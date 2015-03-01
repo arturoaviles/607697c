@@ -79,13 +79,6 @@ public class AdministradorRecursos
     private BuildableBitmapTextureAtlas btaBtnAcercaDe;
 
 
-    //////////////////////////////////////
-
-    //Sprite ball del Juego
-    private ITexture texturaball;
-    public ITextureRegion regionball;
-
-    ///////////////////////////////////77
 
     public static AdministradorRecursos getInstance() {
         return INSTANCE;
@@ -119,10 +112,6 @@ public class AdministradorRecursos
 
     public void cargarRecursosMenu() {
         try {
-
-            texturaball = new AssetBitmapTexture(actividadJuego.getTextureManager(),actividadJuego.getAssets(),"ball58x56.png");
-            regionball = TextureRegionFactory.extractFromTexture(texturaball);
-            texturaball.load();
 
             // Carga la imagen de fondo de la pantalla Menu
             texturaFondoMenu = new AssetBitmapTexture(actividadJuego.getTextureManager(),
@@ -211,8 +200,6 @@ public class AdministradorRecursos
         btaBtnAcercaDe.unload();
         regionBtnAcercaDe=null;
 
-        texturaball.unload();
-        regionball=null;
     }
 
     public void cargarRecursosJuego() {
@@ -223,12 +210,6 @@ public class AdministradorRecursos
             regionFondoJuego = TextureRegionFactory.extractFromTexture(texturaFondoJuego);
             texturaFondoJuego.load();
 
-            //////////////////////
-            texturaball = new AssetBitmapTexture(actividadJuego.getTextureManager(),actividadJuego.getAssets(),"ball58x56.png");
-            regionball = TextureRegionFactory.extractFromTexture(texturaball);
-            texturaball.load();
-
-            ///////////////////////777
         } catch (IOException e) {
             Log.d("cargarRecursosFondoJuego", "No se puede cargar el fondo");
         }
@@ -237,11 +218,8 @@ public class AdministradorRecursos
     public void liberarRecursosJuego() {
         texturaFondoJuego.unload();
         regionFondoJuego = null;
-        texturaball.unload();
-        regionball=null;
 
     }
-
 
     public void cargarRecursosInstrucciones() {
         try {

@@ -13,7 +13,7 @@ import org.andengine.opengl.util.GLState;
 public class EscenaJuego extends EscenaBase
 {
     private Sprite spriteFondo; //(el fondo de la escena, estático)
-    private Sprite spriteBall; //77
+
 
     @Override
     public void crearEscena() {
@@ -32,33 +32,11 @@ public class EscenaJuego extends EscenaBase
         // Habilita los eventos de touch en ciertas áreas
         setTouchAreaBindingOnActionDownEnabled(true);
 
-        /////77
-        spriteBall = new Sprite(ControlJuego.ANCHO_CAMARA/2,ControlJuego.ALTO_CAMARA/2,admRecursos.regionball,admRecursos.vbom){
-
-            public boolean onAreaTouched(TouchEvent pSceneTouchEvent, float pTouchAreaLocalX, float pTouchAreaLocalY) {
-
-
-                if (pSceneTouchEvent.isActionMove()) {
-
-                    spriteBall.setPosition(pSceneTouchEvent.getX(),pSceneTouchEvent.getY());
-
-                }
-                return super.onAreaTouched(pSceneTouchEvent, pTouchAreaLocalX, pTouchAreaLocalY);
-            }
-
-        };
-
-        registerTouchArea(spriteBall);
-
-        /////77
-
-
 
         // Crea el fondo de la pantalla
 
         SpriteBackground fondo = new SpriteBackground(1,0.5f,0,spriteFondo);
         setBackground(fondo);
-        attachChild(spriteBall);
         setBackgroundEnabled(true);
     }
 

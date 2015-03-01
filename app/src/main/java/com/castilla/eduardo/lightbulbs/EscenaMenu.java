@@ -22,7 +22,7 @@ public class EscenaMenu extends EscenaBase
     private ButtonSprite btnInstrucciones;
     private ButtonSprite btnAcercaDe;
     private ButtonSprite btnMarcador;
-    private Sprite spriteBall2;
+
 
 
     @Override
@@ -36,24 +36,6 @@ public class EscenaMenu extends EscenaBase
             }
         };
 
-
-        spriteBall2 = new Sprite(0,0,admRecursos.regionball,admRecursos.vbom){
-
-            public boolean onAreaTouched(TouchEvent pSceneTouchEvent, float pTouchAreaLocalX, float pTouchAreaLocalY) {
-
-
-                if (pSceneTouchEvent.isActionMove()) {
-
-                    spriteBall2.setPosition(pSceneTouchEvent.getX(),pSceneTouchEvent.getY());
-
-                }
-                return super.onAreaTouched(pSceneTouchEvent, pTouchAreaLocalX, pTouchAreaLocalY);
-            }
-
-        };
-
-        registerTouchArea(spriteBall2);
-        attachChild(spriteBall2);
 
 
         // Configuración de la imagen
@@ -100,11 +82,11 @@ public class EscenaMenu extends EscenaBase
             @Override
             public boolean onAreaTouched(TouchEvent pSceneTouchEvent, float pTouchAreaLocalX, float pTouchAreaLocalY) {
                 if (pSceneTouchEvent.isActionMove()) {
-                    btnMarcador.setPosition(pSceneTouchEvent.getX(),pSceneTouchEvent.getY());
+                    //btnMarcador.setPosition(pSceneTouchEvent.getX(),pSceneTouchEvent.getY());
                     // Cambia a la escena de MARCADOR
-                    //admEscenas.crearEscenaMarcador();
-                    //admEscenas.setEscena(TipoEscena.ESCENA_MARCADOR);
-                    //admEscenas.liberarEscenaMenu();
+                    admEscenas.crearEscenaMarcador();
+                    admEscenas.setEscena(TipoEscena.ESCENA_MARCADOR);
+                    admEscenas.liberarEscenaMenu();
                 }
                 return super.onAreaTouched(pSceneTouchEvent, pTouchAreaLocalX, pTouchAreaLocalY);
             }
