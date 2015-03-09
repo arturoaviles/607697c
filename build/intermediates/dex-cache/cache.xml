@@ -2,39 +2,39 @@
 <items version="2" >
 
     <item
-        jar="C:\Users\Eduardo\AndroidStudioProjects\Lightbulbs\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\21.0.3\classes.jar"
+        jar="/Users/arturoavilescastellanos/AndroidStudioProjects/Lightbulbs/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/classes.jar"
         jumboMode="false"
         revision="21.1.2"
         sha1="81d42bf983a8741f4888a6e333e454e4a5e0eeb7">
-        <dex dex="C:\Users\Eduardo\AndroidStudioProjects\Lightbulbs\app\build\intermediates\pre-dexed\debug\classes-a995de89484a6d1ac8f0a4048770278fbb5e3425.jar" />
+        <dex dex="/Users/arturoavilescastellanos/AndroidStudioProjects/Lightbulbs/app/build/intermediates/pre-dexed/debug/classes-c33c6be9af8445a73594b1f31c04fca259f60a5b.jar" />
     </item>
     <item
-        jar="C:\Users\Eduardo\AndroidStudioProjects\Lightbulbs\app\build\intermediates\exploded-aar\com.android.support\support-v4\21.0.3\classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="2c91c949a45a21cdecf26e03951e46c7beec9ad8">
-        <dex dex="C:\Users\Eduardo\AndroidStudioProjects\Lightbulbs\app\build\intermediates\pre-dexed\debug\classes-129ab0e21f5307406ba867f46a8d3695044fb2c9.jar" />
-    </item>
-    <item
-        jar="C:\Users\Eduardo\AndroidStudioProjects\Lightbulbs\app\build\intermediates\exploded-aar\com.android.support\support-v4\21.0.3\libs\internal_impl-21.0.3.jar"
+        jar="/Users/arturoavilescastellanos/AndroidStudioProjects/Lightbulbs/app/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.3/libs/internal_impl-21.0.3.jar"
         jumboMode="false"
         revision="21.1.2"
         sha1="01ec05bfbafcc07646ba813000bf2ef11742dd03">
-        <dex dex="C:\Users\Eduardo\AndroidStudioProjects\Lightbulbs\app\build\intermediates\pre-dexed\debug\internal_impl-21.0.3-9cfa4d902307cbe79eb43eb3e83619e97fd1b32b.jar" />
+        <dex dex="/Users/arturoavilescastellanos/AndroidStudioProjects/Lightbulbs/app/build/intermediates/pre-dexed/debug/internal_impl-21.0.3-36797f7bcd0e027323f64e74f3a1c042cd9cbe2d.jar" />
     </item>
     <item
-        jar="C:\Users\Eduardo\AndroidStudioProjects\Lightbulbs\app\build\intermediates\exploded-aar\Lightbulbs\org.andengine\unspecified\classes.jar"
+        jar="/Users/arturoavilescastellanos/AndroidStudioProjects/Lightbulbs/app/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.3/classes.jar"
         jumboMode="false"
         revision="21.1.2"
-        sha1="9e0af19bc869db163b31c69610f6fea1c12221c2">
-        <dex dex="C:\Users\Eduardo\AndroidStudioProjects\Lightbulbs\app\build\intermediates\pre-dexed\debug\classes-05fd9524283626dd00448372f20b648c643d4e78.jar" />
+        sha1="2c91c949a45a21cdecf26e03951e46c7beec9ad8">
+        <dex dex="/Users/arturoavilescastellanos/AndroidStudioProjects/Lightbulbs/app/build/intermediates/pre-dexed/debug/classes-37d607d382c43bfc32f0674e36adf9c29f5e7085.jar" />
     </item>
     <item
-        jar="C:\Users\Eduardo\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\21.0.3\support-annotations-21.0.3.jar"
+        jar="/Users/arturoavilescastellanos/AndroidStudioProjects/Lightbulbs/app/build/intermediates/exploded-aar/Lightbulbs/org.andengine/unspecified/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="d558242c5311b32bf3de304300dad792a85cf3eb">
+        <dex dex="/Users/arturoavilescastellanos/AndroidStudioProjects/Lightbulbs/app/build/intermediates/pre-dexed/debug/classes-1f9d18302faae8348cd2fa0d8f425eda9c976f36.jar" />
+    </item>
+    <item
+        jar="/Users/arturoavilescastellanos/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/21.0.3/support-annotations-21.0.3.jar"
         jumboMode="false"
         revision="21.1.2"
         sha1="4b74cefe1f0c1b819e7260c8627a14674e37fd35">
-        <dex dex="C:\Users\Eduardo\AndroidStudioProjects\Lightbulbs\app\build\intermediates\pre-dexed\debug\support-annotations-21.0.3-ce30addc7873b94f0950060ef6432cdf95f47902.jar" />
+        <dex dex="/Users/arturoavilescastellanos/AndroidStudioProjects/Lightbulbs/app/build/intermediates/pre-dexed/debug/support-annotations-21.0.3-2e6dd8d576b6f73645ae0f55988fd328fba3af9c.jar" />
     </item>
 
 </items>
