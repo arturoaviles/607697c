@@ -25,8 +25,7 @@ import java.io.IOException;
 public class AdministradorRecursos
 {
     // Instancia única de la clase
-    private static final AdministradorRecursos INSTANCE =
-            new AdministradorRecursos();
+    private static final AdministradorRecursos INSTANCE = new AdministradorRecursos();
 
     public Engine engine;
     public ControlJuego actividadJuego;
@@ -50,7 +49,7 @@ public class AdministradorRecursos
     private ITexture texturaFondoInstrucciones;
     public ITextureRegion regionFondoInstrucciones;
 
-    //Escena mARCADOR
+    //Escena Marcador
     private ITexture texturaFondoMarcador;
     public ITextureRegion regionFondoMarcador;
 
@@ -199,7 +198,6 @@ public class AdministradorRecursos
         //botón acercaDe
         btaBtnAcercaDe.unload();
         regionBtnAcercaDe=null;
-
     }
 
     public void cargarRecursosJuego() {
@@ -218,7 +216,6 @@ public class AdministradorRecursos
     public void liberarRecursosJuego() {
         texturaFondoJuego.unload();
         regionFondoJuego = null;
-
     }
 
     public void cargarRecursosInstrucciones() {
@@ -289,7 +286,5 @@ public class AdministradorRecursos
         texturaFondoFin.unload();
         regionFondoAcercaDe = null;
     }
-
-
 
 }

@@ -183,8 +183,4 @@ public class AdministradorEscenas
         escenaFin.liberarEscena();
         escenaFin = null;
     }
-
-
-
-
 }

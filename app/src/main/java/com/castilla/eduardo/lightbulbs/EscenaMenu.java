@@ -132,7 +132,6 @@ public class EscenaMenu extends EscenaBase
 
         };
 
-
         registerTouchArea(btnAcercaDe);
         attachChild(btnAcercaDe);
     }
