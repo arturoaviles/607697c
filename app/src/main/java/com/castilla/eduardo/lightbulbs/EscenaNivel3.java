@@ -2,15 +2,13 @@ package com.castilla.eduardo.lightbulbs;
 
 import org.andengine.engine.camera.Camera;
 import org.andengine.entity.scene.background.SpriteBackground;
-import org.andengine.entity.sprite.ButtonSprite;
 import org.andengine.entity.sprite.Sprite;
-import org.andengine.input.touch.TouchEvent;
 import org.andengine.opengl.util.GLState;
 
 /**
  * La escena que se muestra cuando corre la aplicación (Logo del TEC)
  */
-public class EscenaJuego extends EscenaBase
+public class EscenaNivel3 extends EscenaBase
 {
     private Sprite spriteFondo; //(el fondo de la escena, estático)
 
