@@ -114,7 +114,7 @@ public class AdministradorRecursos
 
             // Carga la imagen de fondo de la pantalla Menu
             texturaFondoMenu = new AssetBitmapTexture(actividadJuego.getTextureManager(),
-                    actividadJuego.getAssets(), "menuInicio.jpg");
+                    actividadJuego.getAssets(), "PantallaInicio.jpg");
             regionFondoMenu = TextureRegionFactory.extractFromTexture(texturaFondoMenu);
             texturaFondoMenu.load();
 
@@ -140,9 +140,9 @@ public class AdministradorRecursos
             texturaFondoInstrucciones.load();
 
             //Carga la imagen para el botón jugar
-            btaBtnInstrucciones = new BuildableBitmapTextureAtlas(actividadJuego.getTextureManager(),210,107);
+            btaBtnInstrucciones = new BuildableBitmapTextureAtlas(actividadJuego.getTextureManager(),264,132);
             regionBtnInstrucciones = BitmapTextureAtlasTextureRegionFactory.createTiledFromAsset(btaBtnInstrucciones,
-                    actividadJuego.getAssets(), "btnInstrucciones.png",2,1);
+                    actividadJuego.getAssets(), "BtnInstrucciones2.png",2,1);
             try{
                 btaBtnInstrucciones.build(new BlackPawnTextureAtlasBuilder<IBitmapTextureAtlasSource, BitmapTextureAtlas>(0,0,0));
 
