@@ -61,6 +61,10 @@ public class AdministradorRecursos
     private ITexture texturaFondoAcercaDe;
     public ITextureRegion regionFondoAcercaDe;
 
+    // Escena AcercaDe (imagen estática)
+    private ITexture texturaFondoNivel1;
+    public ITextureRegion regionFondoNivel1;
+
     //Botón jugar del menú
     public ITiledTextureRegion regionBtnJugar;
     private BuildableBitmapTextureAtlas btaBtnJugar;
@@ -76,6 +80,10 @@ public class AdministradorRecursos
     //Botón AcercaDe del menú
     public ITiledTextureRegion regionBtnAcercaDe;
     private BuildableBitmapTextureAtlas btaBtnAcercaDe;
+
+    //Botón Marcador del menú
+    public ITiledTextureRegion regionBtnPausa;
+    private BuildableBitmapTextureAtlas btaBtnPausa;
 
 
 
@@ -285,6 +293,24 @@ public class AdministradorRecursos
     public void liberarRecursosFin() {
         texturaFondoFin.unload();
         regionFondoAcercaDe = null;
+    }
+
+
+    public void cargarRecursosNivel1() {
+        try {
+            // Carga la imagen de fondo de la pantalla Splash
+            texturaFondoNivel1 = new AssetBitmapTexture(actividadJuego.getTextureManager(),
+                    actividadJuego.getAssets(), "fondoNivel.jpg");
+            regionFondoNivel1 = TextureRegionFactory.extractFromTexture(texturaFondoNivel1);
+            texturaFondoNivel1.load();
+        } catch (IOException e) {
+            Log.d("cargarRecursosFondoNivel1", "No se puede cargar el fondo");
+        }
+    }
+
+    public void liberarRecursosNivel1() {
+        texturaFondoNivel1.unload();
+        regionFondoNivel1 = null;
     }
 
 }

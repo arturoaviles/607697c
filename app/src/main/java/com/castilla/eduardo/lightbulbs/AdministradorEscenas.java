@@ -18,6 +18,7 @@ public class AdministradorEscenas
     private EscenaBase escenaJuego;
     private EscenaBase escenaInstrucciones;
     private EscenaBase escenaMarcador;
+    private EscenaBase escenaNivel1;
     private EscenaBase escenaFin;
 
 
@@ -77,11 +78,14 @@ public class AdministradorEscenas
             case ESCENA_ACERCA_DE:
                 setEscenaBase(escenaAcercaDe);
                 break;
-            case ESCENA_FIN:
-                setEscenaBase(escenaFin);
-                break;
             case ESCENA_MARCADOR:
                 setEscenaBase(escenaMarcador);
+                break;
+            case ESCENA_NIVEL_1:
+                setEscenaBase(escenaNivel1);
+                break;
+            case ESCENA_FIN:
+                setEscenaBase(escenaFin);
                 break;
         }
     }
@@ -168,6 +172,20 @@ public class AdministradorEscenas
         admRecursos.liberarRecursosAcercaDe();
         escenaAcercaDe.liberarEscena();
         escenaAcercaDe = null;
+    }
+
+    //*** Crea la escena de Nivel1
+    public void crearEscenaNivel1() {
+        // Carga los recursos
+        admRecursos.cargarRecursosNivel1();
+        escenaNivel1 = new EscenaNivel1();
+    }
+
+    //*** Libera la escena de Juego
+    public void liberarEscenaNivel1() {
+        admRecursos.liberarRecursosNivel1();
+        escenaNivel1.liberarEscena();
+        escenaNivel1 = null;
     }
 
     //*** Crea la escena de Fin
