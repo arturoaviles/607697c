@@ -20,7 +20,7 @@ public class EscenaNivel1 extends EscenaBase
     @Override
     public void crearEscena() {
         // Creamos el sprite de manera óptima
-        spriteFondo = new Sprite(0,0, admRecursos.regionFondoJuego,admRecursos.vbom) {
+        spriteFondo = new Sprite(0,0, admRecursos.regionFondoNivel,admRecursos.vbom) {
             @Override
             protected void preDraw(GLState pGLState, Camera pCamera) {
                 super.preDraw(pGLState, pCamera);
@@ -50,7 +50,7 @@ public class EscenaNivel1 extends EscenaBase
         // *** Agrega los botones al Nivel 1
 
         // Botón Pausa
-        btnPausa = new ButtonSprite(ControlJuego.ANCHO_CAMARA/2,ControlJuego.ALTO_CAMARA/2,
+        btnPausa = new ButtonSprite(420,750,
                 admRecursos.regionBtnPausa,admRecursos.vbom) {
             // Aquí el código que ejecuta el botón cuando es presionado
             @Override
@@ -61,9 +61,9 @@ public class EscenaNivel1 extends EscenaBase
                     //btnJugar.setPosition(pSceneTouchEvent.getX(),pSceneTouchEvent.getY());
 
                     // Cambia a la escena de Pausa
-                    admEscenas.crearEscenaJuego();
-                    admEscenas.setEscena(TipoEscena.ESCENA_JUEGO);
-                    admEscenas.liberarEscenaMenu(); //????????????? Aqui se libera la escena de Nivel 1 al poner pausa?
+                    //admEscenas.crearEscenaJuego();
+                    //admEscenas.setEscena(TipoEscena.ESCENA_JUEGO);
+                    //admEscenas.liberarEscenaMenu(); //????????????? Aqui se libera la escena de Nivel 1 al poner pausa?
                 }
                 return super.onAreaTouched(pSceneTouchEvent, pTouchAreaLocalX, pTouchAreaLocalY);
             }
@@ -81,12 +81,11 @@ public class EscenaNivel1 extends EscenaBase
 
     @Override
     public void onBackKeyPressed() {
-
     }
 
     @Override
     public TipoEscena getTipoEscena() {
-        return TipoEscena.ESCENA_JUEGO;
+        return TipoEscena.ESCENA_NIVEL_1;
     }
 
     @Override

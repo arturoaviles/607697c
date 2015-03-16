@@ -14,6 +14,10 @@ public class EscenaJuego extends EscenaBase
 {
     private Sprite spriteFondo; //(el fondo de la escena, estático)
 
+    private ButtonSprite btnNivel1;
+    private ButtonSprite btnNivel2;
+    private ButtonSprite btnNivel3;
+
 
     @Override
     public void crearEscena() {
@@ -38,6 +42,72 @@ public class EscenaJuego extends EscenaBase
         SpriteBackground fondo = new SpriteBackground(1,0.5f,0,spriteFondo);
         setBackground(fondo);
         setBackgroundEnabled(true);
+
+
+        // Botón Nivel_1
+        btnNivel1 = new ButtonSprite(ControlJuego.ANCHO_CAMARA/2,520,admRecursos.regionBtnNivel1,admRecursos.vbom) {
+            // Aquí el código que ejecuta el botón cuando es presionado
+            @Override
+            public boolean onAreaTouched(TouchEvent pSceneTouchEvent, float pTouchAreaLocalX, float pTouchAreaLocalY) {
+
+                if (pSceneTouchEvent.isActionUp()) {
+                    //btnJugar.setPosition(pSceneTouchEvent.getX(),pSceneTouchEvent.getY());
+
+                    // Cambia a la escena de JUGAR
+                    admEscenas.crearEscenaNivel1();
+                    admEscenas.setEscena(TipoEscena.ESCENA_NIVEL_1);
+                    admEscenas.liberarEscenaJuego();
+                }
+                return super.onAreaTouched(pSceneTouchEvent, pTouchAreaLocalX, pTouchAreaLocalY);
+            }
+        };
+
+        registerTouchArea(btnNivel1);
+        attachChild(btnNivel1);
+
+        // Botón Nivel_2
+        btnNivel2 = new ButtonSprite(ControlJuego.ANCHO_CAMARA/2,400,admRecursos.regionBtnNivel2,admRecursos.vbom) {
+            // Aquí el código que ejecuta el botón cuando es presionado
+            @Override
+            public boolean onAreaTouched(TouchEvent pSceneTouchEvent, float pTouchAreaLocalX, float pTouchAreaLocalY) {
+
+                if (pSceneTouchEvent.isActionUp()) {
+                    //btnJugar.setPosition(pSceneTouchEvent.getX(),pSceneTouchEvent.getY());
+
+                    // Cambia a la escena de JUGAR
+                    admEscenas.crearEscenaNivel2();
+                    admEscenas.setEscena(TipoEscena.ESCENA_NIVEL_2);
+                    admEscenas.liberarEscenaJuego();
+                }
+                return super.onAreaTouched(pSceneTouchEvent, pTouchAreaLocalX, pTouchAreaLocalY);
+            }
+        };
+
+        registerTouchArea(btnNivel2);
+        attachChild(btnNivel2);
+
+
+
+        // Botón Nivel_3
+        btnNivel3 = new ButtonSprite(ControlJuego.ANCHO_CAMARA/2,280,admRecursos.regionBtnNivel3,admRecursos.vbom) {
+            // Aquí el código que ejecuta el botón cuando es presionado
+            @Override
+            public boolean onAreaTouched(TouchEvent pSceneTouchEvent, float pTouchAreaLocalX, float pTouchAreaLocalY) {
+
+                if (pSceneTouchEvent.isActionUp()) {
+                    //btnJugar.setPosition(pSceneTouchEvent.getX(),pSceneTouchEvent.getY());
+
+                    // Cambia a la escena de JUGAR
+                    admEscenas.crearEscenaNivel3();
+                    admEscenas.setEscena(TipoEscena.ESCENA_NIVEL_3);
+                    admEscenas.liberarEscenaJuego();
+                }
+                return super.onAreaTouched(pSceneTouchEvent, pTouchAreaLocalX, pTouchAreaLocalY);
+            }
+        };
+
+        registerTouchArea(btnNivel3);
+        attachChild(btnNivel3);
     }
 
 

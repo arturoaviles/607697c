@@ -9,6 +9,7 @@ public enum TipoEscena {
     ESCENA_MENU,
     ESCENA_CARGANDO,
     ESCENA_ACERCA_DE,
+    ESCENA_AJUSTES,
     ESCENA_JUEGO,
     ESCENA_NIVEL_1,
     ESCENA_NIVEL_2,
