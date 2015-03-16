@@ -107,11 +107,31 @@ public class ControlJuego extends SimpleBaseGameActivity
                 admEscenas.liberarEscenaAcercaDe();
 
 
-            }else if(admEscenas.getTipoEscenaActual()==TipoEscena.ESCENA_FIN){
+            }else if(admEscenas.getTipoEscenaActual()==TipoEscena.ESCENA_AJUSTES){
                 admEscenas.crearEscenaMenu();
+                admEscenas.setEscena(TipoEscena.ESCENA_MENU);
+                admEscenas.liberarEscenaAjustes();
+
+
+            }else if(admEscenas.getTipoEscenaActual()==TipoEscena.ESCENA_FIN){
+             admEscenas.crearEscenaMenu();
                 admEscenas.setEscena(TipoEscena.ESCENA_MENU);
                 admEscenas.liberarEscenaFin();
 
+            }else if(admEscenas.getTipoEscenaActual()==TipoEscena.ESCENA_NIVEL_1){
+                admEscenas.crearEscenaJuego();
+                admEscenas.setEscena(TipoEscena.ESCENA_JUEGO);
+                admEscenas.liberarEscenaNivel1();
+
+            }else if(admEscenas.getTipoEscenaActual()==TipoEscena.ESCENA_NIVEL_2){
+                admEscenas.crearEscenaJuego();
+                admEscenas.setEscena(TipoEscena.ESCENA_JUEGO);
+                admEscenas.liberarEscenaNivel2();
+
+            }else if(admEscenas.getTipoEscenaActual()==TipoEscena.ESCENA_NIVEL_3){
+                admEscenas.crearEscenaJuego();
+                admEscenas.setEscena(TipoEscena.ESCENA_JUEGO);
+                admEscenas.liberarEscenaNivel3();
 
             }else{
                 // La escena que esté en pantalla maneja el evento

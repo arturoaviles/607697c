@@ -22,6 +22,7 @@ public class EscenaMenu extends EscenaBase
     private ButtonSprite btnInstrucciones;
     private ButtonSprite btnAcercaDe;
     private ButtonSprite btnMarcador;
+    private ButtonSprite btnAjustes;
 
 
 
@@ -81,7 +82,7 @@ public class EscenaMenu extends EscenaBase
             // Aquí el código que ejecuta el botón cuando es presionado
             @Override
             public boolean onAreaTouched(TouchEvent pSceneTouchEvent, float pTouchAreaLocalX, float pTouchAreaLocalY) {
-                if (pSceneTouchEvent.isActionMove()) {
+                if (pSceneTouchEvent.isActionUp()) {
                     //btnMarcador.setPosition(pSceneTouchEvent.getX(),pSceneTouchEvent.getY());
                     // Cambia a la escena de MARCADOR
                     admEscenas.crearEscenaMarcador();
@@ -113,6 +114,30 @@ public class EscenaMenu extends EscenaBase
 
         registerTouchArea(btnInstrucciones);
         attachChild(btnInstrucciones);
+
+
+        // Botón Ajustes
+        btnAjustes = new ButtonSprite(370,400,
+                admRecursos.regionBtnAjustes,admRecursos.vbom) {
+            // Aquí el código que ejecuta el botón cuando es presionado
+            @Override
+            public boolean onAreaTouched(TouchEvent pSceneTouchEvent, float pTouchAreaLocalX, float pTouchAreaLocalY) {
+
+
+                if (pSceneTouchEvent.isActionUp()) {
+                    //btnJugar.setPosition(pSceneTouchEvent.getX(),pSceneTouchEvent.getY());
+
+                    // Cambia a la escena de JUGAR
+                    admEscenas.crearEscenaAjustes();
+                    admEscenas.setEscena(TipoEscena.ESCENA_AJUSTES);
+                    admEscenas.liberarEscenaMenu();
+                }
+                return super.onAreaTouched(pSceneTouchEvent, pTouchAreaLocalX, pTouchAreaLocalY);
+            }
+        };
+
+        registerTouchArea(btnAjustes);
+        attachChild(btnAjustes);
 
         // Botón AcercaDe
         btnAcercaDe = new ButtonSprite(312,250,

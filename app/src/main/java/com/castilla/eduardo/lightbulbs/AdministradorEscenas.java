@@ -16,10 +16,15 @@ public class AdministradorEscenas
     private EscenaBase escenaMenu;
     private EscenaBase escenaAcercaDe;
     private EscenaBase escenaJuego;
+    private EscenaBase escenaAjustes;
     private EscenaBase escenaInstrucciones;
     private EscenaBase escenaMarcador;
     private EscenaBase escenaNivel1;
+    private EscenaBase escenaNivel2;
+    private EscenaBase escenaNivel3;
     private EscenaBase escenaFin;
+
+
 
 
 
@@ -72,6 +77,9 @@ public class AdministradorEscenas
             case ESCENA_JUEGO:
                 setEscenaBase(escenaJuego);
                 break;
+            case ESCENA_AJUSTES:
+                setEscenaBase(escenaAjustes);
+                break;
             case ESCENA_INSTRUCCIONES:
                 setEscenaBase(escenaInstrucciones);
                 break;
@@ -83,6 +91,12 @@ public class AdministradorEscenas
                 break;
             case ESCENA_NIVEL_1:
                 setEscenaBase(escenaNivel1);
+                break;
+            case ESCENA_NIVEL_2:
+                setEscenaBase(escenaNivel2);
+                break;
+            case ESCENA_NIVEL_3:
+                setEscenaBase(escenaNivel3);
                 break;
             case ESCENA_FIN:
                 setEscenaBase(escenaFin);
@@ -160,6 +174,20 @@ public class AdministradorEscenas
         escenaMarcador= null;
     }
 
+    //*** Crea la escena de Ajustes
+    public void crearEscenaAjustes() {
+        // Carga los recursos
+        admRecursos.cargarRecursosAjustes();
+        escenaAjustes = new EscenaAjustes();
+    }
+
+    //*** Libera la escena de Ajuestes
+    public void liberarEscenaAjustes() {
+        admRecursos.liberarRecursosAjustes();
+        escenaAjustes.liberarEscena();
+        escenaAjustes= null;
+    }
+
     //*** Crea la escena de AcercaDe
     public void crearEscenaAcercaDe() {
         // Carga los recursos
@@ -181,11 +209,39 @@ public class AdministradorEscenas
         escenaNivel1 = new EscenaNivel1();
     }
 
-    //*** Libera la escena de Juego
+    //*** Libera la escena de Nivel1
     public void liberarEscenaNivel1() {
         admRecursos.liberarRecursosNivel1();
         escenaNivel1.liberarEscena();
         escenaNivel1 = null;
+    }
+
+    //*** Crea la escena de Nivel2
+    public void crearEscenaNivel2() {
+        // Carga los recursos
+        admRecursos.cargarRecursosNivel2();
+        escenaNivel2 = new EscenaNivel2();
+    }
+
+    //*** Libera la escena de Nivel2
+    public void liberarEscenaNivel2() {
+        admRecursos.liberarRecursosNivel2();
+        escenaNivel2.liberarEscena();
+        escenaNivel2 = null;
+    }
+
+    //*** Crea la escena de Nivel3
+    public void crearEscenaNivel3() {
+        // Carga los recursos
+        admRecursos.cargarRecursosNivel3();
+        escenaNivel3 = new EscenaNivel3();
+    }
+
+    //*** Libera la escena de Nivel3
+    public void liberarEscenaNivel3() {
+        admRecursos.liberarRecursosNivel3();
+        escenaNivel3.liberarEscena();
+        escenaNivel3 = null;
     }
 
     //*** Crea la escena de Fin
