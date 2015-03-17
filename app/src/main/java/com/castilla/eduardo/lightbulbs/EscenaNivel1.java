@@ -7,7 +7,6 @@ import org.andengine.entity.sprite.ButtonSprite;
 import org.andengine.entity.sprite.Sprite;
 import org.andengine.entity.sprite.TiledSprite;
 import org.andengine.input.touch.TouchEvent;
-import org.andengine.opengl.texture.region.TiledTextureRegion;
 import org.andengine.opengl.util.GLState;
 
 /**
@@ -24,8 +23,6 @@ public class EscenaNivel1 extends EscenaBase
     public TiledSprite foco1;
     public TiledSprite cable2;
     public TiledSprite endBox;
-
-
 
     @Override
     public void crearEscena() {
@@ -53,8 +50,6 @@ public class EscenaNivel1 extends EscenaBase
         SpriteBackground fondo = new SpriteBackground(1,0.5f,0,spriteFondo);
         setBackground(fondo);
         setBackgroundEnabled(true);
-
-
 
 
         // *** Agrega los botones al Nivel 1
@@ -85,7 +80,7 @@ public class EscenaNivel1 extends EscenaBase
 
 
         // *** Agrega StartBox
-        startBox = new AnimatedSprite(240,653,admRecursos.regionStartEndBox,admRecursos.vbom){
+        startBox = new AnimatedSprite(240,607,admRecursos.regionStartEndBox,admRecursos.vbom){
 
             // Aquí el código que ejecuta la caja es presionada
             @Override
@@ -111,7 +106,7 @@ public class EscenaNivel1 extends EscenaBase
         attachChild(startBox);
 
         // *** Agrega Cable1
-        cable1 = new AnimatedSprite(240,521,admRecursos.regionCable,admRecursos.vbom){
+        cable1 = new AnimatedSprite(240,497,admRecursos.regionCable,admRecursos.vbom){
 
             // Aquí el código que ejecuta el cable1 es presionado
             @Override
@@ -171,7 +166,7 @@ public class EscenaNivel1 extends EscenaBase
         attachChild(foco1);
 
         // *** Agrega Cable2
-        cable2 = new AnimatedSprite(240,279,admRecursos.regionCable,admRecursos.vbom){
+        cable2 = new AnimatedSprite(240,300,admRecursos.regionCable,admRecursos.vbom){
 
             // Aquí el código que ejecuta el cable1 es presionado
             @Override
@@ -198,28 +193,35 @@ public class EscenaNivel1 extends EscenaBase
         attachChild(cable2);
 
         // *** Agrega EndBox
-        endBox = new AnimatedSprite(240,147,admRecursos.regionStartEndBox,admRecursos.vbom){
+        endBox = new AnimatedSprite(240,193,admRecursos.regionStartEndBox,admRecursos.vbom){
 
             // Aquí el código que ejecuta la caja es presionada
             @Override
             public boolean onAreaTouched(TouchEvent pSceneTouchEvent, float pTouchAreaLocalX, float pTouchAreaLocalY) {
 
-                if (pSceneTouchEvent.isActionDown()) {
+                if (cable2.getCurrentTileIndex() == 1) {
 
-                    if(cable2.getCurrentTileIndex()==1){
-                        endBox.setCurrentTileIndex(1);
-                    }else{
-                        endBox.setCurrentTileIndex(0);
+
+                    if (pSceneTouchEvent.isActionDown()) {
+
+                        if (cable2.getCurrentTileIndex() == 1) {
+                            endBox.setCurrentTileIndex(1);
+                        } else {
+                            endBox.setCurrentTileIndex(0);
+                        }
                     }
+
+                    if (pSceneTouchEvent.isActionUp()) {
+
+                        admEscenas.crearEscenaFin();
+                        admEscenas.setEscena(TipoEscena.ESCENA_FIN);
+                        admEscenas.liberarEscenaNivel1();
+                    }
+
                 }
 
-                if (pSceneTouchEvent.isActionUp()) {
-
-                    admEscenas.crearEscenaFin();
-                    admEscenas.setEscena(TipoEscena.ESCENA_FIN);
-                    admEscenas.liberarEscenaNivel1();
-                }
                 return super.onAreaTouched(pSceneTouchEvent, pTouchAreaLocalX, pTouchAreaLocalY);
+
             }
         };
         endBox.setCurrentTileIndex(0);
@@ -229,8 +231,12 @@ public class EscenaNivel1 extends EscenaBase
     }
 
 
+
+
+
     @Override
     public void onBackKeyPressed() {
+
     }
 
     @Override

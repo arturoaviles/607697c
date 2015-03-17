@@ -84,8 +84,8 @@ public class ControlJuego extends SimpleBaseGameActivity
 
 
             }else if(admEscenas.getTipoEscenaActual()==TipoEscena.ESCENA_JUEGO){
-                admEscenas.crearEscenaFin();
-                admEscenas.setEscena(TipoEscena.ESCENA_FIN);
+                admEscenas.crearEscenaMenu();
+                admEscenas.setEscena(TipoEscena.ESCENA_MENU);
                 admEscenas.liberarEscenaJuego();
 
 
@@ -114,8 +114,8 @@ public class ControlJuego extends SimpleBaseGameActivity
 
 
             }else if(admEscenas.getTipoEscenaActual()==TipoEscena.ESCENA_FIN){
-             admEscenas.crearEscenaMenu();
-                admEscenas.setEscena(TipoEscena.ESCENA_MENU);
+             admEscenas.crearEscenaJuego();
+                admEscenas.setEscena(TipoEscena.ESCENA_JUEGO);
                 admEscenas.liberarEscenaFin();
 
             }else if(admEscenas.getTipoEscenaActual()==TipoEscena.ESCENA_NIVEL_1){
