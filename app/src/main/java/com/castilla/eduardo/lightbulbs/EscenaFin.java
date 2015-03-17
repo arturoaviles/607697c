@@ -2,7 +2,10 @@ package com.castilla.eduardo.lightbulbs;
 
 import org.andengine.engine.camera.Camera;
 import org.andengine.entity.scene.background.SpriteBackground;
+import org.andengine.entity.sprite.AnimatedSprite;
 import org.andengine.entity.sprite.Sprite;
+import org.andengine.entity.sprite.TiledSprite;
+import org.andengine.input.touch.TouchEvent;
 import org.andengine.opengl.util.GLState;
 
 /**
@@ -11,6 +14,7 @@ import org.andengine.opengl.util.GLState;
 public class EscenaFin extends EscenaBase
 {
     private Sprite spriteFondo; //(el fondo de la escena, estático)
+    private TiledSprite loHicisteBien;
 
     @Override
     public void crearEscena() {
@@ -30,6 +34,30 @@ public class EscenaFin extends EscenaBase
         SpriteBackground fondo = new SpriteBackground(0,0,0.70f,spriteFondo);
         setBackground(fondo);
         setBackgroundEnabled(true);
+
+
+        // *** Agrega el SpriteAnimado "lo hciste bien"
+        loHicisteBien = new AnimatedSprite(240,398,admRecursos.regionBien,admRecursos.vbom){
+
+            // Aquí el código que ejecuta la caja es presionada
+            @Override
+            public boolean onAreaTouched(TouchEvent pSceneTouchEvent, float pTouchAreaLocalX, float pTouchAreaLocalY) {
+
+                if (pSceneTouchEvent.isActionDown()) {
+                    if (loHicisteBien.getCurrentTileIndex()==0){
+                        loHicisteBien.setCurrentTileIndex(1);
+                    }else{
+                        loHicisteBien.setCurrentTileIndex(0);
+                    }
+
+                }
+                return super.onAreaTouched(pSceneTouchEvent, pTouchAreaLocalX, pTouchAreaLocalY);
+            }
+        };
+        loHicisteBien.setCurrentTileIndex(0);
+
+        registerTouchArea(loHicisteBien);
+        attachChild(loHicisteBien);
     }
 
     @Override

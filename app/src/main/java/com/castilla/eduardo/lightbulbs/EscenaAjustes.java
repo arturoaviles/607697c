@@ -2,7 +2,11 @@ package com.castilla.eduardo.lightbulbs;
 
 import org.andengine.engine.camera.Camera;
 import org.andengine.entity.scene.background.SpriteBackground;
+import org.andengine.entity.sprite.AnimatedSprite;
+import org.andengine.entity.sprite.ButtonSprite;
 import org.andengine.entity.sprite.Sprite;
+import org.andengine.entity.sprite.TiledSprite;
+import org.andengine.input.touch.TouchEvent;
 import org.andengine.opengl.util.GLState;
 
 /**
@@ -11,6 +15,8 @@ import org.andengine.opengl.util.GLState;
 public class EscenaAjustes extends EscenaBase
 {
     private Sprite spriteFondo; //(el fondo de la escena, estático)
+    private TiledSprite btnOnOFF_1;
+    private TiledSprite btnOnOFF_2;
 
     @Override
     public void crearEscena() {
@@ -30,6 +36,55 @@ public class EscenaAjustes extends EscenaBase
         SpriteBackground fondo = new SpriteBackground(0,0,0.70f,spriteFondo);
         setBackground(fondo);
         setBackgroundEnabled(true);
+
+        // *** Agrega los botones a la pantalla de Ajustes
+
+        // Botón OnOFF para la música
+        btnOnOFF_1 = new AnimatedSprite(327,472,
+                admRecursos.regionBtnonOff,admRecursos.vbom) {
+            // Aquí el código que ejecuta el botón cuando es presionado
+            @Override
+            public boolean onAreaTouched(TouchEvent pSceneTouchEvent, float pTouchAreaLocalX, float pTouchAreaLocalY) {
+
+
+                if (pSceneTouchEvent.isActionDown()) {
+                    if (btnOnOFF_1.getCurrentTileIndex()==0){
+                        btnOnOFF_1.setCurrentTileIndex(1);
+                    }else{
+                        btnOnOFF_1.setCurrentTileIndex(0);
+                    }
+
+                }
+                return super.onAreaTouched(pSceneTouchEvent, pTouchAreaLocalX, pTouchAreaLocalY);
+            }
+        };
+
+        registerTouchArea(btnOnOFF_1);
+        attachChild(btnOnOFF_1);
+
+        // Botón OnOFF para los efectos
+        btnOnOFF_2 = new AnimatedSprite(327,332,
+                admRecursos.regionBtnonOff,admRecursos.vbom) {
+            // Aquí el código que ejecuta el botón cuando es presionado
+            @Override
+            public boolean onAreaTouched(TouchEvent pSceneTouchEvent, float pTouchAreaLocalX, float pTouchAreaLocalY) {
+
+
+                if (pSceneTouchEvent.isActionDown()) {
+
+                    if (btnOnOFF_2.getCurrentTileIndex()==0){
+                        btnOnOFF_2.setCurrentTileIndex(1);
+                    }else{
+                        btnOnOFF_2.setCurrentTileIndex(0);
+                    }
+
+                }
+                return super.onAreaTouched(pSceneTouchEvent, pTouchAreaLocalX, pTouchAreaLocalY);
+            }
+        };
+
+        registerTouchArea(btnOnOFF_2);
+        attachChild(btnOnOFF_2);
     }
 
     @Override
@@ -45,8 +100,7 @@ public class EscenaAjustes extends EscenaBase
     @Override
     public void liberarEscena() {
         // Liberar cada recurso usado en esta escena
-        spriteFondo.detachSelf();   // Se desconecta de la escena
-        spriteFondo.dispose();      // Libera la memoria
+
 
         this.detachSelf();      // La escena se deconecta del engine
         this.dispose();         // Libera la memoria

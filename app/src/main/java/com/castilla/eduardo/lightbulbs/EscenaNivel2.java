@@ -2,8 +2,10 @@ package com.castilla.eduardo.lightbulbs;
 
 import org.andengine.engine.camera.Camera;
 import org.andengine.entity.scene.background.SpriteBackground;
+import org.andengine.entity.sprite.AnimatedSprite;
 import org.andengine.entity.sprite.ButtonSprite;
 import org.andengine.entity.sprite.Sprite;
+import org.andengine.entity.sprite.TiledSprite;
 import org.andengine.input.touch.TouchEvent;
 import org.andengine.opengl.util.GLState;
 
@@ -16,6 +18,11 @@ public class EscenaNivel2 extends EscenaBase
 
 
     private ButtonSprite btnPausa;
+    public TiledSprite startBox;
+    public TiledSprite cable1;
+    public TiledSprite foco1;
+    public TiledSprite cable2;
+    public TiledSprite endBox;
 
     @Override
     public void crearEscena() {
@@ -47,7 +54,7 @@ public class EscenaNivel2 extends EscenaBase
 
 
 
-        // *** Agrega los botones al Nivel 1
+        // *** Agrega los botones al Nivel 2
 
         // Botón Pausa
         btnPausa = new ButtonSprite(420,750,
@@ -73,6 +80,156 @@ public class EscenaNivel2 extends EscenaBase
         attachChild(btnPausa);
 
 
+
+        // *** Agrega StartBox
+        startBox = new AnimatedSprite(240,607,admRecursos.regionStartEndBox,admRecursos.vbom){
+
+            // Aquí el código que ejecuta la caja es presionada
+            @Override
+            public boolean onAreaTouched(TouchEvent pSceneTouchEvent, float pTouchAreaLocalX, float pTouchAreaLocalY) {
+
+                if (pSceneTouchEvent.isActionDown()) {
+
+                    if(startBox.getCurrentTileIndex()==0&&cable1.getCurrentTileIndex()==1){
+                        startBox.setCurrentTileIndex(1);
+                    }else{
+                        //  startBox.setCurrentTileIndex(0);
+                        cable1.setCurrentTileIndex(0);
+                        foco1.setCurrentTileIndex(0);
+                        cable2.setCurrentTileIndex(0);
+                    }
+                }
+                return super.onAreaTouched(pSceneTouchEvent, pTouchAreaLocalX, pTouchAreaLocalY);
+            }
+        };
+        startBox.setCurrentTileIndex(1);
+
+        registerTouchArea(startBox);
+        attachChild(startBox);
+
+        // *** Agrega Cable1
+        cable1 = new AnimatedSprite(240,497,admRecursos.regionCable,admRecursos.vbom){
+
+            // Aquí el código que ejecuta el cable1 es presionado
+            @Override
+            public boolean onAreaTouched(TouchEvent pSceneTouchEvent, float pTouchAreaLocalX, float pTouchAreaLocalY) {
+
+                if (pSceneTouchEvent.isActionDown()) {
+
+                    if (startBox.getCurrentTileIndex()==1) {
+
+                        if (cable1.getCurrentTileIndex() == 0) {
+                            cable1.setCurrentTileIndex(1);
+                        } else {
+                            cable1.setCurrentTileIndex(0);
+                            foco1.setCurrentTileIndex(0);
+                            cable2.setCurrentTileIndex(0);
+                        }
+                    }
+                }
+                return super.onAreaTouched(pSceneTouchEvent, pTouchAreaLocalX, pTouchAreaLocalY);
+            }
+        };
+        cable1.setRotation(90);
+        cable1.setCurrentTileIndex(0);
+
+        registerTouchArea(cable1);
+        attachChild(cable1);
+
+        // *** Agrega Foco1
+        foco1 = new AnimatedSprite(240,400,admRecursos.regionFoco,admRecursos.vbom){
+
+            // Aquí el código que ejecuta la foco es presionado
+            @Override
+            public boolean onAreaTouched(TouchEvent pSceneTouchEvent, float pTouchAreaLocalX, float pTouchAreaLocalY) {
+
+                if (pSceneTouchEvent.isActionDown()) {
+
+                    if(cable1.getCurrentTileIndex()==1){
+
+                        if(foco1.getCurrentTileIndex()==1){
+                            foco1.setCurrentTileIndex(0);
+                            cable2.setCurrentTileIndex(0);
+                        }else{
+                            foco1.setCurrentTileIndex(1);
+                        }
+
+                    }else{
+                        foco1.setCurrentTileIndex(0);
+                        cable2.setCurrentTileIndex(0);
+                    }
+                }
+                return super.onAreaTouched(pSceneTouchEvent, pTouchAreaLocalX, pTouchAreaLocalY);
+            }
+        };
+        foco1.setCurrentTileIndex(0);
+
+        registerTouchArea(foco1);
+        attachChild(foco1);
+
+        // *** Agrega Cable2
+        cable2 = new AnimatedSprite(240,300,admRecursos.regionCable,admRecursos.vbom){
+
+            // Aquí el código que ejecuta el cable1 es presionado
+            @Override
+            public boolean onAreaTouched(TouchEvent pSceneTouchEvent, float pTouchAreaLocalX, float pTouchAreaLocalY) {
+
+                if (pSceneTouchEvent.isActionDown()) {
+
+                    if (foco1.getCurrentTileIndex()==1) {
+
+                        if (cable2.getCurrentTileIndex() == 0) {
+                            cable2.setCurrentTileIndex(1);
+                        } else {
+                            cable2.setCurrentTileIndex(0);
+                        }
+                    }
+                }
+                return super.onAreaTouched(pSceneTouchEvent, pTouchAreaLocalX, pTouchAreaLocalY);
+            }
+        };
+        cable2.setRotation(90);
+        cable2.setCurrentTileIndex(0);
+
+        registerTouchArea(cable2);
+        attachChild(cable2);
+
+        // *** Agrega EndBox
+        endBox = new AnimatedSprite(240,193,admRecursos.regionStartEndBox,admRecursos.vbom){
+
+            // Aquí el código que ejecuta la caja es presionada
+            @Override
+            public boolean onAreaTouched(TouchEvent pSceneTouchEvent, float pTouchAreaLocalX, float pTouchAreaLocalY) {
+
+                if (cable2.getCurrentTileIndex() == 1) {
+
+                    if (pSceneTouchEvent.isActionDown()) {
+
+                        if (cable2.getCurrentTileIndex() == 1) {
+                            endBox.setCurrentTileIndex(1);
+                        } else {
+                            endBox.setCurrentTileIndex(0);
+                        }
+                    }
+
+                    if (pSceneTouchEvent.isActionUp()) {
+
+                        admEscenas.crearEscenaFin();
+                        admEscenas.setEscena(TipoEscena.ESCENA_FIN);
+                        admEscenas.liberarEscenaNivel2();
+
+                    }
+
+                }
+
+                return super.onAreaTouched(pSceneTouchEvent, pTouchAreaLocalX, pTouchAreaLocalY);
+
+            }
+        };
+        endBox.setCurrentTileIndex(0);
+
+        registerTouchArea(endBox);
+        attachChild(endBox);
     }
 
 
