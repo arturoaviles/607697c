@@ -8,6 +8,9 @@ import org.andengine.entity.sprite.Sprite;
 import org.andengine.entity.sprite.TiledSprite;
 import org.andengine.input.touch.TouchEvent;
 import org.andengine.opengl.util.GLState;
+import org.andengine.util.math.factorioal.IFactorialProvider;
+
+import java.util.LinkedList;
 
 /**
  * La escena que se muestra cuando corre la aplicación (Logo del TEC)
@@ -18,11 +21,13 @@ public class EscenaNivel1 extends EscenaBase
 
 
     private ButtonSprite btnPausa;
-    public TiledSprite startBox;
-    public TiledSprite cable1;
-    public TiledSprite foco1;
-    public TiledSprite cable2;
-    public TiledSprite endBox;
+    public AnimatedSprite startBox;
+    public AnimatedSprite cable1;
+    public AnimatedSprite foco1;
+    public AnimatedSprite cable2;
+    public AnimatedSprite endBox;
+
+    private LinkedList<AnimatedSprite> lista = new LinkedList<AnimatedSprite>();
 
     @Override
     public void crearEscena() {
@@ -82,23 +87,25 @@ public class EscenaNivel1 extends EscenaBase
         // *** Agrega StartBox
         startBox = new AnimatedSprite(240,607,admRecursos.regionStartEndBox,admRecursos.vbom){
 
-            // Aquí el código que ejecuta la caja es presionada
-            @Override
             public boolean onAreaTouched(TouchEvent pSceneTouchEvent, float pTouchAreaLocalX, float pTouchAreaLocalY) {
 
                 if (pSceneTouchEvent.isActionDown()) {
-
-                    if(startBox.getCurrentTileIndex()==0&&cable1.getCurrentTileIndex()==1){
-                        startBox.setCurrentTileIndex(1);
-                    }else{
-                        //  startBox.setCurrentTileIndex(0);
-                        cable1.setCurrentTileIndex(0);
-                        foco1.setCurrentTileIndex(0);
-                        cable2.setCurrentTileIndex(0);
+                    int i = lista.size()-1;
+                    while(!lista.isEmpty()){
+                        lista.get(i).setCurrentTileIndex(0);
+                        lista.remove(i);
+                        i--;
                     }
+
                 }
+
                 return super.onAreaTouched(pSceneTouchEvent, pTouchAreaLocalX, pTouchAreaLocalY);
+
             }
+
+
+
+
         };
         startBox.setCurrentTileIndex(1);
 
@@ -112,18 +119,28 @@ public class EscenaNivel1 extends EscenaBase
             @Override
             public boolean onAreaTouched(TouchEvent pSceneTouchEvent, float pTouchAreaLocalX, float pTouchAreaLocalY) {
 
+
                 if (pSceneTouchEvent.isActionDown()) {
+                    if (cable1.getCurrentTileIndex()==0){
+                        cable1.setCurrentTileIndex(1);
+                        lista.add(cable1);
+                    }else {
+                        int i = lista.size() - 1;
+                        while (!lista.isEmpty()) {
 
-                    if (startBox.getCurrentTileIndex()==1) {
 
-                        if (cable1.getCurrentTileIndex() == 0) {
-                            cable1.setCurrentTileIndex(1);
-                        } else {
-                            cable1.setCurrentTileIndex(0);
-                            foco1.setCurrentTileIndex(0);
-                            cable2.setCurrentTileIndex(0);
+                            if (lista.get(i).equals(cable1)) {
+                                cable1.setCurrentTileIndex(0);
+                                break;
+                            } else {
+                                lista.get(i).setCurrentTileIndex(0);
+                                lista.remove(i);
+                            }
+                            i--;
+
                         }
                     }
+
                 }
                 return super.onAreaTouched(pSceneTouchEvent, pTouchAreaLocalX, pTouchAreaLocalY);
             }
@@ -141,21 +158,29 @@ public class EscenaNivel1 extends EscenaBase
             @Override
             public boolean onAreaTouched(TouchEvent pSceneTouchEvent, float pTouchAreaLocalX, float pTouchAreaLocalY) {
 
+
+
                 if (pSceneTouchEvent.isActionDown()) {
-
-                    if(cable1.getCurrentTileIndex()==1){
-
-                        if(foco1.getCurrentTileIndex()==1){
-                            foco1.setCurrentTileIndex(0);
-                            cable2.setCurrentTileIndex(0);
-                        }else{
-                            foco1.setCurrentTileIndex(1);
-                        }
-
+                    if (foco1.getCurrentTileIndex()==0){
+                        foco1.setCurrentTileIndex(1);
+                        lista.add(foco1);
                     }else{
-                        foco1.setCurrentTileIndex(0);
-                        cable2.setCurrentTileIndex(0);
+                        int i = lista.size()-1;
+                        while(!lista.isEmpty()){
+
+
+                            if (lista.get(i).equals(foco1)){
+                                foco1.setCurrentTileIndex(0);
+                                break;
+                            }else{
+                                lista.get(i).setCurrentTileIndex(0);
+                                lista.remove(i);
+                            }
+                            i--;
+
+                        }
                     }
+
                 }
                 return super.onAreaTouched(pSceneTouchEvent, pTouchAreaLocalX, pTouchAreaLocalY);
             }
@@ -177,7 +202,9 @@ public class EscenaNivel1 extends EscenaBase
                     if (foco1.getCurrentTileIndex()==1) {
 
                         if (cable2.getCurrentTileIndex() == 0) {
+
                             cable2.setCurrentTileIndex(1);
+                            lista.add(cable2);
                         } else {
                             cable2.setCurrentTileIndex(0);
                         }
