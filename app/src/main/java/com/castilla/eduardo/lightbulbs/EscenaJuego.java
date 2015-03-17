@@ -51,7 +51,6 @@ public class EscenaJuego extends EscenaBase
             public boolean onAreaTouched(TouchEvent pSceneTouchEvent, float pTouchAreaLocalX, float pTouchAreaLocalY) {
 
                 if (pSceneTouchEvent.isActionUp()) {
-                    //btnJugar.setPosition(pSceneTouchEvent.getX(),pSceneTouchEvent.getY());
 
                     // Cambia a la escena de JUGAR
                     admEscenas.crearEscenaNivel1();
@@ -95,7 +94,6 @@ public class EscenaJuego extends EscenaBase
             public boolean onAreaTouched(TouchEvent pSceneTouchEvent, float pTouchAreaLocalX, float pTouchAreaLocalY) {
 
                 if (pSceneTouchEvent.isActionUp()) {
-                    //btnJugar.setPosition(pSceneTouchEvent.getX(),pSceneTouchEvent.getY());
 
                     // Cambia a la escena de JUGAR
                     admEscenas.crearEscenaNivel3();
