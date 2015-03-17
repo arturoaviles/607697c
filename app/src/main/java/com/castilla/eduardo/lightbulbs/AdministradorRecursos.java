@@ -22,8 +22,7 @@ import java.io.IOException;
 /**
  * Carga/Descarga los recurso del juego. Imágenes, Audios
  */
-public class AdministradorRecursos
-{
+public class AdministradorRecursos {
     // Instancia única de la clase
     private static final AdministradorRecursos INSTANCE = new AdministradorRecursos();
 
@@ -105,6 +104,20 @@ public class AdministradorRecursos
     public ITiledTextureRegion regionBtnNivel3;
     private BuildableBitmapTextureAtlas btaBtnNivel3;
 
+
+    // Nivel 1 Texturas
+
+    //StartBox
+    private BuildableBitmapTextureAtlas texturaStartEndBox;
+    public ITiledTextureRegion regionStartEndBox;
+
+    // Cable
+    private BuildableBitmapTextureAtlas texturaCable;
+    public ITiledTextureRegion regionCable;
+
+    // Foco
+    private BuildableBitmapTextureAtlas texturaFoco;
+    public ITiledTextureRegion regionFoco;
 
 
     public static AdministradorRecursos getInstance() {
@@ -232,6 +245,12 @@ public class AdministradorRecursos
         //botón acercaDe
         btaBtnAcercaDe.unload();
         regionBtnAcercaDe=null;
+        //botón Marcador
+        btaBtnMarcador.unload();
+        regionBtnMarcador=null;
+        //botón Ajustes
+        btaBtnAjustes.unload();
+        regionBtnAjustes=null;
     }
 
     public void cargarRecursosJuego() {
@@ -410,11 +429,50 @@ public class AdministradorRecursos
             Log.d("CargarRecursosNivel1","No se puede cargar la imagen del botón de pausa");
         }
         btaBtnPausa.load();
-    }
+
+        // Carga las imágenes del StartEndBox
+        texturaStartEndBox = new BuildableBitmapTextureAtlas(actividadJuego.getTextureManager(),172,59);
+        regionStartEndBox = BitmapTextureAtlasTextureRegionFactory.createTiledFromAsset(
+                texturaStartEndBox,actividadJuego, "StartEndBox.png",2,1);
+        try {
+            texturaStartEndBox.build(new BlackPawnTextureAtlasBuilder<IBitmapTextureAtlasSource, BitmapTextureAtlas>(0,0,0));
+        } catch (ITextureAtlasBuilder.TextureAtlasBuilderException e) {
+            Log.d("onCreateResources","No se puede cargar la imagen para el Sprite del StartEndBox");
+        }
+        texturaStartEndBox.load();
+
+        // Carga las imágenes del Cable
+        texturaCable = new BuildableBitmapTextureAtlas(actividadJuego.getTextureManager(),410,49);
+        regionCable = BitmapTextureAtlasTextureRegionFactory.createTiledFromAsset(
+                texturaCable,actividadJuego, "Cable1.png",2,1);
+        try {
+            texturaCable.build(new BlackPawnTextureAtlasBuilder<IBitmapTextureAtlasSource, BitmapTextureAtlas>(0,0,0));
+        } catch (ITextureAtlasBuilder.TextureAtlasBuilderException e) {
+            Log.d("onCreateResources","No se puede cargar la imagen para el Sprite del Cable1");
+        }
+        texturaCable.load();
+
+
+        // Carga las imágenes del Foco
+        texturaFoco = new BuildableBitmapTextureAtlas(actividadJuego.getTextureManager(),127,40);
+        regionFoco = BitmapTextureAtlasTextureRegionFactory.createTiledFromAsset(
+                texturaFoco,actividadJuego, "Lightbulb.png",2,1);
+        try {
+            texturaFoco.build(new BlackPawnTextureAtlasBuilder<IBitmapTextureAtlasSource, BitmapTextureAtlas>(0,0,0));
+        } catch (ITextureAtlasBuilder.TextureAtlasBuilderException e) {
+            Log.d("onCreateResources","No se puede cargar la imagen para el Sprite del Foco1");
+        }
+        texturaFoco.load();
+
+        }
+
 
     public void liberarRecursosNivel1() {
         texturaFondoNivel.unload();
         regionFondoNivel = null;
+
+        btaBtnPausa.unload();
+        regionBtnPausa=null;
     }
 
 
@@ -446,6 +504,10 @@ public class AdministradorRecursos
         public void liberarRecursosNivel2() {
         texturaFondoNivel.unload();
         regionFondoNivel = null;
+
+        btaBtnPausa.unload();
+        regionBtnPausa=null;
+
     }
 
 
@@ -477,6 +539,9 @@ public class AdministradorRecursos
     public void liberarRecursosNivel3() {
         texturaFondoNivel.unload();
         regionFondoNivel = null;
+
+        btaBtnPausa.unload();
+        regionBtnPausa=null;
     }
 
 }
