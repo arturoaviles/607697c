@@ -1,6 +1,8 @@
 package com.castilla.eduardo.lightbulbs;
 
 import org.andengine.engine.camera.Camera;
+import org.andengine.engine.handler.timer.ITimerCallback;
+import org.andengine.engine.handler.timer.TimerHandler;
 import org.andengine.entity.scene.background.SpriteBackground;
 import org.andengine.entity.sprite.AnimatedSprite;
 import org.andengine.entity.sprite.ButtonSprite;
@@ -174,8 +176,8 @@ public class EscenaNivel2 extends EscenaBase
 
                         if (lista.getLast().equals(foco1)||lista.getLast().equals(foco2)) {
 
-                                cable2.setCurrentTileIndex(1);
-                                lista.add(cable2);
+                            cable2.setCurrentTileIndex(1);
+                            lista.add(cable2);
                         }
                     }
 
@@ -478,22 +480,18 @@ public class EscenaNivel2 extends EscenaBase
                 boolean allBulbs = true;
 
 
-                if (foco1.getCurrentTileIndex()==0){
-                    allBulbs = false;
-                }
+                ArrayList<AnimatedSprite> focos = new ArrayList<AnimatedSprite>();
 
-                if (foco2.getCurrentTileIndex()==0){
-                    allBulbs = false;
-                }
+                focos.add(foco1);
+                focos.add(foco2);
+                focos.add(foco3);
+                focos.add(foco4);
 
-                if (foco3.getCurrentTileIndex()==0){
-                    allBulbs = false;
+                for(int i=0; i<focos.size(); i++){
+                    if (focos.get(i).getCurrentTileIndex()==0){
+                        allBulbs = false;
+                    }
                 }
-
-                if (foco4.getCurrentTileIndex()==0){
-                    allBulbs = false;
-                }
-
 
                 if(allBulbs) {
 
@@ -510,20 +508,24 @@ public class EscenaNivel2 extends EscenaBase
                                 endBox.setCurrentTileIndex(0);
                             }
 
-                        }
+                            // Programa la carga de la segunda escena, después de cierto tiempo
+                            admRecursos.engine.registerUpdateHandler(new TimerHandler(1,
+                                    new ITimerCallback() {
+                                        @Override
+                                        public void onTimePassed(TimerHandler pTimerHandler) {
+                                            admRecursos.engine.unregisterUpdateHandler(pTimerHandler); // Invalida el timer
 
-                        if (pSceneTouchEvent.isActionUp()) {
+                                            admEscenas.crearEscenaFin();
+                                            admEscenas.setEscena(TipoEscena.ESCENA_FIN);
+                                            admEscenas.liberarEscenaNivel2();
+                                        }
+                                    }));
 
-                            admEscenas.crearEscenaFin();
-                            admEscenas.setEscena(TipoEscena.ESCENA_FIN);
-                            admEscenas.liberarEscenaNivel2();
 
                         }
                     }
 
                 }
-
-
 
                 return super.onAreaTouched(pSceneTouchEvent, pTouchAreaLocalX, pTouchAreaLocalY);
 
@@ -533,8 +535,6 @@ public class EscenaNivel2 extends EscenaBase
 
         registerTouchArea(endBox);
         attachChild(endBox);
-
-
     }
 
 

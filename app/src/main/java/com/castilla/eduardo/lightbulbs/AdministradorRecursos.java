@@ -407,7 +407,11 @@ public class AdministradorRecursos {
     public void liberarRecursosFin() {
         texturaFondoFin.unload();
         regionFondoAcercaDe = null;
+        
+        texturaBien.unload();
+        regionBien = null;
     }
+
 
     public void cargarRecursosAjustes() {
         try {
@@ -442,82 +446,41 @@ public class AdministradorRecursos {
 
 
     public void cargarRecursosNivel1() {
-        try {
-            texturaFondoNivel = new AssetBitmapTexture(actividadJuego.getTextureManager(),
-                    actividadJuego.getAssets(), "fondoNivel.jpg");
-            regionFondoNivel = TextureRegionFactory.extractFromTexture(texturaFondoNivel);
-            texturaFondoNivel.load();
-        } catch (IOException e) {
-            Log.d("cargarRecursosFondoNivel1", "No se puede cargar el fondo");
-        }
-
-        //Carga la imagen para el botón de Pausa
-        btaBtnPausa = new BuildableBitmapTextureAtlas(actividadJuego.getTextureManager(),40,40);
-        regionBtnPausa = BitmapTextureAtlasTextureRegionFactory.createTiledFromAsset(btaBtnPausa,
-                actividadJuego.getAssets(), "BtnPausa.png",1,1);
-
-        try{
-            btaBtnPausa.build(new BlackPawnTextureAtlasBuilder<IBitmapTextureAtlasSource, BitmapTextureAtlas>(0,0,0));
-
-        }catch(ITextureAtlasBuilder.TextureAtlasBuilderException e){
-            Log.d("CargarRecursosNivel1","No se puede cargar la imagen del botón de pausa");
-        }
-        btaBtnPausa.load();
-
-        // Carga las imágenes del StartEndBox
-        texturaStartEndBox = new BuildableBitmapTextureAtlas(actividadJuego.getTextureManager(),172,59);
-        regionStartEndBox = BitmapTextureAtlasTextureRegionFactory.createTiledFromAsset(
-                texturaStartEndBox,actividadJuego, "StartEndBox.png",2,1);
-        try {
-            texturaStartEndBox.build(new BlackPawnTextureAtlasBuilder<IBitmapTextureAtlasSource, BitmapTextureAtlas>(0,0,0));
-        } catch (ITextureAtlasBuilder.TextureAtlasBuilderException e) {
-            Log.d("onCreateResources","No se puede cargar la imagen para el Sprite del StartEndBox");
-        }
-        texturaStartEndBox.load();
-
-        // Carga las imágenes del Cable
-        texturaCable = new BuildableBitmapTextureAtlas(actividadJuego.getTextureManager(),326,62);
-        regionCable = BitmapTextureAtlasTextureRegionFactory.createTiledFromAsset(
-                texturaCable,actividadJuego, "Cable.png",2,1);
-        try {
-            texturaCable.build(new BlackPawnTextureAtlasBuilder<IBitmapTextureAtlasSource, BitmapTextureAtlas>(0,0,0));
-        } catch (ITextureAtlasBuilder.TextureAtlasBuilderException e) {
-            Log.d("onCreateResources","No se puede cargar la imagen para el Sprite del Cable1");
-        }
-        texturaCable.load();
-
-
-        // Carga las imágenes del Foco
-        texturaFoco = new BuildableBitmapTextureAtlas(actividadJuego.getTextureManager(),127,50);
-        regionFoco = BitmapTextureAtlasTextureRegionFactory.createTiledFromAsset(
-                texturaFoco,actividadJuego, "Lightbulb.png",2,1);
-        try {
-            texturaFoco.build(new BlackPawnTextureAtlasBuilder<IBitmapTextureAtlasSource, BitmapTextureAtlas>(0,0,0));
-            texturaFoco.load();
-        } catch (ITextureAtlasBuilder.TextureAtlasBuilderException e) {
-            Log.d("onCreateResources","No se puede cargar la imagen para el Sprite del Foco1");
-        }
-
-        }
+        cargarRecursosBasicosDeNivel();
+    }
 
 
     public void liberarRecursosNivel1() {
-        texturaFondoNivel.unload();
-        regionFondoNivel = null;
-
-        btaBtnPausa.unload();
-        regionBtnPausa=null;
+        liberarRecursosBasicosDeNivel();
     }
 
 
     public void cargarRecursosNivel2() {
+        cargarRecursosBasicosDeNivel();
+    }
+
+        public void liberarRecursosNivel2() {
+        liberarRecursosBasicosDeNivel();
+    }
+
+
+    public void cargarRecursosNivel3() {
+        cargarRecursosBasicosDeNivel();
+    }
+
+    public void liberarRecursosNivel3() {
+        liberarRecursosBasicosDeNivel();
+    }
+
+
+    public void cargarRecursosBasicosDeNivel(){
         try {
             texturaFondoNivel = new AssetBitmapTexture(actividadJuego.getTextureManager(),
                     actividadJuego.getAssets(), "fondoNivel.jpg");
             regionFondoNivel = TextureRegionFactory.extractFromTexture(texturaFondoNivel);
             texturaFondoNivel.load();
         } catch (IOException e) {
-            Log.d("cargarRecursosFondoNivel2", "No se puede cargar el fondo");
+            Log.d("cargarRecursosFondoNivel", "No se puede cargar el fondo");
         }
 
         //Carga la imagen para el botón de Pausa
@@ -529,7 +492,7 @@ public class AdministradorRecursos {
             btaBtnPausa.build(new BlackPawnTextureAtlasBuilder<IBitmapTextureAtlasSource, BitmapTextureAtlas>(0,0,0));
 
         }catch(ITextureAtlasBuilder.TextureAtlasBuilderException e){
-            Log.d("CargarRecursosNivel2","No se puede cargar la imagen del botón de pausa");
+            Log.d("CargarRecursosNivel","No se puede cargar la imagen del botón de pausa");
         }
         btaBtnPausa.load();
 
@@ -570,47 +533,21 @@ public class AdministradorRecursos {
 
     }
 
-        public void liberarRecursosNivel2() {
+    public void liberarRecursosBasicosDeNivel(){
         texturaFondoNivel.unload();
-        regionFondoNivel = null;
+        regionFondoNivel=null;
+
+        texturaCable.unload();
+        regionCable = null;
+
+        texturaFoco.unload();
+        regionFoco = null;
+
+        texturaStartEndBox.unload();
+        regionStartEndBox = null;
 
         btaBtnPausa.unload();
-        regionBtnPausa=null;
-
-    }
-
-
-    public void cargarRecursosNivel3() {
-        try {
-
-            texturaFondoNivel = new AssetBitmapTexture(actividadJuego.getTextureManager(),
-                    actividadJuego.getAssets(), "fondoNivel.jpg");
-            regionFondoNivel = TextureRegionFactory.extractFromTexture(texturaFondoNivel);
-            texturaFondoNivel.load();
-        } catch (IOException e) {
-            Log.d("cargarRecursosFondoNivel3", "No se puede cargar el fondo");
-        }
-
-        //Carga la imagen para el botón de Pausa
-        btaBtnPausa = new BuildableBitmapTextureAtlas(actividadJuego.getTextureManager(),40,40);
-        regionBtnPausa = BitmapTextureAtlasTextureRegionFactory.createTiledFromAsset(btaBtnPausa,
-                actividadJuego.getAssets(), "BtnPausa.png",1,1);
-
-        try{
-            btaBtnPausa.build(new BlackPawnTextureAtlasBuilder<IBitmapTextureAtlasSource, BitmapTextureAtlas>(0,0,0));
-
-        }catch(ITextureAtlasBuilder.TextureAtlasBuilderException e){
-            Log.d("CargarRecursosNivel3","No se puede cargar la imagen del botón de pausa");
-        }
-        btaBtnPausa.load();
-    }
-
-    public void liberarRecursosNivel3() {
-        texturaFondoNivel.unload();
-        regionFondoNivel = null;
-
-        btaBtnPausa.unload();
-        regionBtnPausa=null;
+        regionBtnPausa = null;
     }
 
 }
