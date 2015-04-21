@@ -18,30 +18,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" readonly="true" id="0960f1e5-06e8-4f22-bd1b-519b53d854c2" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/assets/BtnContinuar.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/assets/COMICATE.TTF" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/assets/DK Crayon Crumble.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/assets/MenuPausa.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/assets/Sonidos" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/assets/bateria.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/assets/bytes.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/assets/Sonidos/mainSong.mp3" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/castilla/eduardo/lightbulbs/EstadoJuego.java" />
-      <change type="DELETED" beforePath="C:\Users\Eduardo\AndroidStudioProjects\Lightbulbs\app\src\main\assets\Tubo1.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Eduardo\AndroidStudioProjects\Lightbulbs\app\src\main\assets\Tubo2.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Eduardo\AndroidStudioProjects\Lightbulbs\app\src\main\assets\Tubo3.png" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/assets/CableChico.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/assets/CableMediano.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/assets/Mal.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/assets/foco.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/castilla/eduardo/lightbulbs/AdministradorEscenas.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/castilla/eduardo/lightbulbs/AdministradorEscenas.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/castilla/eduardo/lightbulbs/AdministradorRecursos.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/castilla/eduardo/lightbulbs/AdministradorRecursos.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/castilla/eduardo/lightbulbs/ControlJuego.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/castilla/eduardo/lightbulbs/ControlJuego.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/castilla/eduardo/lightbulbs/EscenaAcercaDe.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/castilla/eduardo/lightbulbs/EscenaAcercaDe.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/castilla/eduardo/lightbulbs/EscenaAjustes.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/castilla/eduardo/lightbulbs/EscenaAjustes.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/castilla/eduardo/lightbulbs/EscenaFin.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/castilla/eduardo/lightbulbs/EscenaFin.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/castilla/eduardo/lightbulbs/EscenaJuego.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/castilla/eduardo/lightbulbs/EscenaJuego.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/castilla/eduardo/lightbulbs/EscenaMenu.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/castilla/eduardo/lightbulbs/EscenaMenu.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/castilla/eduardo/lightbulbs/EscenaNivel1.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/castilla/eduardo/lightbulbs/EscenaNivel1.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/castilla/eduardo/lightbulbs/EscenaNivel2.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/castilla/eduardo/lightbulbs/EscenaNivel2.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/castilla/eduardo/lightbulbs/EscenaNivel3.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/castilla/eduardo/lightbulbs/EscenaNivel3.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MOVED" beforePath="C:\Users\Eduardo\AndroidStudioProjects\Lightbulbs\app\src\main\assets\Cable.png" afterPath="$PROJECT_DIR$/app/src/main/assets/CableLargo.png" />
     </list>
     <ignored path="Lightbulbs.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -67,8 +56,8 @@
       <file leaf-file-name="EscenaNivel1.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/castilla/eduardo/lightbulbs/EscenaNivel1.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="221" max-vertical-offset="5508">
-              <caret line="277" column="10" selection-start-line="277" selection-start-column="10" selection-end-line="277" selection-end-column="10" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="2074" max-vertical-offset="5440">
+              <caret line="150" column="72" selection-start-line="150" selection-start-column="72" selection-end-line="150" selection-end-column="72" />
               <folding />
             </state>
           </provider>
@@ -77,44 +66,9 @@
       <file leaf-file-name="EscenaNivel2.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/castilla/eduardo/lightbulbs/EscenaNivel2.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="9110" max-vertical-offset="11101">
-              <caret line="550" column="49" selection-start-line="550" selection-start-column="49" selection-end-line="550" selection-end-column="49" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AdministradorRecursos.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/castilla/eduardo/lightbulbs/AdministradorRecursos.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.45321637" vertical-offset="8209" max-vertical-offset="9826">
-              <caret line="523" column="68" selection-start-line="523" selection-start-column="68" selection-end-line="523" selection-end-column="68" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="4247" max-vertical-offset="10710">
+              <caret line="197" column="39" selection-start-line="197" selection-start-column="39" selection-end-line="197" selection-end-column="39" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="EscenaAcercaDe.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/castilla/eduardo/lightbulbs/EscenaAcercaDe.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="51" max-vertical-offset="918">
-              <caret line="15" column="31" selection-start-line="15" selection-start-column="31" selection-end-line="15" selection-end-column="31" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="EscenaAjustes.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/castilla/eduardo/lightbulbs/EscenaAjustes.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="85" max-vertical-offset="1972">
-              <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="18" selection-end-column="35" />
-              <folding>
-                <element signature="e#3891#3892#0" expanded="true" />
-                <element signature="e#3939#3940#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -122,42 +76,68 @@
       <file leaf-file-name="AdministradorEscenas.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/castilla/eduardo/lightbulbs/AdministradorEscenas.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4369">
-              <caret line="14" column="31" selection-start-line="14" selection-start-column="31" selection-end-line="14" selection-end-column="31" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="3720" max-vertical-offset="4369">
+              <caret line="247" column="36" selection-start-line="247" selection-start-column="36" selection-end-line="247" selection-end-column="36" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ControlJuego.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/castilla/eduardo/lightbulbs/ControlJuego.java">
+      <file leaf-file-name="EscenaNivel3.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/castilla/eduardo/lightbulbs/EscenaNivel3.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="782" max-vertical-offset="2822">
-              <caret line="33" column="34" selection-start-line="33" selection-start-column="34" selection-end-line="33" selection-end-column="34" />
-              <folding />
+            <state vertical-scroll-proportion="0.22492401" vertical-offset="3190" max-vertical-offset="11254">
+              <caret line="192" column="39" selection-start-line="192" selection-start-column="39" selection-end-line="192" selection-end-column="39" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#17146#17162#0" expanded="true" />
+                <element signature="e#18249#18961#0" expanded="true" />
+                <element signature="e#18922#18923#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="EscenaBase.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/castilla/eduardo/lightbulbs/EscenaBase.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="14" max-vertical-offset="561">
-              <caret line="12" column="46" selection-start-line="12" selection-start-column="46" selection-end-line="12" selection-end-column="46" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BtnContinuar.png" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/assets/BtnContinuar.png">
+      <file leaf-file-name="Lightbulb.png" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/assets/Lightbulb.png">
           <provider selected="true" editor-type-id="images">
             <state />
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MenuPausa.png" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/assets/MenuPausa.png">
+      <file leaf-file-name="foco.png" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/assets/foco.png">
+          <provider selected="true" editor-type-id="images">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AdministradorRecursos.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/castilla/eduardo/lightbulbs/AdministradorRecursos.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="1190" max-vertical-offset="10540">
+              <caret line="618" column="48" selection-start-line="618" selection-start-column="48" selection-end-line="618" selection-end-column="48" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CableChico.png" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/assets/CableChico.png">
+          <provider selected="true" editor-type-id="images">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CableLargo.png" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/assets/CableLargo.png">
+          <provider selected="true" editor-type-id="images">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CableMediano.png" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/assets/CableMediano.png">
           <provider selected="true" editor-type-id="images">
             <state />
           </provider>
@@ -1186,17 +1166,17 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/castilla/eduardo/lightbulbs/EscenaBase.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/castilla/eduardo/lightbulbs/TipoEscena.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/castilla/eduardo/lightbulbs/EscenaJuego.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/castilla/eduardo/lightbulbs/AdministradorEscenas.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/castilla/eduardo/lightbulbs/EscenaAcercaDe.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/castilla/eduardo/lightbulbs/EscenaMenu.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/castilla/eduardo/lightbulbs/EscenaNivel3.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/castilla/eduardo/lightbulbs/EstadoJuego.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/castilla/eduardo/lightbulbs/EscenaFin.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/castilla/eduardo/lightbulbs/EscenaNivel1.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/castilla/eduardo/lightbulbs/AdministradorRecursos.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/castilla/eduardo/lightbulbs/ControlJuego.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/castilla/eduardo/lightbulbs/EscenaAjustes.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/castilla/eduardo/lightbulbs/ControlJuego.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/castilla/eduardo/lightbulbs/EscenaFin.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/castilla/eduardo/lightbulbs/AdministradorEscenas.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/castilla/eduardo/lightbulbs/AdministradorRecursos.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/castilla/eduardo/lightbulbs/EscenaNivel2.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/castilla/eduardo/lightbulbs/EscenaNivel1.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/castilla/eduardo/lightbulbs/EscenaNivel3.java" />
       </list>
     </option>
   </component>
@@ -1235,8 +1215,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="AndroidView">
         <subPane>
           <PATH>
@@ -1433,6 +1411,8 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -1696,7 +1676,11 @@
       <created>1426835114221</created>
       <updated>1426835114221</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Se agrego bateria a nivel 1 y 2&#10;Se agrego timer a nivel 1 y 2&#10;Se agrego una accion a las escenas para que terminen al acabar el timer&#10;Se agrego Pausa a nivel 2&#10;Se mejoro logica nivel 1 (Uso de LinkedList)&#10;Se agrego un hud de puntuacion a nivel 1 y 2 &#10;Se agrego boton continuar a Pausa&#10;Se agrego boton de Parar y Continuar Musica y Efectos en Pausa (Falta usar PREFERENCIAS para que se guarden valores)&#10;&#10;Trabajaron Arturo y Lalo en este commit.">
+      <created>1429581088132</created>
+      <updated>1429581088133</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1723,10 +1707,10 @@
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298791" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298791" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298791" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298791" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298791" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25189108" sideWeight="0.50124687" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1734,12 +1718,12 @@
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32980332" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32124352" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298791" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3540587" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.328152" sideWeight="0.5" order="13" side_tool="true" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2159091" sideWeight="0.49875313" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23636363" sideWeight="0.49875313" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Memory Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.43523315" sideWeight="0.5" order="14" side_tool="true" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24962178" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1776,119 +1760,26 @@
     <MESSAGE value="Se actualizaron los Sprites de los elementos de nivel(foco,tubo,caja)&#10;Se agregaron a la escena Ajustes los botónes ON/OFF para la música y los efectos.&#10;Se modificó la imagen de fondo de la escena Fin&#10;Se actualizó la imagen de fondo de la escena Acerca de&#10;Se actualizó la imagen de fondo de la escena Instrucciones&#10;Se actualizó la imagen de fondo de la escena Menú&#10;" />
     <MESSAGE value="Se programó la lógica del juego de acuerdo a las reglas establecidas con anterioridad.&#10;&#10;Se desarrolló el nivel 2&#10;&#10;Trabajaron  Lalo y Arturo en este commit." />
     <MESSAGE value="Se creron los metodos cargarRecursosBasicosDeNivel y  liberar RecursosBasicosDeNivel con la finalidad de reducir código en la clase administradorRecursos&#10;&#10;Se corrgió un error en el nivel 1 (encendido de los Sprites).&#10;&#10;Se realizó una copia del nivel 2 en el nivel 3 con objetivo de realizar pruebas de los nuevos algoritmos que implementaremos en un futuro.&#10;&#10;Trabajaron Arturo y Lalo en este commit." />
-    <option name="LAST_COMMIT_MESSAGE" value="Se creron los metodos cargarRecursosBasicosDeNivel y  liberar RecursosBasicosDeNivel con la finalidad de reducir código en la clase administradorRecursos&#10;&#10;Se corrgió un error en el nivel 1 (encendido de los Sprites).&#10;&#10;Se realizó una copia del nivel 2 en el nivel 3 con objetivo de realizar pruebas de los nuevos algoritmos que implementaremos en un futuro.&#10;&#10;Trabajaron Arturo y Lalo en este commit." />
+    <MESSAGE value="Se agrego bateria a nivel 1 y 2&#10;Se agrego timer a nivel 1 y 2&#10;Se agrego una accion a las escenas para que terminen al acabar el timer&#10;Se agrego Pausa a nivel 2&#10;Se mejoro logica nivel 1 (Uso de LinkedList)&#10;Se agrego un hud de puntuacion a nivel 1 y 2 &#10;Se agrego boton continuar a Pausa&#10;Se agrego boton de Parar y Continuar Musica y Efectos en Pausa (Falta usar PREFERENCIAS para que se guarden valores)&#10;&#10;Trabajaron Arturo y Lalo en este commit." />
+    <option name="LAST_COMMIT_MESSAGE" value="Se agrego bateria a nivel 1 y 2&#10;Se agrego timer a nivel 1 y 2&#10;Se agrego una accion a las escenas para que terminen al acabar el timer&#10;Se agrego Pausa a nivel 2&#10;Se mejoro logica nivel 1 (Uso de LinkedList)&#10;Se agrego un hud de puntuacion a nivel 1 y 2 &#10;Se agrego boton continuar a Pausa&#10;Se agrego boton de Parar y Continuar Musica y Efectos en Pausa (Falta usar PREFERENCIAS para que se guarden valores)&#10;&#10;Trabajaron Arturo y Lalo en este commit." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/castilla/eduardo/lightbulbs/EscenaNivel2.java</url>
+          <line>499</line>
+          <properties />
+          <option name="timeStamp" value="69" />
+        </line-breakpoint>
+      </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="65" />
+      <option name="time" value="70" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$USER_HOME$/AppData/Local/Android/sdk/sources/android-21/android/view/View.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.19285715" vertical-offset="138425" max-vertical-offset="347888">
-          <caret line="8354" column="0" selection-start-line="8354" selection-start-column="0" selection-end-line="8354" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/org.andengine/src/main/java/org/andengine/opengl/view/EngineRenderer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.19012797" vertical-offset="1137" max-vertical-offset="1955">
-          <caret line="82" column="0" selection-start-line="82" selection-start-column="0" selection-end-line="82" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Android/sdk/sources/android-21/android/opengl/GLSurfaceView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.19285715" vertical-offset="23471" max-vertical-offset="31960">
-          <caret line="1446" column="0" selection-start-line="1446" selection-start-column="0" selection-end-line="1446" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/org.andengine/src/main/java/org/andengine/engine/handler/timer/TimerHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1337" max-vertical-offset="1819">
-          <caret line="97" column="0" selection-start-line="97" selection-start-column="0" selection-end-line="97" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/org.andengine/src/main/java/org/andengine/engine/handler/UpdateHandlerList.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="674" max-vertical-offset="1190">
-          <caret line="48" column="0" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/castilla/eduardo/lightbulbs/TipoEscena.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="442">
-          <caret line="6" column="12" selection-start-line="6" selection-start-column="12" selection-end-line="6" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/org.andengine/src/main/java/org/andengine/engine/Engine.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="8025" max-vertical-offset="14875">
-          <caret line="574" column="0" selection-start-line="574" selection-start-column="0" selection-end-line="574" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/castilla/eduardo/lightbulbs/EscenaMenu.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="2584" max-vertical-offset="3706">
-          <caret line="176" column="10" selection-start-line="176" selection-start-column="10" selection-end-line="176" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/castilla/eduardo/lightbulbs/EscenaFin.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="758" max-vertical-offset="1428">
-          <caret line="59" column="8" selection-start-line="59" selection-start-column="8" selection-end-line="59" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/castilla/eduardo/lightbulbs/EscenaNivel3.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="204" max-vertical-offset="9673">
-          <caret line="40" column="0" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/castilla/eduardo/lightbulbs/EscenaSplash.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="255" max-vertical-offset="935">
-          <caret line="30" column="29" selection-start-line="30" selection-start-column="29" selection-end-line="30" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/castilla/eduardo/lightbulbs/EscenaMarcador.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="935">
-          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/castilla/eduardo/lightbulbs/EstadoJuego.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="677" max-vertical-offset="1632">
-          <caret line="67" column="59" selection-start-line="67" selection-start-column="59" selection-end-line="67" selection-end-column="59" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/assets/acercaDe.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/assets/bateria.png">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -1944,11 +1835,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/assets/Cable.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/assets/fin.jpg">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -1965,11 +1851,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/assets/juego.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/assets/Lightbulb.png">
       <provider selected="true" editor-type-id="images">
         <state />
       </provider>
@@ -1999,7 +1880,145 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/assets/PantallaInicio.jpg">
+    <entry file="file://$PROJECT_DIR$/app/src/main/assets/MenuPausa.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/castilla/eduardo/lightbulbs/EscenaAcercaDe.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="918">
+          <caret line="15" column="31" selection-start-line="15" selection-start-column="31" selection-end-line="15" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/castilla/eduardo/lightbulbs/EscenaAjustes.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="51" max-vertical-offset="1972">
+          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="18" selection-end-column="35" />
+          <folding>
+            <element signature="e#3891#3892#0" expanded="false" />
+            <element signature="e#3939#3940#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/assets/BtnContinuar.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/castilla/eduardo/lightbulbs/EscenaBase.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="214" max-vertical-offset="561">
+          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/org.andengine/src/main/java/org/andengine/entity/scene/Scene.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="5914" max-vertical-offset="7310">
+          <caret line="398" column="0" selection-start-line="398" selection-start-column="0" selection-end-line="398" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/org.andengine/src/main/java/org/andengine/util/adt/pool/RunnablePoolUpdateHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="78" max-vertical-offset="1156">
+          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/org.andengine/src/main/java/org/andengine/util/adt/pool/PoolUpdateHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1183" max-vertical-offset="1955">
+          <caret line="90" column="0" selection-start-line="90" selection-start-column="0" selection-end-line="90" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/org.andengine/src/main/java/org/andengine/input/touch/controller/BaseTouchController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="797" max-vertical-offset="1836">
+          <caret line="62" column="0" selection-start-line="62" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/castilla/eduardo/lightbulbs/EscenaJuego.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1217" max-vertical-offset="2431">
+          <caret line="89" column="0" selection-start-line="89" selection-start-column="0" selection-end-line="89" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/castilla/eduardo/lightbulbs/TipoEscena.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="85" max-vertical-offset="442">
+          <caret line="6" column="12" selection-start-line="6" selection-start-column="12" selection-end-line="6" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/castilla/eduardo/lightbulbs/EstadoJuego.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="677" max-vertical-offset="1632">
+          <caret line="67" column="59" selection-start-line="67" selection-start-column="59" selection-end-line="67" selection-end-column="59" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/castilla/eduardo/lightbulbs/EscenaSplash.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="255" max-vertical-offset="935">
+          <caret line="30" column="29" selection-start-line="30" selection-start-column="29" selection-end-line="30" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33333334" vertical-offset="56" max-vertical-offset="459">
+          <caret line="10" column="26" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/castilla/eduardo/lightbulbs/ControlJuego.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2822">
+          <caret line="41" column="50" selection-start-line="41" selection-start-column="50" selection-end-line="41" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/org.andengine/src/main/java/org/andengine/engine/Engine.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="8022" max-vertical-offset="14875">
+          <caret line="574" column="0" selection-start-line="574" selection-start-column="0" selection-end-line="574" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/castilla/eduardo/lightbulbs/EscenaMenu.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="2584" max-vertical-offset="3706">
+          <caret line="176" column="10" selection-start-line="176" selection-start-column="10" selection-end-line="176" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/castilla/eduardo/lightbulbs/EscenaFin.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="85" max-vertical-offset="1360">
+          <caret line="37" column="0" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/assets/StartEndBox.png">
       <provider selected="true" editor-type-id="images">
         <state />
       </provider>
@@ -2009,90 +2028,78 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/castilla/eduardo/lightbulbs/EscenaJuego.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="507" max-vertical-offset="2431">
-          <caret line="18" column="43" selection-start-line="18" selection-start-column="43" selection-end-line="18" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/assets/MenuPausa.png">
+    <entry file="file://$PROJECT_DIR$/app/src/main/assets/PantallaInicio.jpg">
       <provider selected="true" editor-type-id="images">
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/castilla/eduardo/lightbulbs/EscenaBase.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/assets/CableChico.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/assets/CableMediano.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/assets/CableLargo.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/assets/Lightbulb.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/assets/foco.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/castilla/eduardo/lightbulbs/AdministradorEscenas.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="14" max-vertical-offset="561">
-          <caret line="12" column="46" selection-start-line="12" selection-start-column="46" selection-end-line="12" selection-end-column="46" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="3720" max-vertical-offset="4369">
+          <caret line="247" column="36" selection-start-line="247" selection-start-column="36" selection-end-line="247" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/castilla/eduardo/lightbulbs/EscenaNivel2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="4247" max-vertical-offset="10710">
+          <caret line="197" column="39" selection-start-line="197" selection-start-column="39" selection-end-line="197" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/castilla/eduardo/lightbulbs/AdministradorRecursos.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1190" max-vertical-offset="10540">
+          <caret line="618" column="48" selection-start-line="618" selection-start-column="48" selection-end-line="618" selection-end-column="48" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/castilla/eduardo/lightbulbs/EscenaNivel1.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="5848">
-          <caret line="277" column="10" selection-start-line="277" selection-start-column="10" selection-end-line="277" selection-end-column="10" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="2074" max-vertical-offset="5440">
+          <caret line="150" column="72" selection-start-line="150" selection-start-column="72" selection-end-line="150" selection-end-column="72" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/castilla/eduardo/lightbulbs/EscenaAcercaDe.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/castilla/eduardo/lightbulbs/EscenaNivel3.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="918">
-          <caret line="15" column="31" selection-start-line="15" selection-start-column="31" selection-end-line="15" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/castilla/eduardo/lightbulbs/ControlJuego.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2822">
-          <caret line="33" column="34" selection-start-line="33" selection-start-column="34" selection-end-line="33" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/castilla/eduardo/lightbulbs/EscenaAjustes.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="51" max-vertical-offset="1972">
-          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="18" selection-end-column="35" />
-          <folding>
-            <element signature="e#3891#3892#0" expanded="true" />
-            <element signature="e#3939#3940#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/castilla/eduardo/lightbulbs/AdministradorEscenas.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4369">
-          <caret line="14" column="31" selection-start-line="14" selection-start-column="31" selection-end-line="14" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/assets/BtnContinuar.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/castilla/eduardo/lightbulbs/EscenaNivel2.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="9110" max-vertical-offset="11101">
-          <caret line="550" column="49" selection-start-line="550" selection-start-column="49" selection-end-line="550" selection-end-column="49" />
+        <state vertical-scroll-proportion="0.22492401" vertical-offset="3190" max-vertical-offset="11254">
+          <caret line="192" column="39" selection-start-line="192" selection-start-column="39" selection-end-line="192" selection-end-column="39" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#17146#17162#0" expanded="true" />
+            <element signature="e#18249#18961#0" expanded="true" />
+            <element signature="e#18922#18923#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/castilla/eduardo/lightbulbs/AdministradorRecursos.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.45321637" vertical-offset="8209" max-vertical-offset="9826">
-          <caret line="523" column="68" selection-start-line="523" selection-start-column="68" selection-end-line="523" selection-end-column="68" />
-          <folding />
         </state>
       </provider>
     </entry>

@@ -127,9 +127,17 @@ public class AdministradorRecursos {
     private BuildableBitmapTextureAtlas texturaStartEndBox;
     public ITiledTextureRegion regionStartEndBox;
 
-    // Cable
-    private BuildableBitmapTextureAtlas texturaCable;
-    public ITiledTextureRegion regionCable;
+    // Cable Largo
+    private BuildableBitmapTextureAtlas texturaCableLargo;
+    public ITiledTextureRegion regionCableLargo;
+
+    // Cable Mediano
+    private BuildableBitmapTextureAtlas texturaCableMediano;
+    public ITiledTextureRegion regionCableMediano;
+
+    // Cable Chico
+    private BuildableBitmapTextureAtlas texturaCableChico;
+    public ITiledTextureRegion regionCableChico;
 
     // Foco
     private BuildableBitmapTextureAtlas texturaFoco;
@@ -389,7 +397,7 @@ public class AdministradorRecursos {
         regionFondoAcercaDe = null;
     }
 
-    public void cargarRecursosFin() {
+    public void cargarRecursosFin(int i) {
         try {
             // Carga la imagen de fondo de la pantalla Fin
             texturaFondoFin = new AssetBitmapTexture(actividadJuego.getTextureManager(),
@@ -402,8 +410,14 @@ public class AdministradorRecursos {
 
         // Carga las imagines de "Lo hiciste bien".
         texturaBien = new BuildableBitmapTextureAtlas(actividadJuego.getTextureManager(),960,800);
-        regionBien = BitmapTextureAtlasTextureRegionFactory.createTiledFromAsset(
-                texturaBien,actividadJuego, "PantallaBien.jpg",2,1);
+        if(i==0){
+            regionBien = BitmapTextureAtlasTextureRegionFactory.createTiledFromAsset(
+                    texturaBien,actividadJuego, "Mal.jpg",2,1);
+        }else{
+            regionBien = BitmapTextureAtlasTextureRegionFactory.createTiledFromAsset(
+                    texturaBien,actividadJuego, "PantallaBien.jpg",2,1);
+        }
+
         try {
             texturaBien.build(new BlackPawnTextureAtlasBuilder<IBitmapTextureAtlasSource, BitmapTextureAtlas>(0,0,0));
             texturaBien.load();
@@ -554,22 +568,44 @@ public class AdministradorRecursos {
         }
         texturaStartEndBox.load();
 
-        // Carga las imágenes del Cable
-        texturaCable = new BuildableBitmapTextureAtlas(actividadJuego.getTextureManager(),326,62);
-        regionCable = BitmapTextureAtlasTextureRegionFactory.createTiledFromAsset(
-                texturaCable,actividadJuego, "Cable.png",2,1);
+        // Carga las imágenes del Cable LARGO
+        texturaCableLargo = new BuildableBitmapTextureAtlas(actividadJuego.getTextureManager(),326,62);
+        regionCableLargo = BitmapTextureAtlasTextureRegionFactory.createTiledFromAsset(
+                texturaCableLargo,actividadJuego, "CableLargo.png",2,1);
         try {
-            texturaCable.build(new BlackPawnTextureAtlasBuilder<IBitmapTextureAtlasSource, BitmapTextureAtlas>(0,0,0));
+            texturaCableLargo.build(new BlackPawnTextureAtlasBuilder<IBitmapTextureAtlasSource, BitmapTextureAtlas>(0,0,0));
         } catch (ITextureAtlasBuilder.TextureAtlasBuilderException e) {
             Log.d("onCreateResources","No se puede cargar la imagen para el Sprite del Cable1");
         }
-        texturaCable.load();
+        texturaCableLargo.load();
+
+        // Carga las imágenes del Cable MEDIANO
+        texturaCableMediano = new BuildableBitmapTextureAtlas(actividadJuego.getTextureManager(),246,62);
+        regionCableMediano = BitmapTextureAtlasTextureRegionFactory.createTiledFromAsset(
+                texturaCableMediano,actividadJuego, "CableMediano.png",2,1);
+        try {
+            texturaCableMediano.build(new BlackPawnTextureAtlasBuilder<IBitmapTextureAtlasSource, BitmapTextureAtlas>(0,0,0));
+        } catch (ITextureAtlasBuilder.TextureAtlasBuilderException e) {
+            Log.d("onCreateResources","No se puede cargar la imagen para el Sprite del Cable1");
+        }
+        texturaCableMediano.load();
+
+        // Carga las imágenes del Cable CHICO
+        texturaCableChico = new BuildableBitmapTextureAtlas(actividadJuego.getTextureManager(),196,62);
+        regionCableChico = BitmapTextureAtlasTextureRegionFactory.createTiledFromAsset(
+                texturaCableChico,actividadJuego, "CableChico.png",2,1);
+        try {
+            texturaCableChico.build(new BlackPawnTextureAtlasBuilder<IBitmapTextureAtlasSource, BitmapTextureAtlas>(0,0,0));
+        } catch (ITextureAtlasBuilder.TextureAtlasBuilderException e) {
+            Log.d("onCreateResources","No se puede cargar la imagen para el Sprite del Cable1");
+        }
+        texturaCableChico.load();
 
 
         // Carga las imágenes del Foco
         texturaFoco = new BuildableBitmapTextureAtlas(actividadJuego.getTextureManager(),127,50);
         regionFoco = BitmapTextureAtlasTextureRegionFactory.createTiledFromAsset(
-                texturaFoco,actividadJuego, "Lightbulb.png",2,1);
+                texturaFoco,actividadJuego, "foco.png",2,1);
         try {
             texturaFoco.build(new BlackPawnTextureAtlasBuilder<IBitmapTextureAtlasSource, BitmapTextureAtlas>(0,0,0));
             texturaFoco.load();
@@ -584,8 +620,14 @@ public class AdministradorRecursos {
         texturaFondoNivel.unload();
         regionFondoNivel=null;
 
-        texturaCable.unload();
-        regionCable = null;
+        texturaCableLargo.unload();
+        regionCableLargo = null;
+
+        texturaCableMediano.unload();
+        regionCableMediano = null;
+
+        texturaCableChico.unload();
+        regionCableChico = null;
 
         texturaFoco.unload();
         regionFoco = null;

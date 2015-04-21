@@ -31,7 +31,6 @@ public class EscenaNivel2 extends EscenaBase
 {
     private Sprite spriteFondoNivel; //(el fondo de la escena, estático)
 
-
     private ButtonSprite btnPausa;
     public AnimatedSprite startBox;
     public AnimatedSprite cable1;
@@ -171,13 +170,11 @@ public class EscenaNivel2 extends EscenaBase
 
         // *** Agrega Cable1
         // colisiona cajaStart y con foco1
-        cable1 = new AnimatedSprite(257,620,admRecursos.regionCable,admRecursos.vbom){
+        cable1 = new AnimatedSprite(257,620,admRecursos.regionCableLargo,admRecursos.vbom){
             // Aquí el código que ejecuta el cable1 es presionado
             @Override
             public boolean onAreaTouched(TouchEvent pSceneTouchEvent, float pTouchAreaLocalX, float pTouchAreaLocalY) {
-
                 if (pSceneTouchEvent.isActionDown()) {
-
                     if (cable1.getCurrentTileIndex()==1){
                         goingBack(cable1);
                     }else{
@@ -199,7 +196,7 @@ public class EscenaNivel2 extends EscenaBase
 
         // *** Agrega Cable2
         // colisiona con foco1 y foco 2
-        cable2 = new AnimatedSprite(358,518,admRecursos.regionCable,admRecursos.vbom){
+        cable2 = new AnimatedSprite(358,518,admRecursos.regionCableLargo,admRecursos.vbom){
 
             // Aquí el código que ejecuta el cable2 es presionado
             @Override
@@ -228,7 +225,7 @@ public class EscenaNivel2 extends EscenaBase
 
         // *** Agrega Cable3
         // colisiona con foco3 y con foco2
-        cable3 = new AnimatedSprite(258,417,admRecursos.regionCable,admRecursos.vbom){
+        cable3 = new AnimatedSprite(258,417,admRecursos.regionCableLargo,admRecursos.vbom){
             // Aquí el código que ejecuta el cable3 es presionado
             @Override
             public boolean onAreaTouched(TouchEvent pSceneTouchEvent, float pTouchAreaLocalX, float pTouchAreaLocalY) {
@@ -254,7 +251,7 @@ public class EscenaNivel2 extends EscenaBase
 
         // *** Agrega Cable4
         // colisiona con cajastart y foco3
-        cable4 = new AnimatedSprite(157,518,admRecursos.regionCable,admRecursos.vbom){
+        cable4 = new AnimatedSprite(157,518,admRecursos.regionCableLargo,admRecursos.vbom){
             // Aquí el código que ejecuta el cable1 es presionado
             @Override
             public boolean onAreaTouched(TouchEvent pSceneTouchEvent, float pTouchAreaLocalX, float pTouchAreaLocalY) {
@@ -279,7 +276,7 @@ public class EscenaNivel2 extends EscenaBase
 
         // *** Agrega Cable5
         // foco 2
-        cable5 = new AnimatedSprite(358,316,admRecursos.regionCable,admRecursos.vbom){
+        cable5 = new AnimatedSprite(358,316,admRecursos.regionCableLargo,admRecursos.vbom){
 
             // Aquí el código que ejecuta el cable1 es presionado
             @Override
@@ -305,7 +302,7 @@ public class EscenaNivel2 extends EscenaBase
 
         // *** Agrega Cable6
         // colisiona con foco 4
-        cable6 = new AnimatedSprite(258,215,admRecursos.regionCable,admRecursos.vbom){
+        cable6 = new AnimatedSprite(258,215,admRecursos.regionCableLargo,admRecursos.vbom){
 
             // Aquí el código que ejecuta el cable1 es presionado
             @Override
@@ -332,7 +329,7 @@ public class EscenaNivel2 extends EscenaBase
 
         // *** Agrega Cable7
         // colisiona con foco3 y foco4
-        cable7 = new AnimatedSprite(157,318,admRecursos.regionCable,admRecursos.vbom){
+        cable7 = new AnimatedSprite(157,318,admRecursos.regionCableLargo,admRecursos.vbom){
             // Aquí el código que ejecuta el cable1 es presionado
             @Override
             public boolean onAreaTouched(TouchEvent pSceneTouchEvent, float pTouchAreaLocalX, float pTouchAreaLocalY) {
@@ -457,7 +454,6 @@ public class EscenaNivel2 extends EscenaBase
         // *** Agrega EndBox
         // colisiona con cable 5 y cable 6
         endBox = new AnimatedSprite(382,208,admRecursos.regionStartEndBox,admRecursos.vbom){
-
             // Aquí el código que ejecuta la caja es presionada
             @Override
             public boolean onAreaTouched(TouchEvent pSceneTouchEvent, float pTouchAreaLocalX, float pTouchAreaLocalY) {
@@ -487,8 +483,7 @@ public class EscenaNivel2 extends EscenaBase
                                         @Override
                                         public void onTimePassed(TimerHandler pTimerHandler) {
                                             admRecursos.engine.unregisterUpdateHandler(pTimerHandler); // Invalida el timer
-
-                                            admEscenas.crearEscenaFin();
+                                            admEscenas.crearEscenaFin(1);
                                             hudMarcador.setPosition(15,ControlJuego.ALTO_CAMARA/2);
                                             admEscenas.setEscena(TipoEscena.ESCENA_FIN);
                                             admEscenas.liberarEscenaNivel2();
@@ -503,7 +498,10 @@ public class EscenaNivel2 extends EscenaBase
         endBox.setCurrentTileIndex(0);
         registerTouchArea(endBox);
         attachChild(endBox);
+
+
     }
+
 
     // El ciclo principal de la escena
     @Override
@@ -520,9 +518,9 @@ public class EscenaNivel2 extends EscenaBase
         if (rectanguloEnergia.getWidth() > 0) {
             rectanguloEnergia.setWidth(rectanguloEnergia.getWidth() - 0.5f);
         }else{
-            admEscenas.crearEscenaJuego();
+            admEscenas.crearEscenaFin(0);
             admRecursos.camara.setHUD(null);    // Quita el HUD
-            admEscenas.setEscena(TipoEscena.ESCENA_JUEGO);
+            admEscenas.setEscena(TipoEscena.ESCENA_FIN);
             admEscenas.liberarEscenaNivel2();
         }
     }
@@ -619,6 +617,7 @@ public class EscenaNivel2 extends EscenaBase
         //escenaPausa.detachSelf();
         //escenaPausa.dispose();
     }
+
 
     @Override
     public void onBackKeyPressed() {

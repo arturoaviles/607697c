@@ -242,9 +242,9 @@ public class AdministradorEscenas
     }
 
     //*** Crea la escena de Fin
-    public void crearEscenaFin() {
+    public void crearEscenaFin(int i) {
         // Carga los recursos
-        admRecursos.cargarRecursosFin();
+        admRecursos.cargarRecursosFin(i);
         escenaFin = new EscenaFin();
     }
 
