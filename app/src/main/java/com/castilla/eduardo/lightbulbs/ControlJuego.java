@@ -6,6 +6,7 @@ import android.view.KeyEvent;
 import android.view.Menu;
         import android.view.MenuItem;
 
+import org.andengine.audio.music.Music;
 import org.andengine.engine.camera.Camera;
 import org.andengine.engine.handler.timer.ITimerCallback;
 import org.andengine.engine.handler.timer.TimerHandler;
@@ -33,11 +34,23 @@ public class ControlJuego extends SimpleBaseGameActivity
     // El administrador de escenas
     private AdministradorEscenas admEscenas;
 
+    //Estado de los botones de Ajustes
+    //public static boolean musicaOn =true;
+    //public static boolean efectosOn = false;
+
     @Override
     public EngineOptions onCreateEngineOptions() {
         camara = new Camera(0,0,ANCHO_CAMARA,ALTO_CAMARA);
-        return new EngineOptions(true, ScreenOrientation.PORTRAIT_FIXED,
+
+        EngineOptions opciones = new EngineOptions(true, ScreenOrientation.PORTRAIT_FIXED,
                 new FillResolutionPolicy(),camara);
+
+        // Para habilitar la reproducción de sonidos 'largos' -Música de fondo-
+        opciones.getAudioOptions().setNeedsMusic(true);
+        // Para habilitar la reproducciñon de sonidos 'cortos'. -Efectos-
+        opciones.getAudioOptions().setNeedsSound(true);
+
+        return opciones;
     }
 
     @Override
@@ -85,6 +98,7 @@ public class ControlJuego extends SimpleBaseGameActivity
 
             }else if(admEscenas.getTipoEscenaActual()==TipoEscena.ESCENA_JUEGO){
                 admEscenas.crearEscenaMenu();
+
                 admEscenas.setEscena(TipoEscena.ESCENA_MENU);
                 admEscenas.liberarEscenaJuego();
 
@@ -113,25 +127,27 @@ public class ControlJuego extends SimpleBaseGameActivity
                 admEscenas.liberarEscenaAjustes();
 
 
-            }else if(admEscenas.getTipoEscenaActual()==TipoEscena.ESCENA_FIN){
-             admEscenas.crearEscenaJuego();
-                admEscenas.setEscena(TipoEscena.ESCENA_JUEGO);
-                admEscenas.liberarEscenaFin();
+            //}else if(admEscenas.getTipoEscenaActual()==TipoEscena.ESCENA_FIN){
+             //admEscenas.crearEscenaJuego();
+                //admEscenas.setEscena(TipoEscena.ESCENA_JUEGO);
+                //admEscenas.liberarEscenaFin();
 
-            }else if(admEscenas.getTipoEscenaActual()==TipoEscena.ESCENA_NIVEL_1){
-                admEscenas.crearEscenaJuego();
-                admEscenas.setEscena(TipoEscena.ESCENA_JUEGO);
-                admEscenas.liberarEscenaNivel1();
+           //}else if(admEscenas.getTipoEscenaActual()==TipoEscena.ESCENA_NIVEL_1){
 
-            }else if(admEscenas.getTipoEscenaActual()==TipoEscena.ESCENA_NIVEL_2){
-                admEscenas.crearEscenaJuego();
-                admEscenas.setEscena(TipoEscena.ESCENA_JUEGO);
-                admEscenas.liberarEscenaNivel2();
+                //admEscenas.crearEscenaJuego();
+                //admRecursos.camara.setHUD(null);    // Quita el HUD
+                //admEscenas.setEscena(TipoEscena.ESCENA_JUEGO);
+                //admEscenas.liberarEscenaNivel1();
 
-            }else if(admEscenas.getTipoEscenaActual()==TipoEscena.ESCENA_NIVEL_3){
-                admEscenas.crearEscenaJuego();
-                admEscenas.setEscena(TipoEscena.ESCENA_JUEGO);
-                admEscenas.liberarEscenaNivel3();
+            //}else if(admEscenas.getTipoEscenaActual()==TipoEscena.ESCENA_NIVEL_2){
+                //admEscenas.crearEscenaJuego();
+                //admEscenas.setEscena(TipoEscena.ESCENA_JUEGO);
+                //admEscenas.liberarEscenaNivel2();
+
+            //}else if(admEscenas.getTipoEscenaActual()==TipoEscena.ESCENA_NIVEL_3){
+                //admEscenas.crearEscenaJuego();
+                //admEscenas.setEscena(TipoEscena.ESCENA_JUEGO);
+                //admEscenas.liberarEscenaNivel3();
 
             }else{
                 // La escena que esté en pantalla maneja el evento
@@ -142,6 +158,14 @@ public class ControlJuego extends SimpleBaseGameActivity
         return super.onKeyDown(keyCode, event);
     }
 
+    public synchronized void onPauseGame(){
+
+    }
+
+    public synchronized void onResumeGame(){
+
+        super.onResumeGame();
+    }
 
     // La aplicación sale de memoria
     @Override
@@ -151,6 +175,5 @@ public class ControlJuego extends SimpleBaseGameActivity
             System.exit(0);
         }
     }
-
 }
 

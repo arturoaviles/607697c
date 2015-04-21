@@ -1,11 +1,17 @@
 package com.castilla.eduardo.lightbulbs;
 
+import android.util.Log;
+
+import org.andengine.audio.music.Music;
+import org.andengine.audio.music.MusicFactory;
 import org.andengine.engine.camera.Camera;
 import org.andengine.entity.scene.background.SpriteBackground;
 import org.andengine.entity.sprite.ButtonSprite;
 import org.andengine.entity.sprite.Sprite;
 import org.andengine.input.touch.TouchEvent;
 import org.andengine.opengl.util.GLState;
+
+import java.io.IOException;
 
 /**
  * La escena que se muestra cuando corre la aplicación (Logo del TEC)
@@ -17,6 +23,9 @@ public class EscenaJuego extends EscenaBase
     private ButtonSprite btnNivel1;
     private ButtonSprite btnNivel2;
     private ButtonSprite btnNivel3;
+
+    // ***** MUSICA DE FONDO *****
+    private Music musicaFondo;
 
 
     @Override
@@ -106,6 +115,15 @@ public class EscenaJuego extends EscenaBase
 
         registerTouchArea(btnNivel3);
         attachChild(btnNivel3);
+
+        // MUSICA
+        //cargarSonidos();
+    }
+
+    // Carga los recursos de sonido
+    private void cargarSonidos() {
+
+
     }
 
 
@@ -122,7 +140,11 @@ public class EscenaJuego extends EscenaBase
     @Override
     public void liberarEscena() {
         // Liberar cada recurso usado en esta escena
+
+        //musicaFondo.release();
+
         this.detachSelf();      // La escena se deconecta del engine
         this.dispose();         // Libera la memoria
     }
+
 }

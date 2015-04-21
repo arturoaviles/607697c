@@ -45,20 +45,18 @@ public class EscenaAjustes extends EscenaBase
             // Aquí el código que ejecuta el botón cuando es presionado
             @Override
             public boolean onAreaTouched(TouchEvent pSceneTouchEvent, float pTouchAreaLocalX, float pTouchAreaLocalY) {
-
-
                 if (pSceneTouchEvent.isActionDown()) {
                     if (btnOnOFF_1.getCurrentTileIndex()==0){
                         btnOnOFF_1.setCurrentTileIndex(1);
+                        //ControlJuego.musicaOn=true;
                     }else{
                         btnOnOFF_1.setCurrentTileIndex(0);
+                        //ControlJuego.musicaOn=false;
                     }
-
                 }
                 return super.onAreaTouched(pSceneTouchEvent, pTouchAreaLocalX, pTouchAreaLocalY);
             }
         };
-
         registerTouchArea(btnOnOFF_1);
         attachChild(btnOnOFF_1);
 
@@ -68,23 +66,34 @@ public class EscenaAjustes extends EscenaBase
             // Aquí el código que ejecuta el botón cuando es presionado
             @Override
             public boolean onAreaTouched(TouchEvent pSceneTouchEvent, float pTouchAreaLocalX, float pTouchAreaLocalY) {
-
-
                 if (pSceneTouchEvent.isActionDown()) {
-
                     if (btnOnOFF_2.getCurrentTileIndex()==0){
                         btnOnOFF_2.setCurrentTileIndex(1);
+                        //ControlJuego.efectosOn=true;
                     }else{
                         btnOnOFF_2.setCurrentTileIndex(0);
+                        //ControlJuego.efectosOn=false;
                     }
-
                 }
                 return super.onAreaTouched(pSceneTouchEvent, pTouchAreaLocalX, pTouchAreaLocalY);
             }
         };
-
         registerTouchArea(btnOnOFF_2);
         attachChild(btnOnOFF_2);
+
+        //if(ControlJuego.musicaOn){
+        //    btnOnOFF_1.setCurrentTileIndex(0);
+
+        //}else{
+        //    btnOnOFF_1.setCurrentTileIndex(1);
+        //}
+
+        //if(ControlJuego.efectosOn){
+        //    btnOnOFF_2.setCurrentTileIndex(0);
+
+        //}else{
+        //    btnOnOFF_2.setCurrentTileIndex(1);
+        //}
     }
 
     @Override

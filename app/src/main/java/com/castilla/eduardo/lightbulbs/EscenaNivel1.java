@@ -1,8 +1,11 @@
 package com.castilla.eduardo.lightbulbs;
 
+import android.util.Log;
+
 import org.andengine.engine.camera.Camera;
 import org.andengine.engine.handler.timer.ITimerCallback;
 import org.andengine.engine.handler.timer.TimerHandler;
+import org.andengine.entity.primitive.Rectangle;
 import org.andengine.entity.scene.background.SpriteBackground;
 import org.andengine.entity.sprite.AnimatedSprite;
 import org.andengine.entity.sprite.ButtonSprite;
@@ -23,11 +26,19 @@ public class EscenaNivel1 extends EscenaBase
 
 
     private ButtonSprite btnPausa;
-    public AnimatedSprite startBox;
-    public AnimatedSprite cable1;
-    public AnimatedSprite foco1;
-    public AnimatedSprite cable2;
-    public AnimatedSprite endBox;
+    private AnimatedSprite startBox;
+    private AnimatedSprite cable1;
+    private AnimatedSprite foco1;
+    private AnimatedSprite cable2;
+    private AnimatedSprite endBox;
+
+    //private TimerHandler myTimer;
+    private Sprite bateria;
+    private Rectangle rectangle;
+
+    //Marcador
+    private EstadoJuego hud;
+
 
     private LinkedList<AnimatedSprite> lista = new LinkedList<AnimatedSprite>();
 
@@ -43,6 +54,18 @@ public class EscenaNivel1 extends EscenaBase
         };
 
 
+        //final float xSeconds = 1.9f; // meaning 5 and a half second
+        //boolean repeat = true; // true to reset the timer after the time passed and execute again
+        //myTimer = new TimerHandler(xSeconds, repeat, new ITimerCallback() {
+            //public void onTimePassed(TimerHandler pTimerHandler) {
+
+            //}
+       //});
+        //registerUpdateHandler(myTimer);   // here you register the timerhandler to your scene
+
+
+        //Agrega el marcador
+        agregarEstado();
 
         // Configuración de la imagen
         spriteFondo.setPosition(ControlJuego.ANCHO_CAMARA/2,ControlJuego.ALTO_CAMARA/2);
@@ -53,15 +76,23 @@ public class EscenaNivel1 extends EscenaBase
 
 
         // Crea el fondo de la pantalla
-
         SpriteBackground fondo = new SpriteBackground(1,0.5f,0,spriteFondo);
         setBackground(fondo);
         setBackgroundEnabled(true);
 
+        // Rectangulo de energia
+        rectangle = new Rectangle(50,739,320,30,admRecursos.vbom);
+        rectangle.setAnchorCenter(0.0f,0.5f);
+
+        rectangle.setColor(1.0f,1.0f,0.0f);
+
+        attachChild(rectangle);
 
 
 
-        // *** Agrega los botones al Nivel 2
+
+        // *** Agrega los botones al Nivel 1
+
 
         // Botón Pausa
         btnPausa = new ButtonSprite(420,750,
@@ -87,6 +118,10 @@ public class EscenaNivel1 extends EscenaBase
         attachChild(btnPausa);
 
 
+        // *** Agrega bateria
+        bateria = new Sprite(215,740,admRecursos.regionBateria,admRecursos.vbom);
+        attachChild(bateria);
+
 
         // *** Agrega StartBox
         startBox = new AnimatedSprite(240,607,admRecursos.regionStartEndBox,admRecursos.vbom){
@@ -96,14 +131,12 @@ public class EscenaNivel1 extends EscenaBase
             public boolean onAreaTouched(TouchEvent pSceneTouchEvent, float pTouchAreaLocalX, float pTouchAreaLocalY) {
 
                 if (pSceneTouchEvent.isActionDown()) {
-
-                    if(startBox.getCurrentTileIndex()==0&&cable1.getCurrentTileIndex()==1){
-                        startBox.setCurrentTileIndex(1);
-                    }else{
-                        //  startBox.setCurrentTileIndex(0);
-                        cable1.setCurrentTileIndex(0);
-                        foco1.setCurrentTileIndex(0);
-                        cable2.setCurrentTileIndex(0);
+                    int i = lista.size()-1;
+                    while(!lista.isEmpty()){
+                        hud.disminuirMarcador(125);
+                        lista.get(i).setCurrentTileIndex(0);
+                        lista.remove(i);
+                        i--;
                     }
                 }
                 return super.onAreaTouched(pSceneTouchEvent, pTouchAreaLocalX, pTouchAreaLocalY);
@@ -123,14 +156,13 @@ public class EscenaNivel1 extends EscenaBase
 
                 if (pSceneTouchEvent.isActionDown()) {
 
-                    if (startBox.getCurrentTileIndex()==1) {
-
-                        if (cable1.getCurrentTileIndex() == 0) {
+                    if (cable1.getCurrentTileIndex()==1){
+                        goingBack(cable1);
+                    }else{
+                        if (lista.isEmpty()) {
+                            hud.aumentarMarcador(100);
                             cable1.setCurrentTileIndex(1);
-                        } else {
-                            cable1.setCurrentTileIndex(0);
-                            foco1.setCurrentTileIndex(0);
-                            cable2.setCurrentTileIndex(0);
+                            lista.add(cable1);
                         }
                     }
                 }
@@ -150,20 +182,16 @@ public class EscenaNivel1 extends EscenaBase
             @Override
             public boolean onAreaTouched(TouchEvent pSceneTouchEvent, float pTouchAreaLocalX, float pTouchAreaLocalY) {
 
-                if (pSceneTouchEvent.isActionDown()) {
+                if (pSceneTouchEvent.isActionDown()&&!lista.isEmpty()) {
 
-                    if(cable1.getCurrentTileIndex()==1){
-
-                        if(foco1.getCurrentTileIndex()==1){
-                            foco1.setCurrentTileIndex(0);
-                            cable2.setCurrentTileIndex(0);
-                        }else{
-                            foco1.setCurrentTileIndex(1);
-                        }
-
+                    if (foco1.getCurrentTileIndex()==1){
+                        goingBack(foco1);
                     }else{
-                        foco1.setCurrentTileIndex(0);
-                        cable2.setCurrentTileIndex(0);
+                        if (lista.getLast().equals(cable1)) {
+                            hud.aumentarMarcador(100);
+                            foco1.setCurrentTileIndex(1);
+                            lista.add(foco1);
+                        }
                     }
                 }
                 return super.onAreaTouched(pSceneTouchEvent, pTouchAreaLocalX, pTouchAreaLocalY);
@@ -181,14 +209,15 @@ public class EscenaNivel1 extends EscenaBase
             @Override
             public boolean onAreaTouched(TouchEvent pSceneTouchEvent, float pTouchAreaLocalX, float pTouchAreaLocalY) {
 
-                if (pSceneTouchEvent.isActionDown()) {
+                if (pSceneTouchEvent.isActionDown()&&!lista.isEmpty()) {
 
-                    if (foco1.getCurrentTileIndex()==1) {
-
-                        if (cable2.getCurrentTileIndex() == 0) {
+                    if (cable2.getCurrentTileIndex()==1){
+                        goingBack(cable2);
+                    }else{
+                        if (lista.getLast().equals(foco1)) {
+                            hud.aumentarMarcador(100);
                             cable2.setCurrentTileIndex(1);
-                        } else {
-                            cable2.setCurrentTileIndex(0);
+                            lista.add(cable2);
                         }
                     }
                 }
@@ -218,7 +247,14 @@ public class EscenaNivel1 extends EscenaBase
                             endBox.setCurrentTileIndex(0);
                         }
 
-                        // Programa la carga de la escena bien, después de 1 segundo
+
+                        //Calcular Score
+                        Log.d("Longitud de la barra",String.valueOf(rectangle.getWidth()));
+                        Log.d("Score Actual",String.valueOf(hud.getMarcador()));
+                        hud.multiplicarMarcador((int)rectangle.getWidth()/10);
+
+
+                        // Carga la escena bien, después de 1 segundo
                         admRecursos.engine.registerUpdateHandler(new TimerHandler(1,
                                 new ITimerCallback() {
                                     @Override
@@ -226,6 +262,8 @@ public class EscenaNivel1 extends EscenaBase
                                         admRecursos.engine.unregisterUpdateHandler(pTimerHandler); // Invalida el timer
 
                                         admEscenas.crearEscenaFin();
+                                        hud.setPosition(15,ControlJuego.ALTO_CAMARA/2);
+
                                         admEscenas.setEscena(TipoEscena.ESCENA_FIN);
                                         admEscenas.liberarEscenaNivel1();
                                     }
@@ -239,18 +277,51 @@ public class EscenaNivel1 extends EscenaBase
             }
         };
         endBox.setCurrentTileIndex(0);
-
         registerTouchArea(endBox);
         attachChild(endBox);
     }
 
 
+    // El ciclo principal de la escena
+    @Override
+    protected void onManagedUpdate(float pSecondsElapsed) {
+        super.onManagedUpdate(pSecondsElapsed);
 
+        if (rectangle.getWidth() > 0) {
+            rectangle.setWidth(rectangle.getWidth() - 0.3f);
+            Log.d("p",String.valueOf(rectangle.getWidth()));
+        }else{
+            admEscenas.crearEscenaJuego();
+            admRecursos.camara.setHUD(null);    // Quita el HUD
+            admEscenas.setEscena(TipoEscena.ESCENA_JUEGO);
+            admEscenas.liberarEscenaNivel1();
+        }
+
+    }
+    private void agregarEstado() {
+    hud = new EstadoJuego(admRecursos.engine,admRecursos.actividadJuego);
+    admRecursos.camara.setHUD(hud);
+}
 
 
     @Override
     public void onBackKeyPressed() {
+        admEscenas.crearEscenaJuego();
+        admRecursos.camara.setHUD(null);    // Quita el HUD
+        admEscenas.setEscena(TipoEscena.ESCENA_JUEGO);
+        admEscenas.liberarEscenaNivel1();
+    }
 
+    public void goingBack(AnimatedSprite a) {
+
+        while (!lista.getLast().equals(a)) {
+            hud.disminuirMarcador(125);
+            lista.getLast().setCurrentTileIndex(0);
+            lista.removeLast();
+        }
+
+        //lista.getLast().setCurrentTileIndex(0);
+        //lista.removeLast();
     }
 
     @Override
