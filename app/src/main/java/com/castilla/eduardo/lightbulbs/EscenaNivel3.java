@@ -39,6 +39,10 @@ public class EscenaNivel3 extends EscenaBase
     public AnimatedSprite endBox;
 
 
+    //Marcador
+    private EstadoJuego hud;
+
+
     private LinkedList<AnimatedSprite> lista = new LinkedList();
 
 
@@ -544,7 +548,10 @@ public class EscenaNivel3 extends EscenaBase
 
     @Override
     public void onBackKeyPressed() {
-
+        admEscenas.crearEscenaJuego();
+        admRecursos.camara.setHUD(null);    // Quita el HUD
+        admEscenas.setEscena(TipoEscena.ESCENA_JUEGO);
+        admEscenas.liberarEscenaNivel3();
     }
 
     public void goingBack(AnimatedSprite a) {

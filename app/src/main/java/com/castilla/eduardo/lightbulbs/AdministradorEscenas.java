@@ -25,10 +25,6 @@ public class AdministradorEscenas
     private EscenaBase escenaFin;
 
 
-
-
-
-
     // El tipo de escena que se está mostrando
     private TipoEscena tipoEscenaActual = TipoEscena.ESCENA_SPLASH;
     // La escena que se está mostrando
@@ -123,6 +119,7 @@ public class AdministradorEscenas
         // Carga los recursos
         admRecursos.cargarRecursosMenu();
         escenaMenu = new EscenaMenu();
+
     }
 
     //*** Libera la escena de Menu

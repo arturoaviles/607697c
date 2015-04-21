@@ -1,11 +1,17 @@
 package com.castilla.eduardo.lightbulbs;
 
+import android.util.Log;
+
+import org.andengine.audio.music.Music;
+import org.andengine.audio.music.MusicFactory;
 import org.andengine.engine.camera.Camera;
 import org.andengine.entity.scene.background.SpriteBackground;
 import org.andengine.entity.sprite.ButtonSprite;
 import org.andengine.entity.sprite.Sprite;
 import org.andengine.input.touch.TouchEvent;
 import org.andengine.opengl.util.GLState;
+
+import java.io.IOException;
 
 /**
  * Representa la escena con las opciones del menú principal
@@ -23,6 +29,10 @@ public class EscenaMenu extends EscenaBase
     private ButtonSprite btnAcercaDe;
     private ButtonSprite btnMarcador;
     private ButtonSprite btnAjustes;
+
+
+    // ***** MUSICA DE FONDO *****
+    private Music musicaFondo;
 
 
 
@@ -49,6 +59,8 @@ public class EscenaMenu extends EscenaBase
 
         // Habilita los eventos de touch en ciertas áreas
         setTouchAreaBindingOnActionDownEnabled(true);
+
+
 
         // *** Agrega los botones al Menú
 
@@ -159,6 +171,29 @@ public class EscenaMenu extends EscenaBase
 
         registerTouchArea(btnAcercaDe);
         attachChild(btnAcercaDe);
+
+
+        // MUSICA
+        //cargarSonidos();
+    }
+
+
+    // Carga los recursos de sonido
+    private void cargarSonidos() {
+        // ***** Música de fondo
+        try {
+            musicaFondo = MusicFactory.createMusicFromAsset(admRecursos.engine.getMusicManager(),
+                    admRecursos.actividadJuego, "Sonidos/mainSong.mp3");
+        }
+        catch (IOException e) {
+            Log.i("cargarSonidos", "No se puede cargar mainSong.mp3");
+        }
+        // Reproducir
+        if (!musicaFondo.isPlaying()) {
+            musicaFondo.play();
+        }else{
+
+        }
     }
 
 
@@ -166,6 +201,7 @@ public class EscenaMenu extends EscenaBase
     @Override
     public void onBackKeyPressed() {
         // Salir del juego
+        musicaFondo.stop();
     }
 
     @Override
@@ -179,8 +215,11 @@ public class EscenaMenu extends EscenaBase
         // FONDO
 
 
+
         this.detachSelf();      // La escena se deconecta del engine
         this.dispose();         // Libera la memoria
+
     }
+
 }
 
