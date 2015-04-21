@@ -36,26 +36,22 @@ public class EscenaFin extends EscenaBase
         setBackgroundEnabled(true);
 
 
-        // *** Agrega el SpriteAnimado "lo hciste bien"
+        // *** Agrega el SpriteAnimado "lo hiciste bien"
         loHicisteBien = new AnimatedSprite(240,398,admRecursos.regionBien,admRecursos.vbom){
-
             // Aquí el código que ejecuta la caja es presionada
             @Override
             public boolean onAreaTouched(TouchEvent pSceneTouchEvent, float pTouchAreaLocalX, float pTouchAreaLocalY) {
-
                 if (pSceneTouchEvent.isActionDown()) {
                     if (loHicisteBien.getCurrentTileIndex()==0){
                         loHicisteBien.setCurrentTileIndex(1);
                     }else{
                         loHicisteBien.setCurrentTileIndex(0);
                     }
-
                 }
                 return super.onAreaTouched(pSceneTouchEvent, pTouchAreaLocalX, pTouchAreaLocalY);
             }
         };
         loHicisteBien.setCurrentTileIndex(0);
-
         registerTouchArea(loHicisteBien);
         attachChild(loHicisteBien);
     }

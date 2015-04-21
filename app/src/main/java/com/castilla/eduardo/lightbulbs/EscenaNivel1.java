@@ -148,7 +148,7 @@ public class EscenaNivel1 extends EscenaBase
         attachChild(startBox);
 
         // *** Agrega Cable1
-        cable1 = new AnimatedSprite(240,497,admRecursos.regionCable,admRecursos.vbom){
+        cable1 = new AnimatedSprite(240,497,admRecursos.regionCableLargo,admRecursos.vbom){
 
             // Aquí el código que ejecuta el cable1 es presionado
             @Override
@@ -203,7 +203,7 @@ public class EscenaNivel1 extends EscenaBase
         attachChild(foco1);
 
         // *** Agrega Cable2
-        cable2 = new AnimatedSprite(240,300,admRecursos.regionCable,admRecursos.vbom){
+        cable2 = new AnimatedSprite(240,300,admRecursos.regionCableLargo,admRecursos.vbom){
 
             // Aquí el código que ejecuta el cable1 es presionado
             @Override
@@ -260,10 +260,8 @@ public class EscenaNivel1 extends EscenaBase
                                     @Override
                                     public void onTimePassed(TimerHandler pTimerHandler) {
                                         admRecursos.engine.unregisterUpdateHandler(pTimerHandler); // Invalida el timer
-
-                                        admEscenas.crearEscenaFin();
+                                        admEscenas.crearEscenaFin(1);
                                         hud.setPosition(15,ControlJuego.ALTO_CAMARA/2);
-
                                         admEscenas.setEscena(TipoEscena.ESCENA_FIN);
                                         admEscenas.liberarEscenaNivel1();
                                     }
@@ -289,11 +287,10 @@ public class EscenaNivel1 extends EscenaBase
 
         if (rectangle.getWidth() > 0) {
             rectangle.setWidth(rectangle.getWidth() - 0.3f);
-            Log.d("p",String.valueOf(rectangle.getWidth()));
         }else{
-            admEscenas.crearEscenaJuego();
+            admEscenas.crearEscenaFin(0);
             admRecursos.camara.setHUD(null);    // Quita el HUD
-            admEscenas.setEscena(TipoEscena.ESCENA_JUEGO);
+            admEscenas.setEscena(TipoEscena.ESCENA_FIN);
             admEscenas.liberarEscenaNivel1();
         }
 
@@ -302,7 +299,6 @@ public class EscenaNivel1 extends EscenaBase
     hud = new EstadoJuego(admRecursos.engine,admRecursos.actividadJuego);
     admRecursos.camara.setHUD(hud);
 }
-
 
     @Override
     public void onBackKeyPressed() {

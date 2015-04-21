@@ -35,8 +35,8 @@ public class ControlJuego extends SimpleBaseGameActivity
     private AdministradorEscenas admEscenas;
 
     //Estado de los botones de Ajustes
-    //public static boolean musicaOn =true;
-    //public static boolean efectosOn = false;
+    public static boolean musicaOn =true;
+    public static boolean efectosOn = false;
 
     @Override
     public EngineOptions onCreateEngineOptions() {
