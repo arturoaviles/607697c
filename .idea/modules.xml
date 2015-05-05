@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/LightBulbs.iml" filepath="$PROJECT_DIR$/LightBulbs.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Lightbulbs.iml" filepath="$PROJECT_DIR$/Lightbulbs.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/org.andengine/org.andengine.iml" filepath="$PROJECT_DIR$/org.andengine/org.andengine.iml" />
     </modules>
