@@ -642,6 +642,7 @@ public class EscenaNivel2 extends EscenaBase
     public TipoEscena getTipoEscena() {
         return TipoEscena.ESCENA_NIVEL_2;
     }
+
     @Override
     public void liberarEscena() {
         // Liberar cada recurso usado en esta escena

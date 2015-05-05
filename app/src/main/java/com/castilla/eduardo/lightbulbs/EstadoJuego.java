@@ -92,7 +92,7 @@ public class EstadoJuego extends HUD
     }
 
     // Método modificador
-    public void setMarcador(int marcador) {
+        public void setMarcador(int marcador) {
         this.marcador = marcador;
     }
 }

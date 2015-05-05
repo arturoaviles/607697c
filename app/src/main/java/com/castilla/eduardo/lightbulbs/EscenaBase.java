@@ -11,10 +11,12 @@ public abstract class EscenaBase extends Scene
     // Variable protegida para que se pueda acceder desde las subclases
     protected AdministradorRecursos admRecursos;
     protected AdministradorEscenas admEscenas;
+    protected AdministradorMusica admMusica;
 
     public EscenaBase() {
         admRecursos = AdministradorRecursos.getInstance();
         admEscenas = AdministradorEscenas.getInstance();
+        admMusica = AdministradorMusica.getInstance();
         // Llama al método que crea la escena
         crearEscena();  // Este método debe implementarse en la subclase
     }

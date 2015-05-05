@@ -302,6 +302,7 @@ public class EscenaNivel1 extends EscenaBase
 
     @Override
     public void onBackKeyPressed() {
+        admMusica.continuarMusica();
         admEscenas.crearEscenaJuego();
         admRecursos.camara.setHUD(null);    // Quita el HUD
         admEscenas.setEscena(TipoEscena.ESCENA_JUEGO);
