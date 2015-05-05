@@ -75,7 +75,7 @@ public class EscenaMenu extends EscenaBase
 
                 if (pSceneTouchEvent.isActionUp()) {
                     //btnJugar.setPosition(pSceneTouchEvent.getX(),pSceneTouchEvent.getY());
-
+                    admMusica.pararMusica();
                     // Cambia a la escena de JUGAR
                     admEscenas.crearEscenaJuego();
                     admEscenas.setEscena(TipoEscena.ESCENA_JUEGO);
@@ -175,6 +175,7 @@ public class EscenaMenu extends EscenaBase
 
         // MUSICA
         //cargarSonidos();
+        admMusica.cargarMusicaMenu();
     }
 
 
@@ -191,8 +192,6 @@ public class EscenaMenu extends EscenaBase
         // Reproducir
         if (!musicaFondo.isPlaying()) {
             musicaFondo.play();
-        }else{
-
         }
     }
 
@@ -213,9 +212,6 @@ public class EscenaMenu extends EscenaBase
     public void liberarEscena() {
         // Liberar cada recurso usado en esta escena
         // FONDO
-
-
-
         this.detachSelf();      // La escena se deconecta del engine
         this.dispose();         // Libera la memoria
 

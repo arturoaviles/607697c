@@ -140,11 +140,8 @@ public class EscenaJuego extends EscenaBase
     @Override
     public void liberarEscena() {
         // Liberar cada recurso usado en esta escena
-
         //musicaFondo.release();
-
         this.detachSelf();      // La escena se deconecta del engine
         this.dispose();         // Libera la memoria
     }
-
 }

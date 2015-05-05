@@ -151,7 +151,6 @@ public class AdministradorRecursos {
 
     public static void inicializarAdministrador(Engine engine,
                                                 ControlJuego control, Camera camara, VertexBufferObjectManager vbom) {
-
         getInstance().engine = engine;
         getInstance().actividadJuego=control;
         getInstance().camara = camara;

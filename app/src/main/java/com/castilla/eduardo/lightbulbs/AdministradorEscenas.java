@@ -24,7 +24,6 @@ public class AdministradorEscenas
     private EscenaBase escenaNivel3;
     private EscenaBase escenaFin;
 
-
     // El tipo de escena que se está mostrando
     private TipoEscena tipoEscenaActual = TipoEscena.ESCENA_SPLASH;
     // La escena que se está mostrando
@@ -33,17 +32,14 @@ public class AdministradorEscenas
     private Engine engine = AdministradorRecursos.getInstance().engine;
     // El administrados de recursos
     private AdministradorRecursos admRecursos = AdministradorRecursos.getInstance();
-
     // Regresa la instancia del administrador de escenas
     public static AdministradorEscenas getInstance() {
         return INSTANCE;
     }
-
     // Regresa el tipo de la escena actual
     public TipoEscena getTipoEscenaActual() {
         return tipoEscenaActual;
     }
-
     // Regresa la escena actual
     public EscenaBase getEscenaActual() {
         return escenaActual;
@@ -119,7 +115,6 @@ public class AdministradorEscenas
         // Carga los recursos
         admRecursos.cargarRecursosMenu();
         escenaMenu = new EscenaMenu();
-
     }
 
     //*** Libera la escena de Menu

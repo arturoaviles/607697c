@@ -58,6 +58,7 @@ public class ControlJuego extends SimpleBaseGameActivity
         // Pasamos toda la información al administrador de recursos
         AdministradorRecursos.inicializarAdministrador(mEngine,this,
                 camara,getVertexBufferObjectManager());
+        AdministradorMusica.inicializarAdministrador(mEngine,this);
         admEscenas = AdministradorEscenas.getInstance();
     }
 
@@ -159,14 +160,12 @@ public class ControlJuego extends SimpleBaseGameActivity
     }
 
     public synchronized void onPauseGame(){
-
     }
 
     public synchronized void onResumeGame(){
 
         super.onResumeGame();
     }
-
     // La aplicación sale de memoria
     @Override
     protected void onDestroy() {

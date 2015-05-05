@@ -1,9 +1,15 @@
 package com.castilla.eduardo.lightbulbs;
 
+import android.util.Log;
+
+import org.andengine.audio.music.Music;
+import org.andengine.audio.music.MusicFactory;
 import org.andengine.engine.camera.Camera;
 import org.andengine.entity.scene.background.SpriteBackground;
 import org.andengine.entity.sprite.Sprite;
 import org.andengine.opengl.util.GLState;
+
+import java.io.IOException;
 
 /**
  * La escena que se muestra cuando corre la aplicación (Logo del TEC)
@@ -11,6 +17,9 @@ import org.andengine.opengl.util.GLState;
 public class EscenaSplash extends EscenaBase
 {
     private Sprite spriteFondo; //(el fondo de la escena, estático)
+
+    // ***** MUSICA DE FONDO *****
+    private Music musicaFondo;
 
     @Override
     public void crearEscena() {
@@ -30,12 +39,15 @@ public class EscenaSplash extends EscenaBase
         SpriteBackground fondo = new SpriteBackground(0,0,0.60f,spriteFondo);
         setBackground(fondo);
         setBackgroundEnabled(true);
+
+
     }
 
     @Override
     public void onBackKeyPressed() {
 
     }
+
 
     @Override
     public TipoEscena getTipoEscena() {
