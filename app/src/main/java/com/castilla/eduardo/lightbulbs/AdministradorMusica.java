@@ -50,7 +50,7 @@ public class AdministradorMusica {
         // ***** Música de fondo del Menu
         try {
             musicaFondo = MusicFactory.createMusicFromAsset(engine.getMusicManager(),
-                    actividadJuego, "Sonidos/mainSong.mp3");
+                    actividadJuego, "Sonidos/mainSong_33.mp3");
         }
         catch (IOException e) {
             Log.i("cargarSonidos","No se puede cargar demo.ogg");
@@ -64,7 +64,7 @@ public class AdministradorMusica {
         // ***** Música de fondo del Menu
         try {
             musicaFondo = MusicFactory.createMusicFromAsset(engine.getMusicManager(),
-                    actividadJuego, "Sonidos/mainSong.mp3");
+                    actividadJuego, "Sonidos/nivel1_10.mp3");
         }
         catch (IOException e) {
             Log.i("cargarSonidos","No se puede cargar demo.ogg");
