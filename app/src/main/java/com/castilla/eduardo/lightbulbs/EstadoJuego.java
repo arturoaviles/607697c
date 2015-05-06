@@ -33,7 +33,7 @@ public class EstadoJuego extends HUD
         this.actividad = actividad;
 
         if(Escena.equals("marcadores")){
-            agregarMarcadorMasAlto();
+            //agregarMarcadorMasAlto();
         }else{
             agregarMarcador();
         }

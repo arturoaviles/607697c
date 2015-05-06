@@ -39,8 +39,7 @@ public class AdministradorMusica {
         return INSTANCE;
     }
 
-    public static void inicializarAdministrador(Engine engine,
-                                                ControlJuego control) {
+    public static void inicializarAdministrador(Engine engine,ControlJuego control) {
         getInstance().engine = engine;
         getInstance().actividadJuego=control;
     }
@@ -106,6 +105,10 @@ public class AdministradorMusica {
         musicaNivel.release();
     }
 
+    public void liberarMusicaMenu(){
+        musicaMenu.release();
+    }
+
     public void pararMusicaMenu(){
         musicaMenu.pause();
     }
@@ -116,5 +119,9 @@ public class AdministradorMusica {
 
     public Music getMusicaMenu() {
         return musicaMenu;
+    }
+
+    public Music getMusicaNivel() {
+        return musicaNivel;
     }
 }

@@ -784,7 +784,6 @@ public class EscenaNivel3 extends EscenaBase
                     if (cable31.getCurrentTileIndex()==1){
                         goingBack(cable31);
                     }else{
-
                         if (lista.getLast().equals(foco30)||lista.getLast().equals(foco32)) {
                             hudMarcador.aumentarMarcador(100);
                             cable31.setCurrentTileIndex(1);
@@ -1159,6 +1158,17 @@ public class EscenaNivel3 extends EscenaBase
                 focos.add(foco5);
                 focos.add(foco7);
                 focos.add(foco9);
+                focos.add(foco16);
+                focos.add(foco18);
+                focos.add(foco20);
+                focos.add(foco24);
+                focos.add(foco26);
+                focos.add(foco30);
+                focos.add(foco25);
+                focos.add(foco32);
+                focos.add(foco34);
+
+
                 for(int i=0; i<focos.size(); i++){
                     if (focos.get(i).getCurrentTileIndex()==0){
                         allBulbsOn = false;
@@ -1207,7 +1217,7 @@ public class EscenaNivel3 extends EscenaBase
             btnContinuar.setCurrentTileIndex(0);
         }
         if (rectanguloEnergia.getWidth() > 0) {
-            //rectanguloEnergia.setWidth(rectanguloEnergia.getWidth() - 2.0f);
+            rectanguloEnergia.setWidth(rectanguloEnergia.getWidth() - 0.3f);
         }else{
             admEscenas.crearEscenaFin(0);
             admRecursos.camara.setHUD(null);
