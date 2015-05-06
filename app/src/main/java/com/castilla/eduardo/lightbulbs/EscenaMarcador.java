@@ -11,6 +11,9 @@ import org.andengine.opengl.util.GLState;
 public class EscenaMarcador extends EscenaBase
 {
     private Sprite spriteFondo; //(el fondo de la escena, estático)
+    //Marcador
+    private EstadoJuego hudMarcador;
+
 
     @Override
     public void crearEscena() {
@@ -30,11 +33,23 @@ public class EscenaMarcador extends EscenaBase
         SpriteBackground fondo = new SpriteBackground(0,0,0.60f,spriteFondo);
         setBackground(fondo);
         setBackgroundEnabled(true);
+
+        //Agrega el marcador
+        agregarEstado();
     }
 
     @Override
     public void onBackKeyPressed() {
+        admEscenas.crearEscenaMenu();
+        admEscenas.setEscena(TipoEscena.ESCENA_MENU);
+        admEscenas.liberarEscenaMarcador();
+        admRecursos.camara.setHUD(null);    // Quita el HUD
+    }
 
+    // Agrega el hud del Marcador
+    private void agregarEstado() {
+        hudMarcador = new EstadoJuego(admRecursos.engine,admRecursos.actividadJuego,"marcadores");
+        admRecursos.camara.setHUD(hudMarcador);
     }
 
     @Override

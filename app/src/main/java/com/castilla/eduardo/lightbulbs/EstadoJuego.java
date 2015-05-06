@@ -1,5 +1,7 @@
 package com.castilla.eduardo.lightbulbs;
 
+import android.util.Log;
+
 import org.andengine.engine.Engine;
 import org.andengine.engine.camera.hud.HUD;
 import org.andengine.entity.primitive.Rectangle;
@@ -20,11 +22,22 @@ public class EstadoJuego extends HUD
     private Text txtMarcador;
     private ControlJuego actividad;
 
-    public EstadoJuego(Engine engine, ControlJuego actividad) {
+    // Marcador más alto
+    private Text txtMarcadorMasAlto;
+    private int marcadorMasAlto;
+
+
+    public EstadoJuego(Engine engine, ControlJuego actividad,String Escena) {
         this.engine = engine;
         marcador = 0;
         this.actividad = actividad;
-        agregarMarcador();
+
+        if(Escena.equals("marcadores")){
+            agregarMarcadorMasAlto();
+        }else{
+            agregarMarcador();
+        }
+
     }
 
     // Método para actualizar el marcador
@@ -94,5 +107,24 @@ public class EstadoJuego extends HUD
     // Método modificador
         public void setMarcador(int marcador) {
         this.marcador = marcador;
+    }
+
+    // Para el marcador mayor
+    public void agregarMarcadorMasAlto() {
+        // Un cuadro transparente arriba centrado
+        Rectangle cuadroMasAlto = new Rectangle(ControlJuego.ANCHO_CAMARA/8,ControlJuego.ALTO_CAMARA-60,
+                200,100, engine.getVertexBufferObjectManager());
+        cuadroMasAlto.setColor(0.2f, 0.2f, 0.2f, 0.7f);
+        this.attachChild(cuadroMasAlto);
+
+        // Letrero sobre el cuadro
+        Font tipo = crearTipoLetra();
+        txtMarcadorMasAlto = new Text(100,50,
+                tipo,"Mayor: 0",15,engine.getVertexBufferObjectManager());
+        txtMarcadorMasAlto.setWidth(200);
+        txtMarcadorMasAlto.setHorizontalAlign(HorizontalAlign.CENTER);
+
+        // Agrega el marcador al recuadro trasparente
+        cuadroMasAlto.attachChild(txtMarcadorMasAlto);
     }
 }

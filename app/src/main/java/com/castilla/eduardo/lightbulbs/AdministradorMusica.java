@@ -32,7 +32,8 @@ public class AdministradorMusica {
     public ControlJuego actividadJuego;
 
     // ***** MUSICA *****
-    private Music musicaFondo;
+    private Music musicaMenu;
+    private Music musicaNivel;
 
     public static AdministradorMusica getInstance() {
         return INSTANCE;
@@ -40,47 +41,80 @@ public class AdministradorMusica {
 
     public static void inicializarAdministrador(Engine engine,
                                                 ControlJuego control) {
-
         getInstance().engine = engine;
         getInstance().actividadJuego=control;
-
     }
 
     public void cargarMusicaMenu(){
         // ***** Música de fondo del Menu
         try {
-            musicaFondo = MusicFactory.createMusicFromAsset(engine.getMusicManager(),
+            musicaMenu = MusicFactory.createMusicFromAsset(engine.getMusicManager(),
                     actividadJuego, "Sonidos/mainSong_33.mp3");
         }
         catch (IOException e) {
             Log.i("cargarSonidos","No se puede cargar demo.ogg");
         }
         // Reproducir
-        musicaFondo.setLooping(true);
-        musicaFondo.play();
+        musicaMenu.setLooping(true);
+        musicaMenu.play();
     }
 
     public void cargarMusicaNivel1(){
         // ***** Música de fondo del Menu
         try {
-            musicaFondo = MusicFactory.createMusicFromAsset(engine.getMusicManager(),
+            musicaNivel = MusicFactory.createMusicFromAsset(engine.getMusicManager(),
                     actividadJuego, "Sonidos/nivel1_10.mp3");
         }
         catch (IOException e) {
             Log.i("cargarSonidos","No se puede cargar demo.ogg");
         }
         // Reproducir
-        musicaFondo.setLooping(true);
-        musicaFondo.play();
+
+        musicaNivel.play();
+    }
+
+    public void cargarMusicaNivel2(){
+        // ***** Música de fondo del Menu
+        try {
+            musicaNivel = MusicFactory.createMusicFromAsset(engine.getMusicManager(),
+                    actividadJuego, "Sonidos/nivel2_24.mp3");
+        }
+        catch (IOException e) {
+            Log.i("cargarSonidos","No se puede cargar demo.ogg");
+        }
+        // Reproducir
+
+        musicaNivel.play();
     }
 
 
+    public void cargarMusicaNivel3(){
+        // ***** Música de fondo del Menu
+        try {
+            musicaNivel = MusicFactory.createMusicFromAsset(engine.getMusicManager(),
+                    actividadJuego, "Sonidos/nivel3_34.mp3");
+        }
+        catch (IOException e) {
+            Log.i("cargarSonidos","No se puede cargar demo.ogg");
+        }
+        // Reproducir
 
-    public void pararMusica(){
-        musicaFondo.pause();
+        musicaNivel.play();
     }
 
-    public void continuarMusica(){
-        musicaFondo.resume();
+    public void liberarMusicaNivel(){
+        musicaNivel.release();
+    }
+
+    public void pararMusicaMenu(){
+        musicaMenu.pause();
+    }
+
+    public void continuarMusicaMenu(){
+        musicaMenu.resume();
+    }
+
+    public Music getMusicaMenu() {
+        return musicaMenu;
     }
 }

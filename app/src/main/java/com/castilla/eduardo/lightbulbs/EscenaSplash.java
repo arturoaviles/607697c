@@ -18,9 +18,6 @@ public class EscenaSplash extends EscenaBase
 {
     private Sprite spriteFondo; //(el fondo de la escena, estático)
 
-    // ***** MUSICA DE FONDO *****
-    private Music musicaFondo;
-
     @Override
     public void crearEscena() {
         // Creamos el sprite de manera óptima
@@ -39,8 +36,6 @@ public class EscenaSplash extends EscenaBase
         SpriteBackground fondo = new SpriteBackground(0,0,0.60f,spriteFondo);
         setBackground(fondo);
         setBackgroundEnabled(true);
-
-
     }
 
     @Override

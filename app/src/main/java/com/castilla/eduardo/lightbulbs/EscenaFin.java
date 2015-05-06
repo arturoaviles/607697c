@@ -26,6 +26,9 @@ public class EscenaFin extends EscenaBase
                 pGLState.enableDither();
             }
         };
+
+        //liberar la musica del nivel
+        admMusica.liberarMusicaNivel();
         // Configuración de la imagen
         spriteFondo.setPosition(ControlJuego.ANCHO_CAMARA/2,ControlJuego.ALTO_CAMARA/2);
         //spriteFondo.setScale(0.7f);
@@ -58,6 +61,7 @@ public class EscenaFin extends EscenaBase
 
     @Override
     public void onBackKeyPressed() {
+        admMusica.continuarMusicaMenu();
         admEscenas.crearEscenaJuego();
         admRecursos.camara.setHUD(null);    // Quita el HUD
         admEscenas.setEscena(TipoEscena.ESCENA_JUEGO);

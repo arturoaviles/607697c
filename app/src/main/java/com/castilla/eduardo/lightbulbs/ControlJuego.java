@@ -82,6 +82,7 @@ public class ControlJuego extends SimpleBaseGameActivity
                         admEscenas.crearEscenaMenu();
                         admEscenas.setEscena(TipoEscena.ESCENA_MENU);
                         admEscenas.liberarEscenaSplash();
+
                     }
                 }));
 
@@ -99,7 +100,6 @@ public class ControlJuego extends SimpleBaseGameActivity
 
             }else if(admEscenas.getTipoEscenaActual()==TipoEscena.ESCENA_JUEGO){
                 admEscenas.crearEscenaMenu();
-
                 admEscenas.setEscena(TipoEscena.ESCENA_MENU);
                 admEscenas.liberarEscenaJuego();
 
@@ -110,10 +110,10 @@ public class ControlJuego extends SimpleBaseGameActivity
                 admEscenas.liberarEscenaInstrucciones();
 
 
-            }else if(admEscenas.getTipoEscenaActual()==TipoEscena.ESCENA_MARCADOR){
-                admEscenas.crearEscenaMenu();
-                admEscenas.setEscena(TipoEscena.ESCENA_MENU);
-                admEscenas.liberarEscenaMarcador();
+            //}else if(admEscenas.getTipoEscenaActual()==TipoEscena.ESCENA_MARCADOR){
+                //admEscenas.crearEscenaMenu();
+                //admEscenas.setEscena(TipoEscena.ESCENA_MENU);
+                //admEscenas.liberarEscenaMarcador();
 
 
             }else if(admEscenas.getTipoEscenaActual()==TipoEscena.ESCENA_ACERCA_DE){
@@ -166,6 +166,11 @@ public class ControlJuego extends SimpleBaseGameActivity
 
         super.onResumeGame();
     }
+
+    public AdministradorEscenas getAdmEscenas() {
+        return admEscenas;
+    }
+
     // La aplicación sale de memoria
     @Override
     protected void onDestroy() {

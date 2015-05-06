@@ -62,6 +62,7 @@ public class EscenaJuego extends EscenaBase
                 if (pSceneTouchEvent.isActionUp()) {
 
                     // Cambia a la escena de JUGAR
+                    admMusica.pararMusicaMenu();
                     admEscenas.crearEscenaNivel1();
                     admEscenas.setEscena(TipoEscena.ESCENA_NIVEL_1);
                     admEscenas.liberarEscenaJuego();
@@ -83,6 +84,7 @@ public class EscenaJuego extends EscenaBase
                     //btnJugar.setPosition(pSceneTouchEvent.getX(),pSceneTouchEvent.getY());
 
                     // Cambia a la escena de JUGAR
+                    admMusica.pararMusicaMenu();
                     admEscenas.crearEscenaNivel2();
                     admEscenas.setEscena(TipoEscena.ESCENA_NIVEL_2);
                     admEscenas.liberarEscenaJuego();
@@ -105,6 +107,7 @@ public class EscenaJuego extends EscenaBase
                 if (pSceneTouchEvent.isActionUp()) {
 
                     // Cambia a la escena de JUGAR
+                    admMusica.pararMusicaMenu();
                     admEscenas.crearEscenaNivel3();
                     admEscenas.setEscena(TipoEscena.ESCENA_NIVEL_3);
                     admEscenas.liberarEscenaJuego();
@@ -115,16 +118,9 @@ public class EscenaJuego extends EscenaBase
 
         registerTouchArea(btnNivel3);
         attachChild(btnNivel3);
-
-        // MUSICA
-        //cargarSonidos();
     }
 
-    // Carga los recursos de sonido
-    private void cargarSonidos() {
 
-
-    }
 
 
     @Override

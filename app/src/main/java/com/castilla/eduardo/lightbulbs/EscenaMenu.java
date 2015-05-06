@@ -31,11 +31,6 @@ public class EscenaMenu extends EscenaBase
     private ButtonSprite btnAjustes;
 
 
-    // ***** MUSICA DE FONDO *****
-    private Music musicaFondo;
-
-
-
     @Override
     public void crearEscena() {
         // Creamos el sprite de manera óptima
@@ -75,7 +70,6 @@ public class EscenaMenu extends EscenaBase
 
                 if (pSceneTouchEvent.isActionUp()) {
                     //btnJugar.setPosition(pSceneTouchEvent.getX(),pSceneTouchEvent.getY());
-                    admMusica.pararMusica();
                     // Cambia a la escena de JUGAR
                     admEscenas.crearEscenaJuego();
                     admEscenas.setEscena(TipoEscena.ESCENA_JUEGO);
@@ -165,42 +159,21 @@ public class EscenaMenu extends EscenaBase
                 }
                 return super.onAreaTouched(pSceneTouchEvent, pTouchAreaLocalX, pTouchAreaLocalY);
             }
-
-
         };
 
         registerTouchArea(btnAcercaDe);
         attachChild(btnAcercaDe);
 
-
         // MUSICA
-        //cargarSonidos();
-        admMusica.cargarMusicaMenu();
-    }
-
-
-    // Carga los recursos de sonido
-    private void cargarSonidos() {
-        // ***** Música de fondo
-        try {
-            musicaFondo = MusicFactory.createMusicFromAsset(admRecursos.engine.getMusicManager(),
-                    admRecursos.actividadJuego, "Sonidos/mainSong.mp3");
-        }
-        catch (IOException e) {
-            Log.i("cargarSonidos", "No se puede cargar mainSong.mp3");
-        }
-        // Reproducir
-        if (!musicaFondo.isPlaying()) {
-            musicaFondo.play();
+        if(admMusica.getMusicaMenu()==null){
+            admMusica.cargarMusicaMenu();
         }
     }
-
-
 
     @Override
     public void onBackKeyPressed() {
         // Salir del juego
-        musicaFondo.stop();
+        //musicaFondo.stop();
     }
 
     @Override
