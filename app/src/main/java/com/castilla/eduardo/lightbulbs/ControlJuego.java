@@ -160,10 +160,37 @@ public class ControlJuego extends SimpleBaseGameActivity
     }
 
     public synchronized void onPauseGame(){
+        // Pausar la música en Niveles
+        if (admEscenas!=null && admEscenas.getTipoEscenaActual()==TipoEscena.ESCENA_NIVEL_1||admEscenas.getTipoEscenaActual()==TipoEscena.ESCENA_NIVEL_2||admEscenas.getTipoEscenaActual()==TipoEscena.ESCENA_NIVEL_3) {
+            // Esta en AcercaDe, revisar si está reproduciendo música
+            Music musicaFondo = admEscenas.getEscenaActual().admMusica.getMusicaNivel();
+            if (musicaFondo!=null && musicaFondo.isPlaying()) {
+                musicaFondo.pause();
+            }
+        }else if(admEscenas!=null && admEscenas.getTipoEscenaActual()!=TipoEscena.ESCENA_SPLASH){
+            // Pausar la música en todas las escenas que ocnforman el menú
+            Music musicaFondo = admEscenas.getEscenaActual().admMusica.getMusicaMenu();
+            if(musicaFondo!=null && musicaFondo.isPlaying()){
+                musicaFondo.pause();
+            }
+        }
+        super.onPauseGame();
     }
 
-    public synchronized void onResumeGame(){
-
+    public synchronized void onResumeGame(){// Pausar la música en Niveles
+        if (admEscenas!=null && admEscenas.getTipoEscenaActual()==TipoEscena.ESCENA_NIVEL_1||admEscenas.getTipoEscenaActual()==TipoEscena.ESCENA_NIVEL_2||admEscenas.getTipoEscenaActual()==TipoEscena.ESCENA_NIVEL_3) {
+            // Esta en AcercaDe, revisar si está reproduciendo música
+            Music musicaFondo = admEscenas.getEscenaActual().admMusica.getMusicaNivel();
+            if (musicaFondo!=null && !musicaFondo.isPlaying()) {
+                musicaFondo.play();
+            }
+        }else if(admEscenas!=null && admEscenas.getTipoEscenaActual()!=TipoEscena.ESCENA_SPLASH){
+            // Pausar la música en todas las escenas que ocnforman el menú
+            Music musicaFondo = admEscenas.getEscenaActual().admMusica.getMusicaMenu();
+            if(musicaFondo!=null && !musicaFondo.isPlaying()){
+                musicaFondo.play();
+            }
+        }
         super.onResumeGame();
     }
 
