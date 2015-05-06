@@ -55,6 +55,8 @@ public class EscenaNivel3 extends EscenaBase
     public AnimatedSprite cable27;
     public AnimatedSprite cable28;
     public AnimatedSprite cable29;
+    public AnimatedSprite cable31;
+    public AnimatedSprite cable33;
 
     public AnimatedSprite foco5;
     public AnimatedSprite foco7;
@@ -66,6 +68,7 @@ public class EscenaNivel3 extends EscenaBase
     public AnimatedSprite foco24;
     public AnimatedSprite foco25;
     public AnimatedSprite foco26;
+    public AnimatedSprite foco32;
     public AnimatedSprite foco34;
 
 
@@ -595,7 +598,7 @@ public class EscenaNivel3 extends EscenaBase
 
         // *** Agrega Cable 21
         // colisiona con foco 24 y foco 16
-        cable21 = new AnimatedSprite(154,300,admRecursos.regionCableLargo,admRecursos.vbom){
+        cable21 = new AnimatedSprite(154,320,admRecursos.regionCableLargo,admRecursos.vbom){
 
             // Aquí el código que ejecuta el cable2 es presionado
             @Override
@@ -621,11 +624,39 @@ public class EscenaNivel3 extends EscenaBase
         cable21.setCurrentTileIndex(0);
         registerTouchArea(cable21);
         attachChild(cable21);
-        cable21.setWidth(cable21.getWidth()+35);
+
+        // *** Agrega Cable 22
+        // colisiona con ...................................................................................
+        cable22 = new AnimatedSprite(240,250,admRecursos.regionCableChico,admRecursos.vbom){
+
+            // Aquí el código que ejecuta el cable2 es presionado
+            @Override
+            public boolean onAreaTouched(TouchEvent pSceneTouchEvent, float pTouchAreaLocalX, float pTouchAreaLocalY) {
+
+                if (pSceneTouchEvent.isActionDown()&&!lista.isEmpty()) {
+
+                    if (cable22.getCurrentTileIndex()==1){
+                        goingBack(cable22);
+                    }else{
+                        if (lista.getLast().equals(foco18)||lista.getLast().equals(foco25)) {
+                            hudMarcador.aumentarMarcador(100);
+                            cable22.setCurrentTileIndex(1);
+                            lista.add(cable22);
+                        }
+                    }
+                }
+                return super.onAreaTouched(pSceneTouchEvent, pTouchAreaLocalX, pTouchAreaLocalY);
+            }
+        };
+        cable22.setRotation(90);
+        cable22.setCurrentTileIndex(0);
+        registerTouchArea(cable22);
+        attachChild(cable22);
+
 
         // *** Agrega Cable 23
         // colisiona con foco 20 y foco 26
-        cable23 = new AnimatedSprite(328,300,admRecursos.regionCableLargo,admRecursos.vbom){
+        cable23 = new AnimatedSprite(328,320,admRecursos.regionCableLargo,admRecursos.vbom){
 
             // Aquí el código que ejecuta el cable2 es presionado
             @Override
@@ -651,7 +682,154 @@ public class EscenaNivel3 extends EscenaBase
         cable23.setCurrentTileIndex(0);
         registerTouchArea(cable23);
         attachChild(cable23);
-        cable23.setWidth(cable23.getWidth()+35);
+
+        // *** Agrega Cable 27
+        // colisiona con ......9............................................................................
+        cable27 = new AnimatedSprite(111,210,admRecursos.regionCableChico,admRecursos.vbom){
+
+            // Aquí el código que ejecuta el cable2 es presionado
+            @Override
+            public boolean onAreaTouched(TouchEvent pSceneTouchEvent, float pTouchAreaLocalX, float pTouchAreaLocalY) {
+
+                if (pSceneTouchEvent.isActionDown()&&!lista.isEmpty()) {
+
+                    if (cable27.getCurrentTileIndex()==1){
+                        goingBack(cable27);
+                    }else{
+
+                        if (lista.getLast().equals(foco24)||lista.getLast().equals(foco30)) {
+                            hudMarcador.aumentarMarcador(100);
+                            cable27.setCurrentTileIndex(1);
+                            lista.add(cable27);
+                        }
+                    }
+                }
+                return super.onAreaTouched(pSceneTouchEvent, pTouchAreaLocalX, pTouchAreaLocalY);
+            }
+        };
+        cable27.setRotation(135);
+        cable27.setCurrentTileIndex(0);
+        registerTouchArea(cable27);
+        attachChild(cable27);
+
+        // *** Agrega Cable 28
+        // colisiona con ...................................................................................
+        cable28 = new AnimatedSprite(240,180,admRecursos.regionCableChico,admRecursos.vbom){
+
+            // Aquí el código que ejecuta el cable2 es presionado
+            @Override
+            public boolean onAreaTouched(TouchEvent pSceneTouchEvent, float pTouchAreaLocalX, float pTouchAreaLocalY) {
+
+                if (pSceneTouchEvent.isActionDown()&&!lista.isEmpty()) {
+
+                    if (cable28.getCurrentTileIndex()==1){
+                        goingBack(cable28);
+                    }else{
+
+                        if (lista.getLast().equals(foco25)||lista.getLast().equals(foco32)) {
+                            hudMarcador.aumentarMarcador(100);
+                            cable28.setCurrentTileIndex(1);
+                            lista.add(cable28);
+                        }
+                    }
+                }
+                return super.onAreaTouched(pSceneTouchEvent, pTouchAreaLocalX, pTouchAreaLocalY);
+            }
+        };
+        cable28.setRotation(90);
+        cable28.setCurrentTileIndex(0);
+        registerTouchArea(cable28);
+        attachChild(cable28);
+
+        // *** Agrega Cable 29
+        // colisiona con foco 26,34
+        cable29 = new AnimatedSprite(368,212,admRecursos.regionCableChico,admRecursos.vbom){
+
+            // Aquí el código que ejecuta el cable2 es presionado
+            @Override
+            public boolean onAreaTouched(TouchEvent pSceneTouchEvent, float pTouchAreaLocalX, float pTouchAreaLocalY) {
+
+                if (pSceneTouchEvent.isActionDown()&&!lista.isEmpty()) {
+
+                    if (cable29.getCurrentTileIndex()==1){
+                        goingBack(cable29);
+                    }else{
+
+                        if (lista.getLast().equals(foco26)||lista.getLast().equals(foco34)) {
+                            hudMarcador.aumentarMarcador(100);
+                            cable29.setCurrentTileIndex(1);
+                            lista.add(cable29);
+                        }
+                    }
+                }
+                return super.onAreaTouched(pSceneTouchEvent, pTouchAreaLocalX, pTouchAreaLocalY);
+            }
+        };
+        cable29.setRotation(46);
+        cable29.setCurrentTileIndex(0);
+        registerTouchArea(cable29);
+        attachChild(cable29);
+
+
+        // *** Agrega Cable 31
+        // colisiona con ........................................................................................
+        cable31 = new AnimatedSprite(154,144,admRecursos.regionCableMediano,admRecursos.vbom){
+
+            // Aquí el código que ejecuta el cable2 es presionado
+            @Override
+            public boolean onAreaTouched(TouchEvent pSceneTouchEvent, float pTouchAreaLocalX, float pTouchAreaLocalY) {
+
+                if (pSceneTouchEvent.isActionDown()&&!lista.isEmpty()) {
+
+                    if (cable31.getCurrentTileIndex()==1){
+                        goingBack(cable31);
+                    }else{
+
+                        if (lista.getLast().equals(foco30)||lista.getLast().equals(foco32)) {
+                            hudMarcador.aumentarMarcador(100);
+                            cable31.setCurrentTileIndex(1);
+                            lista.add(cable31);
+                        }
+                    }
+                }
+                return super.onAreaTouched(pSceneTouchEvent, pTouchAreaLocalX, pTouchAreaLocalY);
+            }
+        };
+        cable31.setRotation(16);
+        cable31.setCurrentTileIndex(0);
+        registerTouchArea(cable31);
+        attachChild(cable31);
+        cable31.setWidth(cable31.getWidth()+35);
+
+        // *** Agrega Cable 33
+        // colisiona con ........................................................................................
+        cable33 = new AnimatedSprite(326,144,admRecursos.regionCableLargo,admRecursos.vbom){
+
+            // Aquí el código que ejecuta el cable2 es presionado
+            @Override
+            public boolean onAreaTouched(TouchEvent pSceneTouchEvent, float pTouchAreaLocalX, float pTouchAreaLocalY) {
+
+                if (pSceneTouchEvent.isActionDown()&&!lista.isEmpty()) {
+
+                    if (cable33.getCurrentTileIndex()==1){
+                        goingBack(cable33);
+                    }else{
+
+                        if (lista.getLast().equals(foco32)||lista.getLast().equals(foco34)) {
+                            hudMarcador.aumentarMarcador(100);
+                            cable33.setCurrentTileIndex(1);
+                            lista.add(cable33);
+                        }
+                    }
+                }
+                return super.onAreaTouched(pSceneTouchEvent, pTouchAreaLocalX, pTouchAreaLocalY);
+            }
+        };
+        cable33.setRotation(-16);
+        cable33.setCurrentTileIndex(0);
+        registerTouchArea(cable33);
+        attachChild(cable33);
+        cable33.setWidth(cable33.getWidth()+35);
 
 
         // *** Agrega StartBox
@@ -678,34 +856,7 @@ public class EscenaNivel3 extends EscenaBase
         attachChild(startBox0);
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+//%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
         // *** Agrega Foco5
         // colisiona con cable 1,6,10,11
@@ -855,7 +1006,7 @@ public class EscenaNivel3 extends EscenaBase
 
         // *** Agrega Foco 24
         // colisiona con cable  21,27
-        foco24 = new AnimatedSprite(154,185,admRecursos.regionFoco,admRecursos.vbom){
+        foco24 = new AnimatedSprite(154,255,admRecursos.regionFoco,admRecursos.vbom){
             // Aquí el código que ejecuta la foco es presionado
             @Override
             public boolean onAreaTouched(TouchEvent pSceneTouchEvent, float pTouchAreaLocalX, float pTouchAreaLocalY) {
@@ -879,7 +1030,7 @@ public class EscenaNivel3 extends EscenaBase
 
         // *** Agrega Foco 25
         // colisiona con cable  22,28
-        foco25 = new AnimatedSprite(240,185,admRecursos.regionFoco,admRecursos.vbom){
+        foco25 = new AnimatedSprite(240,210,admRecursos.regionFoco,admRecursos.vbom){
             // Aquí el código que ejecuta la foco es presionado
             @Override
             public boolean onAreaTouched(TouchEvent pSceneTouchEvent, float pTouchAreaLocalX, float pTouchAreaLocalY) {
@@ -903,7 +1054,7 @@ public class EscenaNivel3 extends EscenaBase
 
         // *** Agrega Foco 26
         // colisiona con cable  23,29
-        foco26 = new AnimatedSprite(328,185,admRecursos.regionFoco,admRecursos.vbom){
+        foco26 = new AnimatedSprite(328,255,admRecursos.regionFoco,admRecursos.vbom){
             // Aquí el código que ejecuta la foco es presionado
             @Override
             public boolean onAreaTouched(TouchEvent pSceneTouchEvent, float pTouchAreaLocalX, float pTouchAreaLocalY) {
@@ -924,6 +1075,78 @@ public class EscenaNivel3 extends EscenaBase
         foco26.setCurrentTileIndex(0);
         registerTouchArea(foco26);
         attachChild(foco26);
+
+        // *** Agrega Foco 30
+        // colisiona con cable 10,27,31
+        foco30 = new AnimatedSprite(67,170,admRecursos.regionFoco,admRecursos.vbom){
+            // Aquí el código que ejecuta la foco es presionado
+            @Override
+            public boolean onAreaTouched(TouchEvent pSceneTouchEvent, float pTouchAreaLocalX, float pTouchAreaLocalY) {
+                if (pSceneTouchEvent.isActionDown()&&!lista.isEmpty()) {
+                    if (foco30.getCurrentTileIndex()==1){
+                        goingBack(foco30);
+                    }else{
+                        if (lista.getLast().equals(cable10)||lista.getLast().equals(cable27)||lista.getLast().equals(cable31)){
+                            hudMarcador.aumentarMarcador(100);
+                            foco30.setCurrentTileIndex(1);
+                            lista.add(foco30);
+                        }
+                    }
+                }
+                return super.onAreaTouched(pSceneTouchEvent, pTouchAreaLocalX, pTouchAreaLocalY);
+            }
+        };
+        foco30.setCurrentTileIndex(0);
+        registerTouchArea(foco30);
+        attachChild(foco30);
+
+        // *** Agrega Foco 32
+        // colisiona con cable 28,31,33
+        foco32 = new AnimatedSprite(240,120,admRecursos.regionFoco,admRecursos.vbom){
+            // Aquí el código que ejecuta la foco es presionado
+            @Override
+            public boolean onAreaTouched(TouchEvent pSceneTouchEvent, float pTouchAreaLocalX, float pTouchAreaLocalY) {
+                if (pSceneTouchEvent.isActionDown()&&!lista.isEmpty()) {
+                    if (foco32.getCurrentTileIndex()==1){
+                        goingBack(foco32);
+                    }else{
+                        if (lista.getLast().equals(cable28)||lista.getLast().equals(cable31)||lista.getLast().equals(cable33)){
+                            hudMarcador.aumentarMarcador(100);
+                            foco32.setCurrentTileIndex(1);
+                            lista.add(foco32);
+                        }
+                    }
+                }
+                return super.onAreaTouched(pSceneTouchEvent, pTouchAreaLocalX, pTouchAreaLocalY);
+            }
+        };
+        foco32.setCurrentTileIndex(0);
+        registerTouchArea(foco32);
+        attachChild(foco32);
+
+        // *** Agrega Foco 34
+        // colisiona con cable 15,29,33
+        foco34 = new AnimatedSprite(413,170,admRecursos.regionFoco,admRecursos.vbom){
+            // Aquí el código que ejecuta la foco es presionado
+            @Override
+            public boolean onAreaTouched(TouchEvent pSceneTouchEvent, float pTouchAreaLocalX, float pTouchAreaLocalY) {
+                if (pSceneTouchEvent.isActionDown()&&!lista.isEmpty()) {
+                    if (foco34.getCurrentTileIndex()==1){
+                        goingBack(foco34);
+                    }else{
+                        if (lista.getLast().equals(cable15)||lista.getLast().equals(cable29)||lista.getLast().equals(cable33)){
+                            hudMarcador.aumentarMarcador(100);
+                            foco34.setCurrentTileIndex(1);
+                            lista.add(foco34);
+                        }
+                    }
+                }
+                return super.onAreaTouched(pSceneTouchEvent, pTouchAreaLocalX, pTouchAreaLocalY);
+            }
+        };
+        foco34.setCurrentTileIndex(0);
+        registerTouchArea(foco34);
+        attachChild(foco34);
 
         // *** Agrega EndBox
         // colisiona con cable 5 y cable 6
@@ -970,6 +1193,8 @@ public class EscenaNivel3 extends EscenaBase
         endBox.setCurrentTileIndex(0);
         registerTouchArea(endBox);
         attachChild(endBox);
+
+        admMusica.cargarMusicaNivel3();
     }
 
     // El ciclo principal de la escena
@@ -994,7 +1219,7 @@ public class EscenaNivel3 extends EscenaBase
 
     // Agrega el hud del Marcador
     private void agregarEstado() {
-        hudMarcador = new EstadoJuego(admRecursos.engine,admRecursos.actividadJuego);
+        hudMarcador = new EstadoJuego(admRecursos.engine,admRecursos.actividadJuego,"");
         admRecursos.camara.setHUD(hudMarcador);
     }
 
@@ -1088,6 +1313,8 @@ public class EscenaNivel3 extends EscenaBase
 
     @Override
     public void onBackKeyPressed() {
+        admMusica.liberarMusicaNivel();
+        admMusica.continuarMusicaMenu();
         admEscenas.crearEscenaJuego();
         admRecursos.camara.setHUD(null);    // Quita el HUD
         admEscenas.setEscena(TipoEscena.ESCENA_JUEGO);

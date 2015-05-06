@@ -277,6 +277,8 @@ public class EscenaNivel1 extends EscenaBase
         endBox.setCurrentTileIndex(0);
         registerTouchArea(endBox);
         attachChild(endBox);
+
+        admMusica.cargarMusicaNivel1();
     }
 
 
@@ -296,13 +298,14 @@ public class EscenaNivel1 extends EscenaBase
 
     }
     private void agregarEstado() {
-    hud = new EstadoJuego(admRecursos.engine,admRecursos.actividadJuego);
+    hud = new EstadoJuego(admRecursos.engine,admRecursos.actividadJuego,"");
     admRecursos.camara.setHUD(hud);
 }
 
     @Override
     public void onBackKeyPressed() {
-        admMusica.continuarMusica();
+        admMusica.liberarMusicaNivel();
+        admMusica.continuarMusicaMenu();
         admEscenas.crearEscenaJuego();
         admRecursos.camara.setHUD(null);    // Quita el HUD
         admEscenas.setEscena(TipoEscena.ESCENA_JUEGO);

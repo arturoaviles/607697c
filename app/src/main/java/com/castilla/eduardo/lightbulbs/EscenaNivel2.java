@@ -499,6 +499,8 @@ public class EscenaNivel2 extends EscenaBase
         registerTouchArea(endBox);
         attachChild(endBox);
 
+        admMusica.cargarMusicaNivel2();
+
 
     }
 
@@ -527,7 +529,7 @@ public class EscenaNivel2 extends EscenaBase
 
     // Agrega el hud del Marcador
     private void agregarEstado() {
-        hudMarcador = new EstadoJuego(admRecursos.engine,admRecursos.actividadJuego);
+        hudMarcador = new EstadoJuego(admRecursos.engine,admRecursos.actividadJuego,"");
         admRecursos.camara.setHUD(hudMarcador);
     }
 
@@ -621,6 +623,8 @@ public class EscenaNivel2 extends EscenaBase
 
     @Override
     public void onBackKeyPressed() {
+        admMusica.liberarMusicaNivel();
+        admMusica.continuarMusicaMenu();
         admEscenas.crearEscenaJuego();
         admRecursos.camara.setHUD(null);    // Quita el HUD
         admEscenas.setEscena(TipoEscena.ESCENA_JUEGO);
