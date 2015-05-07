@@ -94,6 +94,7 @@ public class EscenaMenu extends EscenaBase
                     admEscenas.crearEscenaMarcador();
                     admEscenas.setEscena(TipoEscena.ESCENA_MARCADOR);
                     admEscenas.liberarEscenaMenu();
+
                 }
                 return super.onAreaTouched(pSceneTouchEvent, pTouchAreaLocalX, pTouchAreaLocalY);
             }

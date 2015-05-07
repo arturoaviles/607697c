@@ -33,8 +33,9 @@ public class EstadoJuego extends HUD
         this.actividad = actividad;
 
         if(Escena.equals("marcadores")){
-            //agregarMarcadorMasAlto();
+            agregarMarcadorMasAlto();
         }else{
+            agregarMarcadorMasAlto();
             agregarMarcador();
         }
 
@@ -57,6 +58,11 @@ public class EstadoJuego extends HUD
         marcador += puntos;
         // Actualiza en el HUD
         txtMarcador.setText("Puntos: " + marcador);
+
+        // ¿Supera el marcador anterior?
+        if (marcador>marcadorMasAlto) {
+            setMarcadorMasAlto(marcador);
+        }
     }
 
     public void multiplicarMarcador(int delta) {
@@ -112,19 +118,32 @@ public class EstadoJuego extends HUD
     // Para el marcador mayor
     public void agregarMarcadorMasAlto() {
         // Un cuadro transparente arriba centrado
-        Rectangle cuadroMasAlto = new Rectangle(ControlJuego.ANCHO_CAMARA/8,ControlJuego.ALTO_CAMARA-60,
-                200,100, engine.getVertexBufferObjectManager());
+        Rectangle cuadroMasAlto = new Rectangle(ControlJuego.ANCHO_CAMARA/2,ControlJuego.ALTO_CAMARA/2-25,
+                270,450, engine.getVertexBufferObjectManager());
         cuadroMasAlto.setColor(0.2f, 0.2f, 0.2f, 0.7f);
-        this.attachChild(cuadroMasAlto);
+        //this.attachChild(cuadroMasAlto);
 
         // Letrero sobre el cuadro
         Font tipo = crearTipoLetra();
-        txtMarcadorMasAlto = new Text(100,50,
+        txtMarcadorMasAlto = new Text(0,0,
                 tipo,"Mayor: 0",15,engine.getVertexBufferObjectManager());
         txtMarcadorMasAlto.setWidth(200);
         txtMarcadorMasAlto.setHorizontalAlign(HorizontalAlign.CENTER);
 
         // Agrega el marcador al recuadro trasparente
         cuadroMasAlto.attachChild(txtMarcadorMasAlto);
+
     }
+
+    public int getMarcadorMasAlto() {
+        return marcadorMasAlto;
+    }
+
+    public void setMarcadorMasAlto(int ultimoMarcador) {
+        marcadorMasAlto = ultimoMarcador;
+        // Mostrar el marcador más alto
+        txtMarcadorMasAlto.setText("Mayor: " + ultimoMarcador);
+    }
+
+
 }

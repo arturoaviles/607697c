@@ -1,5 +1,7 @@
 package com.castilla.eduardo.lightbulbs;
 
+import android.content.Context;
+import android.os.Vibrator;
 import android.support.v7.app.ActionBarActivity;
         import android.os.Bundle;
 import android.view.KeyEvent;
@@ -68,7 +70,6 @@ public class ControlJuego extends SimpleBaseGameActivity
         // Crea la primer escena que se quiere mostrar
         admEscenas.crearEscenaSplash();
         admEscenas.setEscena(TipoEscena.ESCENA_SPLASH);
-
         // Programa la carga de la segunda escena, después de cierto tiempo
         mEngine.registerUpdateHandler(new TimerHandler(2,
                 new ITimerCallback() {
@@ -206,5 +207,11 @@ public class ControlJuego extends SimpleBaseGameActivity
             System.exit(0);
         }
     }
+
+
+
+
+
+
 }
 
