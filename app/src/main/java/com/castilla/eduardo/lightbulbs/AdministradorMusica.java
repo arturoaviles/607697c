@@ -7,6 +7,8 @@ import android.util.Log;
 
 import org.andengine.audio.music.Music;
 import org.andengine.audio.music.MusicFactory;
+import org.andengine.audio.sound.Sound;
+import org.andengine.audio.sound.SoundFactory;
 import org.andengine.engine.Engine;
 import org.andengine.engine.camera.Camera;
 import org.andengine.opengl.texture.ITexture;
@@ -37,6 +39,9 @@ public class AdministradorMusica {
     // ***** MUSICA *****
     private Music musicaMenu;
     private Music musicaNivel;
+
+    private Sound efectoSonido;
+    private Sound efectoExplosion;  // Ver cargarSonidos
 
     public static AdministradorMusica getInstance() {
         return INSTANCE;
@@ -150,9 +155,11 @@ public class AdministradorMusica {
         return musicaNivel;
     }
 
-    public void vibrar(){
-        Vibrator v = (Vibrator)actividadJuego.getSystemService(Context.VIBRATOR_SERVICE);
-        v.vibrate(20);
+    public void vibrar(int i){
+        if(leerPreferenciaEfectos()){
+            Vibrator v = (Vibrator)actividadJuego.getSystemService(Context.VIBRATOR_SERVICE);
+            v.vibrate(i);
+        }
     }
 
 
@@ -170,7 +177,33 @@ public class AdministradorMusica {
         SharedPreferences.Editor mPrefsEditor = mSharedPrefs.edit();
         mPrefsEditor.putBoolean("Musica", soundflag);
         mPrefsEditor.commit();
+    }
 
+    public boolean leerPreferenciaEfectos() {
+        SharedPreferences mSharedPrefs = actividadJuego.getSharedPreferences("PrefEfectos",Context.MODE_PRIVATE);
+        SharedPreferences.Editor mPrefsEditor = mSharedPrefs.edit();
+        boolean eff = mSharedPrefs.getBoolean("Efectos", true);
+        return eff;
+    }
 
+    public void modificarPreferenciaEfectos(boolean effflag) {
+        SharedPreferences mSharedPrefs = actividadJuego.getSharedPreferences("PrefEfectos",Context.MODE_PRIVATE);
+        SharedPreferences.Editor mPrefsEditor = mSharedPrefs.edit();
+        mPrefsEditor.putBoolean("Efectos", effflag);
+        mPrefsEditor.commit();
+    }
+
+    private void cargarSonidos() {
+        // Efecto de sonido
+        try {
+            efectoSonido = SoundFactory.createSoundFromAsset(engine.getSoundManager(),
+                    actividadJuego, "sonidos/bark.wav");
+            efectoExplosion = SoundFactory.createSoundFromAsset(engine.getSoundManager(),
+                    actividadJuego, "sonidos/choque.mp3");
+        } catch (final IOException e) {
+            Log.i("cargarSonidos","No se puede cargar efecto de sonido");
+        }
+        //efectoExplosion.setVolume(0.5f);    // Volumen de este archivo
+        // *** Ver onManagedUpdate, onSceneTouchEvent, onBackKeyPressed, liberarEscena
     }
 }

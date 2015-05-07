@@ -193,6 +193,7 @@ public class EscenaNivel3 extends EscenaBase
                     }else{
                         if (lista.isEmpty()||lista.getLast().equals(foco5)) {
                             hudMarcador.aumentarMarcador(100);
+                            admMusica.vibrar(16);
                             cable1.setCurrentTileIndex(1);
                             lista.add(cable1);
                             if (foco5.getCurrentTileIndex()==0){
@@ -228,6 +229,7 @@ public class EscenaNivel3 extends EscenaBase
 
                         if (lista.isEmpty()||lista.getLast().equals(foco7)) {
                             hudMarcador.aumentarMarcador(100);
+                            admMusica.vibrar(16);
                             cable2.setCurrentTileIndex(1);
                             lista.add(cable2);
                             if (foco7.getCurrentTileIndex()==0) {
@@ -261,6 +263,7 @@ public class EscenaNivel3 extends EscenaBase
 
                         if (lista.getLast().equals(foco7)) {
                             hudMarcador.aumentarMarcador(100);
+                            admMusica.vibrar(16);
                             cable3.setCurrentTileIndex(1);
                             lista.add(cable3);
                             if (foco7.getCurrentTileIndex()==0) {
@@ -295,6 +298,7 @@ public class EscenaNivel3 extends EscenaBase
 
                         if (lista.getLast().equals(foco9)) {
                             hudMarcador.aumentarMarcador(100);
+                            admMusica.vibrar(16);
                             cable4.setCurrentTileIndex(1);
                             lista.add(cable4);
                             if (foco9.getCurrentTileIndex()==0) {
@@ -328,6 +332,7 @@ public class EscenaNivel3 extends EscenaBase
 
                         if (lista.getLast().equals(foco5)||lista.getLast().equals(foco7)) {
                             hudMarcador.aumentarMarcador(100);
+                            admMusica.vibrar(16);
                             cable6.setCurrentTileIndex(1);
                             lista.add(cable6);
                             if (foco5.getCurrentTileIndex()==0) {
@@ -368,6 +373,7 @@ public class EscenaNivel3 extends EscenaBase
 
                         if (lista.getLast().equals(foco7)||lista.getLast().equals(foco9)) {
                             hudMarcador.aumentarMarcador(100);
+                            admMusica.vibrar(16);
                             cable8.setCurrentTileIndex(1);
                             lista.add(cable8);
                             if (foco7.getCurrentTileIndex()==0) {
@@ -406,6 +412,7 @@ public class EscenaNivel3 extends EscenaBase
 
                         if (lista.getLast().equals(foco5)||lista.getLast().equals(foco30)) {
                             hudMarcador.aumentarMarcador(100);
+                            admMusica.vibrar(16);
                             cable10.setCurrentTileIndex(1);
                             lista.add(cable10);
                             if (foco5.getCurrentTileIndex()==0) {
@@ -446,6 +453,7 @@ public class EscenaNivel3 extends EscenaBase
 
                         if (lista.getLast().equals(foco5)||lista.getLast().equals(foco16)) {
                             hudMarcador.aumentarMarcador(100);
+                            admMusica.vibrar(16);
                             cable11.setCurrentTileIndex(1);
                             lista.add(cable11);
                             if (foco5.getCurrentTileIndex()==0) {
@@ -484,6 +492,7 @@ public class EscenaNivel3 extends EscenaBase
 
                         if (lista.getLast().equals(foco7)||lista.getLast().equals(foco16)) {
                             hudMarcador.aumentarMarcador(100);
+                            admMusica.vibrar(16);
                             cable12.setCurrentTileIndex(1);
                             lista.add(cable12);
                             if (foco7.getCurrentTileIndex()==0) {
@@ -521,6 +530,7 @@ public class EscenaNivel3 extends EscenaBase
 
                         if (lista.getLast().equals(foco7)||lista.getLast().equals(foco20)) {
                             hudMarcador.aumentarMarcador(100);
+                            admMusica.vibrar(16);
                             cable13.setCurrentTileIndex(1);
                             lista.add(cable13);
                             if (foco7.getCurrentTileIndex()==0) {
@@ -559,6 +569,7 @@ public class EscenaNivel3 extends EscenaBase
 
                         if (lista.getLast().equals(foco9)||lista.getLast().equals(foco20)) {
                             hudMarcador.aumentarMarcador(100);
+                            admMusica.vibrar(16);
                             cable14.setCurrentTileIndex(1);
                             lista.add(cable14);
                             if (foco9.getCurrentTileIndex()==0) {
@@ -596,6 +607,7 @@ public class EscenaNivel3 extends EscenaBase
 
                         if (lista.getLast().equals(foco9)||lista.getLast().equals(foco34)) {
                             hudMarcador.aumentarMarcador(100);
+                            admMusica.vibrar(16);
                             cable15.setCurrentTileIndex(1);
                             lista.add(cable15);
                             if (foco9.getCurrentTileIndex()==0) {
@@ -636,6 +648,7 @@ public class EscenaNivel3 extends EscenaBase
 
                         if (lista.getLast().equals(foco16)||lista.getLast().equals(foco18)) {
                             hudMarcador.aumentarMarcador(100);
+                            admMusica.vibrar(16);
                             cable17.setCurrentTileIndex(1);
                             lista.add(cable17);
                             if (foco16.getCurrentTileIndex()==0) {
@@ -673,6 +686,7 @@ public class EscenaNivel3 extends EscenaBase
 
                         if (lista.getLast().equals(foco18)||lista.getLast().equals(foco20)) {
                             hudMarcador.aumentarMarcador(100);
+                            admMusica.vibrar(16);
                             cable19.setCurrentTileIndex(1);
                             lista.add(cable19);
                             if (foco18.getCurrentTileIndex()==0) {
@@ -710,6 +724,7 @@ public class EscenaNivel3 extends EscenaBase
 
                         if (lista.getLast().equals(foco16)||lista.getLast().equals(foco24)) {
                             hudMarcador.aumentarMarcador(100);
+                            admMusica.vibrar(16);
                             cable21.setCurrentTileIndex(1);
                             lista.add(cable21);
                             if (foco24.getCurrentTileIndex()==0) {
@@ -746,6 +761,7 @@ public class EscenaNivel3 extends EscenaBase
                     }else{
                         if (lista.getLast().equals(foco18)||lista.getLast().equals(foco25)) {
                             hudMarcador.aumentarMarcador(100);
+                            admMusica.vibrar(16);
                             cable22.setCurrentTileIndex(1);
                             lista.add(cable22);
                             if (foco18.getCurrentTileIndex()==0) {
@@ -784,6 +800,7 @@ public class EscenaNivel3 extends EscenaBase
 
                         if (lista.getLast().equals(foco20)||lista.getLast().equals(foco26)) {
                             hudMarcador.aumentarMarcador(100);
+                            admMusica.vibrar(16);
                             cable23.setCurrentTileIndex(1);
                             lista.add(cable23);
                             if (foco20.getCurrentTileIndex()==0) {
@@ -821,6 +838,7 @@ public class EscenaNivel3 extends EscenaBase
 
                         if (lista.getLast().equals(foco24)||lista.getLast().equals(foco30)) {
                             hudMarcador.aumentarMarcador(100);
+                            admMusica.vibrar(16);
                             cable27.setCurrentTileIndex(1);
                             lista.add(cable27);
                             if (foco24.getCurrentTileIndex()==0) {
@@ -858,6 +876,7 @@ public class EscenaNivel3 extends EscenaBase
 
                         if (lista.getLast().equals(foco25)||lista.getLast().equals(foco32)) {
                             hudMarcador.aumentarMarcador(100);
+                            admMusica.vibrar(16);
                             cable28.setCurrentTileIndex(1);
                             lista.add(cable28);
                             if (foco25.getCurrentTileIndex()==0) {
@@ -895,6 +914,7 @@ public class EscenaNivel3 extends EscenaBase
 
                         if (lista.getLast().equals(foco26)||lista.getLast().equals(foco34)) {
                             hudMarcador.aumentarMarcador(100);
+                            admMusica.vibrar(16);
                             cable29.setCurrentTileIndex(1);
                             lista.add(cable29);
                             if (foco26.getCurrentTileIndex()==0) {
@@ -932,6 +952,7 @@ public class EscenaNivel3 extends EscenaBase
                     }else{
                         if (lista.getLast().equals(foco30)||lista.getLast().equals(foco32)) {
                             hudMarcador.aumentarMarcador(100);
+                            admMusica.vibrar(16);
                             cable31.setCurrentTileIndex(1);
                             lista.add(cable31);
                             if (foco30.getCurrentTileIndex()==0) {
@@ -970,6 +991,7 @@ public class EscenaNivel3 extends EscenaBase
 
                         if (lista.getLast().equals(foco32)||lista.getLast().equals(foco34)) {
                             hudMarcador.aumentarMarcador(100);
+                            admMusica.vibrar(16);
                             cable33.setCurrentTileIndex(1);
                             lista.add(cable33);
                             if (foco32.getCurrentTileIndex()==0) {
@@ -1164,6 +1186,7 @@ public class EscenaNivel3 extends EscenaBase
                             if (endBox.getCurrentTileIndex() == 0) {
                                 hudMarcador.multiplicarMarcador(((int)rectanguloEnergia.getWidth()/10));
                                 ganar=true;
+                                admMusica.vibrar(40);
                                 endBox.setCurrentTileIndex(1);
                                 // Programa la carga de la segunda escena, después de cierto tiempo
                                 admRecursos.engine.registerUpdateHandler(new TimerHandler(0.5f,
@@ -1283,9 +1306,10 @@ public class EscenaNivel3 extends EscenaBase
                 if (pSceneTouchEvent.isActionDown()) {
                     if (btnOnOFF_2.getCurrentTileIndex()==0){
                         btnOnOFF_2.setCurrentTileIndex(1);
-                        //ControlJuego.efectosOn=true;
+                        admMusica.modificarPreferenciaEfectos(false);
                     }else{
                         btnOnOFF_2.setCurrentTileIndex(0);
+                        admMusica.modificarPreferenciaEfectos(true);
                         //ControlJuego.efectosOn=false;
                     }
                 }
@@ -1294,6 +1318,12 @@ public class EscenaNivel3 extends EscenaBase
         };
         escenaPausa.registerTouchArea(btnOnOFF_2);
         escenaPausa.attachChild(btnOnOFF_2);
+
+        if(admMusica.leerPreferenciaEfectos()){
+            btnOnOFF_2.setCurrentTileIndex(0);
+        }else{
+            btnOnOFF_2.setCurrentTileIndex(1);
+        }
 
     }
 
