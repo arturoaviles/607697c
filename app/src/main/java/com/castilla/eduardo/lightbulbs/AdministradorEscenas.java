@@ -45,6 +45,8 @@ public class AdministradorEscenas
         return escenaActual;
     }
 
+
+
     /*
      * Pone en la pantalla la escena que llega como parámetro y guarda el nuevo estado
      */

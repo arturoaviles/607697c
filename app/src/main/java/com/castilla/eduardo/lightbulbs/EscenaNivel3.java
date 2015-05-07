@@ -1158,6 +1158,7 @@ public class EscenaNivel3 extends EscenaBase
                     }
                 }
                 if(allBulbsOn) {
+                    revisarMarcador();
                     if (cable3.getCurrentTileIndex() == 1 || cable4.getCurrentTileIndex() == 1) {
                         if (pSceneTouchEvent.isActionDown()) {
                             if (endBox.getCurrentTileIndex() == 0) {
@@ -1214,6 +1215,7 @@ public class EscenaNivel3 extends EscenaBase
     private void agregarEstado() {
         hudMarcador = new EstadoJuego(admRecursos.engine,admRecursos.actividadJuego,"");
         admRecursos.camara.setHUD(hudMarcador);
+        hudMarcador.setMarcadorMasAlto(admRecursos.leerRecordNivel3());
     }
 
     // Crea la escena que se mostrará cuando se pausa el juego
@@ -1307,7 +1309,7 @@ public class EscenaNivel3 extends EscenaBase
     @Override
     public void onBackKeyPressed() {
         admMusica.liberarMusicaNivel();
-        admMusica.continuarMusicaMenu();
+        admMusica.reproducirMusicaMenu();
         admEscenas.crearEscenaJuego();
         admRecursos.camara.setHUD(null);    // Quita el HUD
         admEscenas.setEscena(TipoEscena.ESCENA_JUEGO);
@@ -1323,6 +1325,16 @@ public class EscenaNivel3 extends EscenaBase
         }
         lista.getLast().setCurrentTileIndex(0);
         lista.removeLast();
+    }
+
+    private void revisarMarcador() {
+        //
+        int masAlto = hudMarcador.getMarcadorMasAlto();
+        int puntos = hudMarcador.getMarcador();
+        // si la puntacíon supera el highscore
+        if (puntos>=masAlto) {
+            admRecursos.modificarRecordNivel3(puntos);
+        }
     }
 
     @Override

@@ -259,6 +259,7 @@ public class EscenaNivel1 extends EscenaBase
                             if (endBox.getCurrentTileIndex() == 0) {
                                 hudMarcador.multiplicarMarcador(((int)rectanguloEnergia.getWidth()/10));
                                 ganar=true;
+
                                 endBox.setCurrentTileIndex(1);
                                 // Programa la carga de la segunda escena, después de cierto tiempo
                                 admRecursos.engine.registerUpdateHandler(new TimerHandler(0.5f,
@@ -316,11 +317,7 @@ public class EscenaNivel1 extends EscenaBase
     private void agregarEstado() {
         hudMarcador = new EstadoJuego(admRecursos.engine,admRecursos.actividadJuego,"");
         admRecursos.camara.setHUD(hudMarcador);
-
-        // Para marcador más alto. PRIMERO lee el marcador anterior
-        SharedPreferences preferencias = admRecursos.actividadJuego.getSharedPreferences("MarcadorMasAlto", Context.MODE_PRIVATE);
-        int ultimoMarcador = preferencias.getInt("alto",0);
-        hudMarcador.setMarcadorMasAlto(ultimoMarcador);
+        hudMarcador.setMarcadorMasAlto(admRecursos.leerRecordNivel1());
     }
 
     // Crea la escena que se mostrará cuando se pausa el juego
@@ -414,7 +411,10 @@ public class EscenaNivel1 extends EscenaBase
     @Override
     public void onBackKeyPressed() {
         admMusica.liberarMusicaNivel();
-        admMusica.continuarMusicaMenu();
+        if(admMusica.leerPreferenciaMusica()){
+           admMusica.reproducirMusicaMenu();
+        }
+
         admEscenas.crearEscenaJuego();
         admRecursos.camara.setHUD(null);    // Quita el HUD
         admEscenas.setEscena(TipoEscena.ESCENA_JUEGO);
@@ -428,8 +428,8 @@ public class EscenaNivel1 extends EscenaBase
             lista.getLast().setCurrentTileIndex(0);
             lista.removeLast();
         }
-        //lista.getLast().setCurrentTileIndex(0);
-        //lista.removeLast();
+        lista.getLast().setCurrentTileIndex(0);
+        lista.removeLast();
     }
 
     private void revisarMarcador() {
@@ -438,12 +438,7 @@ public class EscenaNivel1 extends EscenaBase
         int puntos = hudMarcador.getMarcador();
         // si la puntacíon supera el highscore
         if (puntos>=masAlto) {
-            // guardarlo en las preferencias
-            SharedPreferences preferencias = admRecursos.actividadJuego.getSharedPreferences(
-                    "MarcadorMasAlto", Context.MODE_PRIVATE);
-            SharedPreferences.Editor editor = preferencias.edit();
-            editor.putInt("alto",masAlto);
-            editor.commit();
+            admRecursos.modificarRecordNivel1(puntos);
         }
     }
 

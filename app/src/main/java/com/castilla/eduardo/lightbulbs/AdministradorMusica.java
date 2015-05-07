@@ -1,6 +1,7 @@
 package com.castilla.eduardo.lightbulbs;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Vibrator;
 import android.util.Log;
 
@@ -55,9 +56,10 @@ public class AdministradorMusica {
         catch (IOException e) {
             Log.i("cargarSonidos","No se puede cargar demo.ogg");
         }
-        // Reproducir
+
         musicaMenu.setLooping(true);
-        musicaMenu.play();
+
+        reproducirMusicaMenu();
     }
 
     public void cargarMusicaNivel1(){
@@ -69,9 +71,7 @@ public class AdministradorMusica {
         catch (IOException e) {
             Log.i("cargarSonidos","No se puede cargar demo.ogg");
         }
-        // Reproducir
-
-        musicaNivel.play();
+        reproducirMusicaNivel();
     }
 
     public void cargarMusicaNivel2(){
@@ -83,9 +83,7 @@ public class AdministradorMusica {
         catch (IOException e) {
             Log.i("cargarSonidos","No se puede cargar demo.ogg");
         }
-        // Reproducir
-
-        musicaNivel.play();
+        reproducirMusicaNivel();
     }
 
 
@@ -98,9 +96,8 @@ public class AdministradorMusica {
         catch (IOException e) {
             Log.i("cargarSonidos","No se puede cargar demo.ogg");
         }
-        // Reproducir
 
-        musicaNivel.play();
+        reproducirMusicaNivel();
     }
 
     public void liberarMusicaNivel(){
@@ -112,11 +109,37 @@ public class AdministradorMusica {
     }
 
     public void pararMusicaMenu(){
-        musicaMenu.pause();
+        if(musicaMenu.isPlaying()){
+            musicaMenu.pause();
+        }
     }
 
-    public void continuarMusicaMenu(){
-        musicaMenu.resume();
+    public void pararMusicaNivel(){
+        if(musicaNivel.isPlaying()){
+            musicaNivel.pause();
+        }
+
+
+    }
+
+    public void reproducirMusicaMenu(){
+        if(leerPreferenciaMusica()){
+            if(musicaMenu.isPlaying()){
+                musicaMenu.resume();
+            }else{
+                musicaMenu.play();
+            }
+        }
+    }
+
+    public void reproducirMusicaNivel(){
+        if(leerPreferenciaMusica()){
+            if(musicaNivel.isPlaying()){
+                musicaNivel.resume();
+            }else{
+                musicaNivel.play();
+            }
+        }
     }
 
     public Music getMusicaMenu() {
@@ -130,5 +153,24 @@ public class AdministradorMusica {
     public void vibrar(){
         Vibrator v = (Vibrator)actividadJuego.getSystemService(Context.VIBRATOR_SERVICE);
         v.vibrate(20);
+    }
+
+
+    // Si está en true entonces se escucha la musica
+
+    public boolean leerPreferenciaMusica() {
+        SharedPreferences mSharedPrefs = actividadJuego.getSharedPreferences("PrefMusica",Context.MODE_PRIVATE);
+        SharedPreferences.Editor mPrefsEditor = mSharedPrefs.edit();
+        boolean musicOn = mSharedPrefs.getBoolean("Musica", true);
+        return musicOn;
+    }
+
+    public void modificarPreferenciaMusica(boolean soundflag) {
+        SharedPreferences mSharedPrefs = actividadJuego.getSharedPreferences("PrefMusica",Context.MODE_PRIVATE);
+        SharedPreferences.Editor mPrefsEditor = mSharedPrefs.edit();
+        mPrefsEditor.putBoolean("Musica", soundflag);
+        mPrefsEditor.commit();
+
+
     }
 }

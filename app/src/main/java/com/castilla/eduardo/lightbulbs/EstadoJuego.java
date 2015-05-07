@@ -27,6 +27,7 @@ public class EstadoJuego extends HUD
     private int marcadorMasAlto;
 
 
+
     public EstadoJuego(Engine engine, ControlJuego actividad,String Escena) {
         this.engine = engine;
         marcador = 0;
@@ -120,8 +121,8 @@ public class EstadoJuego extends HUD
         // Un cuadro transparente arriba centrado
         Rectangle cuadroMasAlto = new Rectangle(ControlJuego.ANCHO_CAMARA/2,ControlJuego.ALTO_CAMARA/2-25,
                 270,450, engine.getVertexBufferObjectManager());
-        cuadroMasAlto.setColor(0.2f, 0.2f, 0.2f, 0.7f);
-        //this.attachChild(cuadroMasAlto);
+        cuadroMasAlto.setColor(0.2f, 0.2f, 0.2f, 0.1f);
+        this.attachChild(cuadroMasAlto);
 
         // Letrero sobre el cuadro
         Font tipo = crearTipoLetra();
@@ -131,7 +132,27 @@ public class EstadoJuego extends HUD
         txtMarcadorMasAlto.setHorizontalAlign(HorizontalAlign.CENTER);
 
         // Agrega el marcador al recuadro trasparente
-        cuadroMasAlto.attachChild(txtMarcadorMasAlto);
+        //cuadroMasAlto.attachChild(txtMarcadorMasAlto);
+
+    }
+
+    // Para el marcador mayor
+    public void agregarListadeMarcadores() {
+        // Un cuadro transparente arriba centrado
+        Rectangle cuadroMarcadores = new Rectangle(ControlJuego.ANCHO_CAMARA/2,ControlJuego.ALTO_CAMARA/2-25,
+                270,450, engine.getVertexBufferObjectManager());
+        cuadroMarcadores.setColor(0.2f, 0.2f, 0.2f, 0.5f);
+        this.attachChild(cuadroMarcadores);
+
+        // Letrero sobre el cuadro
+        Font tipo = crearTipoLetra();
+        txtMarcadorMasAlto = new Text(0,0,
+                tipo,"Mayor: 0",15,engine.getVertexBufferObjectManager());
+        txtMarcadorMasAlto.setWidth(200);
+        txtMarcadorMasAlto.setHorizontalAlign(HorizontalAlign.CENTER);
+
+        // Agrega el marcador al recuadro trasparente
+        cuadroMarcadores.attachChild(txtMarcadorMasAlto);
 
     }
 
