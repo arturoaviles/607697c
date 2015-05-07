@@ -469,7 +469,7 @@ public class AdministradorRecursos {
 
 
     public void cargarRecursosNivel1() {
-        cargarRecursosBasicosDeNivel();
+        cargarRecursosBasicosDeNivel(1);
     }
 
 
@@ -479,7 +479,7 @@ public class AdministradorRecursos {
 
 
     public void cargarRecursosNivel2() {
-        cargarRecursosBasicosDeNivel();
+        cargarRecursosBasicosDeNivel(2);
     }
 
     public void liberarRecursosNivel2() {
@@ -488,7 +488,8 @@ public class AdministradorRecursos {
 
 
     public void cargarRecursosNivel3() {
-        cargarRecursosBasicosDeNivel();
+
+        cargarRecursosBasicosDeNivel(3);
     }
 
     public void liberarRecursosNivel3() {
@@ -496,12 +497,23 @@ public class AdministradorRecursos {
     }
 
 
-    public void cargarRecursosBasicosDeNivel(){
+    public void cargarRecursosBasicosDeNivel(int i){
 
         //Carga la imagen de fondo
         try {
-            texturaFondoNivel = new AssetBitmapTexture(actividadJuego.getTextureManager(),
-                    actividadJuego.getAssets(), "fondoNivel.jpg");
+
+            if(i == 1){
+                texturaFondoNivel = new AssetBitmapTexture(actividadJuego.getTextureManager(),
+                        actividadJuego.getAssets(), "fondoNivel.jpg");
+
+            }else if(i==2){
+                texturaFondoNivel = new AssetBitmapTexture(actividadJuego.getTextureManager(),
+                        actividadJuego.getAssets(), "nivelMadera.jpg");
+            }else{
+                texturaFondoNivel = new AssetBitmapTexture(actividadJuego.getTextureManager(),
+                        actividadJuego.getAssets(), "nivelMetal.jpg");
+            }
+
             regionFondoNivel = TextureRegionFactory.extractFromTexture(texturaFondoNivel);
             texturaFondoNivel.load();
         } catch (IOException e) {

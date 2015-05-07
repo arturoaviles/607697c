@@ -127,7 +127,7 @@ public class EscenaNivel1 extends EscenaBase
         // *** Agrega los botones al Nivel 2
 
         // Botón Pausa
-        btnPausa = new ButtonSprite(420,750,
+        btnPausa = new ButtonSprite(410,740,
                 admRecursos.regionBtnPausa,admRecursos.vbom) {
             // Aquí el código que ejecuta el botón cuando es presionado
             @Override
@@ -303,7 +303,7 @@ public class EscenaNivel1 extends EscenaBase
             btnContinuar.setCurrentTileIndex(0);
         }
         if (rectanguloEnergia.getWidth() > 0) {
-            rectanguloEnergia.setWidth(rectanguloEnergia.getWidth() - 2.0f);
+            rectanguloEnergia.setWidth(rectanguloEnergia.getWidth() - 1.7f);
         }else{
             admEscenas.crearEscenaFin(0);
             admRecursos.camara.setHUD(null);

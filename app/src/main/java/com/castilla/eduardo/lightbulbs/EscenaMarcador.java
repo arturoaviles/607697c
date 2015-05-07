@@ -86,7 +86,7 @@ public class EscenaMarcador extends EscenaBase
         // Un cuadro transparente arriba centrado
         Rectangle cuadroMarcadores = new Rectangle(ControlJuego.ANCHO_CAMARA/2,ControlJuego.ALTO_CAMARA/2-25,
                 270,450, admRecursos.engine.getVertexBufferObjectManager());
-        cuadroMarcadores.setColor(0.2f, 0.2f, 0.2f, 0.5f);
+        cuadroMarcadores.setColor(0.2f, 0.2f, 0.2f, 0.0f);
         this.attachChild(cuadroMarcadores);
 
         int marcadorMasAlto1 = admRecursos.leerRecordNivel1();
@@ -100,8 +100,8 @@ public class EscenaMarcador extends EscenaBase
 
         // Letrero sobre el cuadro
         Font tipo = crearTipoLetra();
-        txtMarcadorMasAlto1 = new Text(20,380,
-                tipo,"Mayor: 0",15,admRecursos.engine.getVertexBufferObjectManager());
+        txtMarcadorMasAlto1 = new Text(40,380,
+                tipo,"Mayor: 0",30,admRecursos.engine.getVertexBufferObjectManager());
         txtMarcadorMasAlto1.setText("NIVEL 1: "+marcadorMasAlto1);
         txtMarcadorMasAlto1.setWidth(200);
         txtMarcadorMasAlto1.setHorizontalAlign(HorizontalAlign.CENTER);
@@ -110,8 +110,8 @@ public class EscenaMarcador extends EscenaBase
         // Agrega el marcador al recuadro trasparente
         cuadroMarcadores.attachChild(txtMarcadorMasAlto1);
 
-        txtMarcadorMasAlto2 = new Text(20,230,
-                tipo,"Mayor: 0",15,admRecursos.engine.getVertexBufferObjectManager());
+        txtMarcadorMasAlto2 = new Text(40,230,
+                tipo,"Mayor: 0",30,admRecursos.engine.getVertexBufferObjectManager());
         txtMarcadorMasAlto2.setText("NIVEL 2: "+marcadorMasAlto2);
         txtMarcadorMasAlto2.setWidth(200);
         txtMarcadorMasAlto2.setHorizontalAlign(HorizontalAlign.CENTER);
@@ -120,8 +120,8 @@ public class EscenaMarcador extends EscenaBase
         // Agrega el marcador al recuadro trasparente
         cuadroMarcadores.attachChild(txtMarcadorMasAlto2);
 
-        txtMarcadorMasAlto3 = new Text(20,80,
-                tipo,"Mayor: 0",15,admRecursos.engine.getVertexBufferObjectManager());
+        txtMarcadorMasAlto3 = new Text(40,80,
+                tipo,"Mayor: 0",30,admRecursos.engine.getVertexBufferObjectManager());
         txtMarcadorMasAlto3.setText("NIVEL 3: "+marcadorMasAlto3);
         txtMarcadorMasAlto3.setWidth(200);
         txtMarcadorMasAlto3.setHorizontalAlign(HorizontalAlign.CENTER);
