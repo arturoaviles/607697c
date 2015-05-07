@@ -186,6 +186,10 @@ public class EscenaNivel1 extends EscenaBase
                             hudMarcador.aumentarMarcador(100);
                             cable1.setCurrentTileIndex(1);
                             lista.add(cable1);
+                            if (foco1.getCurrentTileIndex()==0) {
+                                foco1.setCurrentTileIndex(1);
+                                lista.add(foco1);
+                            }
                         }
                     }
                 }
@@ -201,24 +205,6 @@ public class EscenaNivel1 extends EscenaBase
         // *** Agrega Foco1
         foco1 = new AnimatedSprite(240,400,admRecursos.regionFoco,admRecursos.vbom){
 
-            // Aquí el código que ejecuta la foco es presionado
-            @Override
-            public boolean onAreaTouched(TouchEvent pSceneTouchEvent, float pTouchAreaLocalX, float pTouchAreaLocalY) {
-
-                if (pSceneTouchEvent.isActionDown()&&!lista.isEmpty()) {
-
-                    if (foco1.getCurrentTileIndex()==1){
-                        goingBack(foco1);
-                    }else{
-                        if (lista.getLast().equals(cable1)) {
-                            hudMarcador.aumentarMarcador(100);
-                            foco1.setCurrentTileIndex(1);
-                            lista.add(foco1);
-                        }
-                    }
-                }
-                return super.onAreaTouched(pSceneTouchEvent, pTouchAreaLocalX, pTouchAreaLocalY);
-            }
         };
         foco1.setCurrentTileIndex(0);
 
