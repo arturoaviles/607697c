@@ -19,10 +19,6 @@
   <component name="ChangeListManager">
     <list default="true" readonly="true" id="0960f1e5-06e8-4f22-bd1b-519b53d854c2" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/castilla/eduardo/lightbulbs/AdministradorMusica.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/castilla/eduardo/lightbulbs/AdministradorMusica.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/castilla/eduardo/lightbulbs/EscenaAjustes.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/castilla/eduardo/lightbulbs/EscenaAjustes.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/castilla/eduardo/lightbulbs/EscenaNivel1.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/castilla/eduardo/lightbulbs/EscenaNivel1.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/castilla/eduardo/lightbulbs/EscenaNivel2.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/castilla/eduardo/lightbulbs/EscenaNivel2.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/castilla/eduardo/lightbulbs/EscenaNivel3.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/castilla/eduardo/lightbulbs/EscenaNivel3.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Lightbulbs.iws" />
@@ -49,8 +45,8 @@
       <file leaf-file-name="AdministradorMusica.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/castilla/eduardo/lightbulbs/AdministradorMusica.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.22018349" vertical-offset="2665" max-vertical-offset="3077">
-              <caret line="195" column="34" selection-start-line="195" selection-start-column="34" selection-end-line="195" selection-end-column="34" />
+            <state vertical-scroll-proportion="4.1070337" vertical-offset="0" max-vertical-offset="3128">
+              <caret line="105" column="37" selection-start-line="105" selection-start-column="37" selection-end-line="105" selection-end-column="37" />
               <folding />
             </state>
           </provider>
@@ -1644,7 +1640,11 @@
       <created>1431009796104</created>
       <updated>1431009796104</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="Se implementó vibración&#10;                            &#10;Hizó commit Eduardo Castilla">
+      <created>1431011955105</created>
+      <updated>1431011955105</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1736,7 +1736,8 @@
     <MESSAGE value="Se Terminaron de implementar los marcadores&#10;&#10;Hizó commit Eduardo Castilla" />
     <MESSAGE value="Se implemetaron las preferencias para el sonido&#10;                            &#10;Hizó commit Eduardo Castilla" />
     <MESSAGE value="Se importaron las nuevas pantallas de niveles 2 y 3&#10;                            &#10;Hizó commit Eduardo Castilla" />
-    <option name="LAST_COMMIT_MESSAGE" value="Se importaron las nuevas pantallas de niveles 2 y 3&#10;                            &#10;Hizó commit Eduardo Castilla" />
+    <MESSAGE value="Se implementó vibración&#10;                            &#10;Hizó commit Eduardo Castilla" />
+    <option name="LAST_COMMIT_MESSAGE" value="Se implementó vibración&#10;                            &#10;Hizó commit Eduardo Castilla" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -2099,8 +2100,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/castilla/eduardo/lightbulbs/AdministradorMusica.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.22018349" vertical-offset="2665" max-vertical-offset="3077">
-          <caret line="195" column="34" selection-start-line="195" selection-start-column="34" selection-end-line="195" selection-end-column="34" />
+        <state vertical-scroll-proportion="4.1070337" vertical-offset="0" max-vertical-offset="3128">
+          <caret line="105" column="37" selection-start-line="105" selection-start-column="37" selection-end-line="105" selection-end-column="37" />
           <folding />
         </state>
       </provider>

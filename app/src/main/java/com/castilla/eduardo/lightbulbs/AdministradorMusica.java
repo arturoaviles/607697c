@@ -76,6 +76,7 @@ public class AdministradorMusica {
         catch (IOException e) {
             Log.i("cargarSonidos","No se puede cargar demo.ogg");
         }
+        musicaNivel.setLooping(true);
         reproducirMusicaNivel();
     }
 
@@ -88,6 +89,7 @@ public class AdministradorMusica {
         catch (IOException e) {
             Log.i("cargarSonidos","No se puede cargar demo.ogg");
         }
+        musicaNivel.setLooping(true);
         reproducirMusicaNivel();
     }
 
@@ -101,6 +103,7 @@ public class AdministradorMusica {
         catch (IOException e) {
             Log.i("cargarSonidos","No se puede cargar demo.ogg");
         }
+        musicaNivel.setLooping(true);
 
         reproducirMusicaNivel();
     }
