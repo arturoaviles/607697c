@@ -189,6 +189,7 @@ public class EscenaNivel2 extends EscenaBase
                     }else{
                         if (lista.isEmpty()||lista.getLast().equals(foco1)) {
                             hudMarcador.aumentarMarcador(100);
+                            admMusica.vibrar(16);
                             cable1.setCurrentTileIndex(1);
                             lista.add(cable1);
                             if (foco1.getCurrentTileIndex()==0) {
@@ -223,6 +224,7 @@ public class EscenaNivel2 extends EscenaBase
 
                         if (lista.getLast().equals(foco1)||lista.getLast().equals(foco2)) {
                             hudMarcador.aumentarMarcador(100);
+                            admMusica.vibrar(16);
                             cable2.setCurrentTileIndex(1);
                             lista.add(cable2);
                             if (foco1.getCurrentTileIndex()==0) {
@@ -257,6 +259,7 @@ public class EscenaNivel2 extends EscenaBase
 
                         if (lista.getLast().equals(foco3)||lista.getLast().equals(foco2)) {
                             hudMarcador.aumentarMarcador(100);
+                            admMusica.vibrar(16);
                             cable3.setCurrentTileIndex(1);
                             lista.add(cable3);
                             if (foco2.getCurrentTileIndex()==0) {
@@ -290,6 +293,7 @@ public class EscenaNivel2 extends EscenaBase
                     }else{
                         if (lista.isEmpty()||lista.getLast().equals(foco3)) {
                             hudMarcador.aumentarMarcador(100);
+                            admMusica.vibrar(16);
                             cable4.setCurrentTileIndex(1);
                             lista.add(cable4);
                             if (foco3.getCurrentTileIndex()==0) {
@@ -320,6 +324,7 @@ public class EscenaNivel2 extends EscenaBase
                     }else{
                         if (lista.getLast().equals(foco2)) {
                             hudMarcador.aumentarMarcador(100);
+                            admMusica.vibrar(16);
                             cable5.setCurrentTileIndex(1);
                             lista.add(cable5);
                             if (foco2.getCurrentTileIndex()==0) {
@@ -350,6 +355,7 @@ public class EscenaNivel2 extends EscenaBase
                     }else{
                         if (lista.getLast().equals(foco4)) {
                             hudMarcador.aumentarMarcador(100);
+                            admMusica.vibrar(16);
                             cable6.setCurrentTileIndex(1);
                             lista.add(cable6);
                             if (foco4.getCurrentTileIndex()==0) {
@@ -380,6 +386,7 @@ public class EscenaNivel2 extends EscenaBase
                     }else{
                         if (lista.getLast().equals(foco3)||lista.getLast().equals(foco4)) {
                             hudMarcador.aumentarMarcador(100);
+                            admMusica.vibrar(16);
                             cable7.setCurrentTileIndex(1);
                             lista.add(cable7);
                             if (foco3.getCurrentTileIndex()==0) {
@@ -465,6 +472,7 @@ public class EscenaNivel2 extends EscenaBase
                             if (endBox.getCurrentTileIndex() == 0) {
                                 hudMarcador.multiplicarMarcador(((int)rectanguloEnergia.getWidth()/10));
                                 ganar=true;
+                                admMusica.vibrar(30);
                                 endBox.setCurrentTileIndex(1);
                                 // Programa la carga de la segunda escena, después de cierto tiempo
                                 admRecursos.engine.registerUpdateHandler(new TimerHandler(0.5f,
@@ -585,10 +593,10 @@ public class EscenaNivel2 extends EscenaBase
                 if (pSceneTouchEvent.isActionDown()) {
                     if (btnOnOFF_2.getCurrentTileIndex()==0){
                         btnOnOFF_2.setCurrentTileIndex(1);
-                        //ControlJuego.efectosOn=true;
+                        admMusica.modificarPreferenciaEfectos(false);
                     }else{
                         btnOnOFF_2.setCurrentTileIndex(0);
-                        //ControlJuego.efectosOn=false;
+                        admMusica.modificarPreferenciaEfectos(true);
                     }
                 }
                 return super.onAreaTouched(pSceneTouchEvent, pTouchAreaLocalX, pTouchAreaLocalY);
@@ -596,6 +604,12 @@ public class EscenaNivel2 extends EscenaBase
         };
         escenaPausa.registerTouchArea(btnOnOFF_2);
         escenaPausa.attachChild(btnOnOFF_2);
+
+        if(admMusica.leerPreferenciaEfectos()){
+            btnOnOFF_2.setCurrentTileIndex(0);
+        }else{
+            btnOnOFF_2.setCurrentTileIndex(1);
+        }
 
     }
 

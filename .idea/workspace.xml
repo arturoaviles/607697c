@@ -18,6 +18,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" readonly="true" id="0960f1e5-06e8-4f22-bd1b-519b53d854c2" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/castilla/eduardo/lightbulbs/AdministradorMusica.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/castilla/eduardo/lightbulbs/AdministradorMusica.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/castilla/eduardo/lightbulbs/EscenaAjustes.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/castilla/eduardo/lightbulbs/EscenaAjustes.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/castilla/eduardo/lightbulbs/EscenaNivel1.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/castilla/eduardo/lightbulbs/EscenaNivel1.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/castilla/eduardo/lightbulbs/EscenaNivel2.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/castilla/eduardo/lightbulbs/EscenaNivel2.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/castilla/eduardo/lightbulbs/EscenaNivel3.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/castilla/eduardo/lightbulbs/EscenaNivel3.java" />
@@ -47,8 +49,8 @@
       <file leaf-file-name="AdministradorMusica.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/castilla/eduardo/lightbulbs/AdministradorMusica.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="2.8165138" vertical-offset="1153" max-vertical-offset="2550">
-              <caret line="154" column="22" selection-start-line="154" selection-start-column="22" selection-end-line="154" selection-end-column="22" />
+            <state vertical-scroll-proportion="0.22018349" vertical-offset="2665" max-vertical-offset="3077">
+              <caret line="195" column="34" selection-start-line="195" selection-start-column="34" selection-end-line="195" selection-end-column="34" />
               <folding />
             </state>
           </provider>
@@ -57,8 +59,8 @@
       <file leaf-file-name="EscenaNivel3.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/castilla/eduardo/lightbulbs/EscenaNivel3.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="20716" max-vertical-offset="22712">
-              <caret line="1274" column="9" selection-start-line="1274" selection-start-column="9" selection-end-line="1274" selection-end-column="9" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="21549" max-vertical-offset="23222">
+              <caret line="1309" column="26" selection-start-line="1309" selection-start-column="26" selection-end-line="1309" selection-end-column="26" />
               <folding />
             </state>
           </provider>
@@ -87,8 +89,8 @@
       <file leaf-file-name="EscenaAjustes.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/castilla/eduardo/lightbulbs/EscenaAjustes.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="799" max-vertical-offset="1802">
-              <caret line="66" column="0" selection-start-line="66" selection-start-column="0" selection-end-line="70" selection-end-column="9" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="867" max-vertical-offset="1938">
+              <caret line="95" column="7" selection-start-line="95" selection-start-column="7" selection-end-line="100" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -128,8 +130,8 @@
       <file leaf-file-name="EscenaNivel1.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/castilla/eduardo/lightbulbs/EscenaNivel1.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="5593" max-vertical-offset="7395">
-              <caret line="348" column="119" selection-start-line="348" selection-start-column="119" selection-end-line="370" selection-end-column="9" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="5967" max-vertical-offset="7565">
+              <caret line="396" column="0" selection-start-line="396" selection-start-column="0" selection-end-line="400" selection-end-column="9" />
               <folding />
             </state>
           </provider>
@@ -138,8 +140,8 @@
       <file leaf-file-name="EscenaNivel2.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/castilla/eduardo/lightbulbs/EscenaNivel2.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="9058" max-vertical-offset="10880">
-              <caret line="576" column="9" selection-start-line="576" selection-start-column="9" selection-end-line="576" selection-end-column="9" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="9517" max-vertical-offset="11118">
+              <caret line="595" column="67" selection-start-line="595" selection-start-column="67" selection-end-line="595" selection-end-column="67" />
               <folding />
             </state>
           </provider>
@@ -148,7 +150,7 @@
       <file leaf-file-name="EscenaMarcador.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/castilla/eduardo/lightbulbs/EscenaMarcador.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1309" max-vertical-offset="2278">
+            <state vertical-scroll-proportion="0.0" vertical-offset="1445" max-vertical-offset="2278">
               <caret line="89" column="43" selection-start-line="89" selection-start-column="43" selection-end-line="89" selection-end-column="43" />
               <folding />
             </state>
@@ -1183,14 +1185,14 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/castilla/eduardo/lightbulbs/EscenaMenu.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/castilla/eduardo/lightbulbs/ControlJuego.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/castilla/eduardo/lightbulbs/EscenaFin.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/castilla/eduardo/lightbulbs/EscenaAjustes.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/castilla/eduardo/lightbulbs/AdministradorMusica.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/castilla/eduardo/lightbulbs/AdministradorRecursos.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/castilla/eduardo/lightbulbs/EscenaMarcador.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/castilla/eduardo/lightbulbs/EstadoJuego.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/castilla/eduardo/lightbulbs/EscenaAjustes.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/castilla/eduardo/lightbulbs/EscenaNivel1.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/castilla/eduardo/lightbulbs/EscenaNivel2.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/castilla/eduardo/lightbulbs/EscenaNivel3.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/castilla/eduardo/lightbulbs/AdministradorMusica.java" />
       </list>
     </option>
   </component>
@@ -1638,7 +1640,11 @@
       <created>1431009243107</created>
       <updated>1431009243107</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Se importaron las nuevas pantallas de niveles 2 y 3&#10;                            &#10;Hizó commit Eduardo Castilla">
+      <created>1431009796104</created>
+      <updated>1431009796104</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1729,7 +1735,8 @@
     <MESSAGE value="Se empezó a trabajar con los marcadores y la vibración&#10;&#10;Hizó commit Eduardo Castilla" />
     <MESSAGE value="Se Terminaron de implementar los marcadores&#10;&#10;Hizó commit Eduardo Castilla" />
     <MESSAGE value="Se implemetaron las preferencias para el sonido&#10;                            &#10;Hizó commit Eduardo Castilla" />
-    <option name="LAST_COMMIT_MESSAGE" value="Se implemetaron las preferencias para el sonido&#10;                            &#10;Hizó commit Eduardo Castilla" />
+    <MESSAGE value="Se importaron las nuevas pantallas de niveles 2 y 3&#10;                            &#10;Hizó commit Eduardo Castilla" />
+    <option name="LAST_COMMIT_MESSAGE" value="Se importaron las nuevas pantallas de niveles 2 y 3&#10;                            &#10;Hizó commit Eduardo Castilla" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -2042,14 +2049,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/castilla/eduardo/lightbulbs/EscenaMarcador.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1309" max-vertical-offset="2278">
-          <caret line="89" column="43" selection-start-line="89" selection-start-column="43" selection-end-line="89" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/castilla/eduardo/lightbulbs/EstadoJuego.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="2091" max-vertical-offset="2720">
@@ -2058,42 +2057,50 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/castilla/eduardo/lightbulbs/EscenaAjustes.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/castilla/eduardo/lightbulbs/EscenaNivel3.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="799" max-vertical-offset="1802">
-          <caret line="66" column="0" selection-start-line="66" selection-start-column="0" selection-end-line="70" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/castilla/eduardo/lightbulbs/EscenaNivel1.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="5593" max-vertical-offset="7395">
-          <caret line="348" column="119" selection-start-line="348" selection-start-column="119" selection-end-line="370" selection-end-column="9" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="21549" max-vertical-offset="23222">
+          <caret line="1309" column="26" selection-start-line="1309" selection-start-column="26" selection-end-line="1309" selection-end-column="26" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/castilla/eduardo/lightbulbs/EscenaNivel2.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="9058" max-vertical-offset="10880">
-          <caret line="576" column="9" selection-start-line="576" selection-start-column="9" selection-end-line="576" selection-end-column="9" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="9517" max-vertical-offset="11118">
+          <caret line="595" column="67" selection-start-line="595" selection-start-column="67" selection-end-line="595" selection-end-column="67" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/castilla/eduardo/lightbulbs/EscenaNivel3.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/castilla/eduardo/lightbulbs/EscenaNivel1.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="20716" max-vertical-offset="22712">
-          <caret line="1274" column="9" selection-start-line="1274" selection-start-column="9" selection-end-line="1274" selection-end-column="9" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="5967" max-vertical-offset="7565">
+          <caret line="396" column="0" selection-start-line="396" selection-start-column="0" selection-end-line="400" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/castilla/eduardo/lightbulbs/EscenaAjustes.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="867" max-vertical-offset="1938">
+          <caret line="95" column="7" selection-start-line="95" selection-start-column="7" selection-end-line="100" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/castilla/eduardo/lightbulbs/EscenaMarcador.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1309" max-vertical-offset="2278">
+          <caret line="89" column="43" selection-start-line="89" selection-start-column="43" selection-end-line="89" selection-end-column="43" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/castilla/eduardo/lightbulbs/AdministradorMusica.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="2.8165138" vertical-offset="1153" max-vertical-offset="2550">
-          <caret line="154" column="22" selection-start-line="154" selection-start-column="22" selection-end-line="154" selection-end-column="22" />
+        <state vertical-scroll-proportion="0.22018349" vertical-offset="2665" max-vertical-offset="3077">
+          <caret line="195" column="34" selection-start-line="195" selection-start-column="34" selection-end-line="195" selection-end-column="34" />
           <folding />
         </state>
       </provider>

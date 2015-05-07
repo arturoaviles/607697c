@@ -79,9 +79,11 @@ public class EscenaAjustes extends EscenaBase
                 if (pSceneTouchEvent.isActionDown()) {
                     if (btnOnOFF_2.getCurrentTileIndex()==0){
                         btnOnOFF_2.setCurrentTileIndex(1);
+                        admMusica.modificarPreferenciaEfectos(false);
                         //ControlJuego.efectosOn=true;
                     }else{
                         btnOnOFF_2.setCurrentTileIndex(0);
+                        admMusica.modificarPreferenciaEfectos(true);
                         //ControlJuego.efectosOn=false;
                     }
                 }
@@ -90,6 +92,12 @@ public class EscenaAjustes extends EscenaBase
         };
         registerTouchArea(btnOnOFF_2);
         attachChild(btnOnOFF_2);
+
+        if(admMusica.leerPreferenciaEfectos()){
+            btnOnOFF_2.setCurrentTileIndex(0);
+        }else{
+            btnOnOFF_2.setCurrentTileIndex(1);
+        }
     }
 
     @Override
