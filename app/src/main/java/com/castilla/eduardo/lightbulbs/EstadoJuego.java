@@ -121,7 +121,7 @@ public class EstadoJuego extends HUD
         // Un cuadro transparente arriba centrado
         Rectangle cuadroMasAlto = new Rectangle(ControlJuego.ANCHO_CAMARA/2,ControlJuego.ALTO_CAMARA/2-25,
                 270,450, engine.getVertexBufferObjectManager());
-        cuadroMasAlto.setColor(0.2f, 0.2f, 0.2f, 0.1f);
+        cuadroMasAlto.setColor(0.2f, 0.2f, 0.2f, 0.0f);
         this.attachChild(cuadroMasAlto);
 
         // Letrero sobre el cuadro
