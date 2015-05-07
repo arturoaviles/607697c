@@ -1,5 +1,8 @@
 package com.castilla.eduardo.lightbulbs;
 
+import android.content.Context;
+import android.content.SharedPreferences;
+
 import org.andengine.engine.camera.Camera;
 import org.andengine.entity.scene.background.SpriteBackground;
 import org.andengine.entity.sprite.Sprite;
@@ -50,6 +53,11 @@ public class EscenaMarcador extends EscenaBase
     private void agregarEstado() {
         hudMarcador = new EstadoJuego(admRecursos.engine,admRecursos.actividadJuego,"marcadores");
         admRecursos.camara.setHUD(hudMarcador);
+
+        // Para marcador más alto. PRIMERO lee el marcador anterior
+        SharedPreferences preferencias = admRecursos.actividadJuego.getSharedPreferences("MarcadorMasAlto", Context.MODE_PRIVATE);
+        int ultimoMarcador = preferencias.getInt("alto",0);
+        hudMarcador.setMarcadorMasAlto(ultimoMarcador);
     }
 
     @Override

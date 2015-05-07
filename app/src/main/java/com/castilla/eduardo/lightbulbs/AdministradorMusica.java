@@ -1,5 +1,7 @@
 package com.castilla.eduardo.lightbulbs;
 
+import android.content.Context;
+import android.os.Vibrator;
 import android.util.Log;
 
 import org.andengine.audio.music.Music;
@@ -22,7 +24,7 @@ import org.andengine.opengl.vbo.VertexBufferObjectManager;
 import java.io.IOException;
 
 /**
- * Carga/Descarga los recurso del juego. Imágenes, Audios
+ * Reproducir, parar y liberar audio. Tambíen se manejan efectos como la vibracion
  */
 public class AdministradorMusica {
     // Instancia única de la clase
@@ -123,5 +125,10 @@ public class AdministradorMusica {
 
     public Music getMusicaNivel() {
         return musicaNivel;
+    }
+
+    public void vibrar(){
+        Vibrator v = (Vibrator)actividadJuego.getSystemService(Context.VIBRATOR_SERVICE);
+        v.vibrate(20);
     }
 }

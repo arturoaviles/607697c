@@ -1,5 +1,8 @@
 package com.castilla.eduardo.lightbulbs;
 
+import android.content.Context;
+import android.content.SharedPreferences;
+
 import org.andengine.engine.camera.Camera;
 import org.andengine.engine.handler.timer.ITimerCallback;
 import org.andengine.engine.handler.timer.TimerHandler;
@@ -264,6 +267,7 @@ public class EscenaNivel1 extends EscenaBase
                     }
                 }
                 if(allBulbsOn) {
+                    revisarMarcador();
                     if (cable2.getCurrentTileIndex() == 1) {
                         if (pSceneTouchEvent.isActionDown()) {
                             if (endBox.getCurrentTileIndex() == 0) {
@@ -326,6 +330,11 @@ public class EscenaNivel1 extends EscenaBase
     private void agregarEstado() {
         hudMarcador = new EstadoJuego(admRecursos.engine,admRecursos.actividadJuego,"");
         admRecursos.camara.setHUD(hudMarcador);
+
+        // Para marcador más alto. PRIMERO lee el marcador anterior
+        SharedPreferences preferencias = admRecursos.actividadJuego.getSharedPreferences("MarcadorMasAlto", Context.MODE_PRIVATE);
+        int ultimoMarcador = preferencias.getInt("alto",0);
+        hudMarcador.setMarcadorMasAlto(ultimoMarcador);
     }
 
     // Crea la escena que se mostrará cuando se pausa el juego
@@ -435,6 +444,21 @@ public class EscenaNivel1 extends EscenaBase
         }
         //lista.getLast().setCurrentTileIndex(0);
         //lista.removeLast();
+    }
+
+    private void revisarMarcador() {
+        //
+        int masAlto = hudMarcador.getMarcadorMasAlto();
+        int puntos = hudMarcador.getMarcador();
+        // si la puntacíon supera el highscore
+        if (puntos>=masAlto) {
+            // guardarlo en las preferencias
+            SharedPreferences preferencias = admRecursos.actividadJuego.getSharedPreferences(
+                    "MarcadorMasAlto", Context.MODE_PRIVATE);
+            SharedPreferences.Editor editor = preferencias.edit();
+            editor.putInt("alto",masAlto);
+            editor.commit();
+        }
     }
 
     @Override
