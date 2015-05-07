@@ -195,6 +195,10 @@ public class EscenaNivel3 extends EscenaBase
                             hudMarcador.aumentarMarcador(100);
                             cable1.setCurrentTileIndex(1);
                             lista.add(cable1);
+                            if (foco5.getCurrentTileIndex()==0){
+                                foco5.setCurrentTileIndex(1);
+                                lista.add(foco5);
+                            }
                         }
                     }
                 }
@@ -226,6 +230,10 @@ public class EscenaNivel3 extends EscenaBase
                             hudMarcador.aumentarMarcador(100);
                             cable2.setCurrentTileIndex(1);
                             lista.add(cable2);
+                            if (foco7.getCurrentTileIndex()==0) {
+                                foco7.setCurrentTileIndex(1);
+                                lista.add(foco7);
+                            }
                         }
                     }
                 }
@@ -255,6 +263,10 @@ public class EscenaNivel3 extends EscenaBase
                             hudMarcador.aumentarMarcador(100);
                             cable3.setCurrentTileIndex(1);
                             lista.add(cable3);
+                            if (foco7.getCurrentTileIndex()==0) {
+                                foco7.setCurrentTileIndex(1);
+                                lista.add(foco7);
+                            }
                         }
                     }
                 }
@@ -285,6 +297,10 @@ public class EscenaNivel3 extends EscenaBase
                             hudMarcador.aumentarMarcador(100);
                             cable4.setCurrentTileIndex(1);
                             lista.add(cable4);
+                            if (foco9.getCurrentTileIndex()==0) {
+                                foco9.setCurrentTileIndex(1);
+                                lista.add(foco9);
+                            }
                         }
                     }
                 }
@@ -314,6 +330,15 @@ public class EscenaNivel3 extends EscenaBase
                             hudMarcador.aumentarMarcador(100);
                             cable6.setCurrentTileIndex(1);
                             lista.add(cable6);
+                            if (foco5.getCurrentTileIndex()==0) {
+                                foco5.setCurrentTileIndex(1);
+                                lista.add(foco5);
+                            }
+                            if (foco7.getCurrentTileIndex()==0) {
+                                foco7.setCurrentTileIndex(1);
+                                lista.add(foco7);
+                            }
+
                         }
                     }
                 }
@@ -328,7 +353,7 @@ public class EscenaNivel3 extends EscenaBase
 
 
         // *** Agrega Cable8
-        // colisiona con foco 5 y foco 9
+        // colisiona con foco 7 y foco 9
         cable8 = new AnimatedSprite(324,545,admRecursos.regionCableMediano,admRecursos.vbom){
 
             // Aquí el código que ejecuta el cable2 es presionado
@@ -345,6 +370,14 @@ public class EscenaNivel3 extends EscenaBase
                             hudMarcador.aumentarMarcador(100);
                             cable8.setCurrentTileIndex(1);
                             lista.add(cable8);
+                            if (foco7.getCurrentTileIndex()==0) {
+                                foco7.setCurrentTileIndex(1);
+                                lista.add(foco7);
+                            }
+                            if (foco9.getCurrentTileIndex()==0) {
+                                foco9.setCurrentTileIndex(1);
+                                lista.add(foco9);
+                            }
                         }
                     }
                 }
@@ -375,6 +408,14 @@ public class EscenaNivel3 extends EscenaBase
                             hudMarcador.aumentarMarcador(100);
                             cable10.setCurrentTileIndex(1);
                             lista.add(cable10);
+                            if (foco5.getCurrentTileIndex()==0) {
+                                foco5.setCurrentTileIndex(1);
+                                lista.add(foco5);
+                            }
+                            if (foco30.getCurrentTileIndex()==0) {
+                                foco30.setCurrentTileIndex(1);
+                                lista.add(foco30);
+                            }
                         }
                     }
                 }
@@ -407,6 +448,15 @@ public class EscenaNivel3 extends EscenaBase
                             hudMarcador.aumentarMarcador(100);
                             cable11.setCurrentTileIndex(1);
                             lista.add(cable11);
+                            if (foco5.getCurrentTileIndex()==0) {
+                                foco5.setCurrentTileIndex(1);
+                                lista.add(foco5);
+                            }
+                            if (foco16.getCurrentTileIndex()==0) {
+                                foco16.setCurrentTileIndex(1);
+                                lista.add(foco16);
+                            }
+
                         }
                     }
                 }
@@ -436,6 +486,14 @@ public class EscenaNivel3 extends EscenaBase
                             hudMarcador.aumentarMarcador(100);
                             cable12.setCurrentTileIndex(1);
                             lista.add(cable12);
+                            if (foco7.getCurrentTileIndex()==0) {
+                                foco7.setCurrentTileIndex(1);
+                                lista.add(foco7);
+                            }
+                            if (foco16.getCurrentTileIndex()==0) {
+                                foco16.setCurrentTileIndex(1);
+                                lista.add(foco16);
+                            }
                         }
                     }
                 }
@@ -465,6 +523,14 @@ public class EscenaNivel3 extends EscenaBase
                             hudMarcador.aumentarMarcador(100);
                             cable13.setCurrentTileIndex(1);
                             lista.add(cable13);
+                            if (foco7.getCurrentTileIndex()==0) {
+                                foco7.setCurrentTileIndex(1);
+                                lista.add(foco7);
+                            }
+                            if (foco20.getCurrentTileIndex()==0) {
+                                foco20.setCurrentTileIndex(1);
+                                lista.add(foco20);
+                            }
                         }
                     }
                 }
@@ -495,6 +561,14 @@ public class EscenaNivel3 extends EscenaBase
                             hudMarcador.aumentarMarcador(100);
                             cable14.setCurrentTileIndex(1);
                             lista.add(cable14);
+                            if (foco9.getCurrentTileIndex()==0) {
+                                foco9.setCurrentTileIndex(1);
+                                lista.add(foco9);
+                            }
+                            if (foco20.getCurrentTileIndex()==0) {
+                                foco20.setCurrentTileIndex(1);
+                                lista.add(foco20);
+                            }
                         }
                     }
                 }
@@ -524,6 +598,14 @@ public class EscenaNivel3 extends EscenaBase
                             hudMarcador.aumentarMarcador(100);
                             cable15.setCurrentTileIndex(1);
                             lista.add(cable15);
+                            if (foco9.getCurrentTileIndex()==0) {
+                                foco9.setCurrentTileIndex(1);
+                                lista.add(foco9);
+                            }
+                            if (foco34.getCurrentTileIndex()==0) {
+                                foco34.setCurrentTileIndex(1);
+                                lista.add(foco34);
+                            }
                         }
                     }
                 }
@@ -556,6 +638,14 @@ public class EscenaNivel3 extends EscenaBase
                             hudMarcador.aumentarMarcador(100);
                             cable17.setCurrentTileIndex(1);
                             lista.add(cable17);
+                            if (foco16.getCurrentTileIndex()==0) {
+                                foco16.setCurrentTileIndex(1);
+                                lista.add(foco16);
+                            }
+                            if (foco18.getCurrentTileIndex()==0) {
+                                foco18.setCurrentTileIndex(1);
+                                lista.add(foco18);
+                            }
                         }
                     }
                 }
@@ -585,6 +675,14 @@ public class EscenaNivel3 extends EscenaBase
                             hudMarcador.aumentarMarcador(100);
                             cable19.setCurrentTileIndex(1);
                             lista.add(cable19);
+                            if (foco18.getCurrentTileIndex()==0) {
+                                foco18.setCurrentTileIndex(1);
+                                lista.add(foco18);
+                            }
+                            if (foco20.getCurrentTileIndex()==0) {
+                                foco20.setCurrentTileIndex(1);
+                                lista.add(foco20);
+                            }
                         }
                     }
                 }
@@ -614,6 +712,14 @@ public class EscenaNivel3 extends EscenaBase
                             hudMarcador.aumentarMarcador(100);
                             cable21.setCurrentTileIndex(1);
                             lista.add(cable21);
+                            if (foco24.getCurrentTileIndex()==0) {
+                                foco24.setCurrentTileIndex(1);
+                                lista.add(foco24);
+                            }
+                            if (foco16.getCurrentTileIndex()==0) {
+                                foco16.setCurrentTileIndex(1);
+                                lista.add(foco16);
+                            }
                         }
                     }
                 }
@@ -642,6 +748,14 @@ public class EscenaNivel3 extends EscenaBase
                             hudMarcador.aumentarMarcador(100);
                             cable22.setCurrentTileIndex(1);
                             lista.add(cable22);
+                            if (foco18.getCurrentTileIndex()==0) {
+                                foco18.setCurrentTileIndex(1);
+                                lista.add(foco18);
+                            }
+                            if (foco25.getCurrentTileIndex()==0) {
+                                foco25.setCurrentTileIndex(1);
+                                lista.add(foco25);
+                            }
                         }
                     }
                 }
@@ -672,6 +786,14 @@ public class EscenaNivel3 extends EscenaBase
                             hudMarcador.aumentarMarcador(100);
                             cable23.setCurrentTileIndex(1);
                             lista.add(cable23);
+                            if (foco20.getCurrentTileIndex()==0) {
+                                foco20.setCurrentTileIndex(1);
+                                lista.add(foco20);
+                            }
+                            if (foco26.getCurrentTileIndex()==0) {
+                                foco26.setCurrentTileIndex(1);
+                                lista.add(foco26);
+                            }
                         }
                     }
                 }
@@ -701,6 +823,14 @@ public class EscenaNivel3 extends EscenaBase
                             hudMarcador.aumentarMarcador(100);
                             cable27.setCurrentTileIndex(1);
                             lista.add(cable27);
+                            if (foco24.getCurrentTileIndex()==0) {
+                                foco24.setCurrentTileIndex(1);
+                                lista.add(foco24);
+                            }
+                            if (foco30.getCurrentTileIndex()==0) {
+                                foco30.setCurrentTileIndex(1);
+                                lista.add(foco30);
+                            }
                         }
                     }
                 }
@@ -730,6 +860,14 @@ public class EscenaNivel3 extends EscenaBase
                             hudMarcador.aumentarMarcador(100);
                             cable28.setCurrentTileIndex(1);
                             lista.add(cable28);
+                            if (foco25.getCurrentTileIndex()==0) {
+                                foco25.setCurrentTileIndex(1);
+                                lista.add(foco25);
+                            }
+                            if (foco32.getCurrentTileIndex()==0) {
+                                foco32.setCurrentTileIndex(1);
+                                lista.add(foco32);
+                            }
                         }
                     }
                 }
@@ -759,6 +897,14 @@ public class EscenaNivel3 extends EscenaBase
                             hudMarcador.aumentarMarcador(100);
                             cable29.setCurrentTileIndex(1);
                             lista.add(cable29);
+                            if (foco26.getCurrentTileIndex()==0) {
+                                foco26.setCurrentTileIndex(1);
+                                lista.add(foco26);
+                            }
+                            if (foco34.getCurrentTileIndex()==0) {
+                                foco34.setCurrentTileIndex(1);
+                                lista.add(foco34);
+                            }
                         }
                     }
                 }
@@ -788,6 +934,14 @@ public class EscenaNivel3 extends EscenaBase
                             hudMarcador.aumentarMarcador(100);
                             cable31.setCurrentTileIndex(1);
                             lista.add(cable31);
+                            if (foco30.getCurrentTileIndex()==0) {
+                                foco30.setCurrentTileIndex(1);
+                                lista.add(foco30);
+                            }
+                            if (foco32.getCurrentTileIndex()==0) {
+                                foco32.setCurrentTileIndex(1);
+                                lista.add(foco32);
+                            }
                         }
                     }
                 }
@@ -818,7 +972,16 @@ public class EscenaNivel3 extends EscenaBase
                             hudMarcador.aumentarMarcador(100);
                             cable33.setCurrentTileIndex(1);
                             lista.add(cable33);
+                            if (foco32.getCurrentTileIndex()==0) {
+                                foco32.setCurrentTileIndex(1);
+                                lista.add(foco32);
+                            }
+                            if (foco34.getCurrentTileIndex()==0) {
+                                foco34.setCurrentTileIndex(1);
+                                lista.add(foco34);
+                            }
                         }
+
                     }
                 }
                 return super.onAreaTouched(pSceneTouchEvent, pTouchAreaLocalX, pTouchAreaLocalY);
@@ -860,22 +1023,7 @@ public class EscenaNivel3 extends EscenaBase
         // *** Agrega Foco5
         // colisiona con cable 1,6,10,11
         foco5 = new AnimatedSprite(73,545,admRecursos.regionFoco,admRecursos.vbom){
-            // Aquí el código que ejecuta la foco es presionado
-            @Override
-            public boolean onAreaTouched(TouchEvent pSceneTouchEvent, float pTouchAreaLocalX, float pTouchAreaLocalY) {
-                if (pSceneTouchEvent.isActionDown()&&!lista.isEmpty()) {
-                    if (foco5.getCurrentTileIndex()==1){
-                        goingBack(foco5);
-                    }else{
-                        if (lista.getLast().equals(cable1)||lista.getLast().equals(cable6)||lista.getLast().equals(cable10)||lista.getLast().equals(cable11)) {
-                            hudMarcador.aumentarMarcador(100);
-                            foco5.setCurrentTileIndex(1);
-                            lista.add(foco5);
-                        }
-                    }
-                }
-                return super.onAreaTouched(pSceneTouchEvent, pTouchAreaLocalX, pTouchAreaLocalY);
-            }
+
         };
         foco5.setCurrentTileIndex(0);
         registerTouchArea(foco5);
@@ -884,22 +1032,7 @@ public class EscenaNivel3 extends EscenaBase
         // *** Agrega Foco7
         // colisiona con cable  6,2,3,8,12 13
         foco7 = new AnimatedSprite(240,545,admRecursos.regionFoco,admRecursos.vbom){
-            // Aquí el código que ejecuta la foco es presionado
-            @Override
-            public boolean onAreaTouched(TouchEvent pSceneTouchEvent, float pTouchAreaLocalX, float pTouchAreaLocalY) {
-                if (pSceneTouchEvent.isActionDown()&&!lista.isEmpty()) {
-                    if (foco7.getCurrentTileIndex()==1){
-                        goingBack(foco7);
-                    }else{
-                        if (lista.getLast().equals(cable6)||lista.getLast().equals(cable2)||lista.getLast().equals(cable3)||lista.getLast().equals(cable8)||lista.getLast().equals(cable12)||lista.getLast().equals(cable13)) {
-                            hudMarcador.aumentarMarcador(100);
-                            foco7.setCurrentTileIndex(1);
-                            lista.add(foco7);
-                        }
-                    }
-                }
-                return super.onAreaTouched(pSceneTouchEvent, pTouchAreaLocalX, pTouchAreaLocalY);
-            }
+
         };
         foco7.setCurrentTileIndex(0);
         registerTouchArea(foco7);
@@ -909,22 +1042,7 @@ public class EscenaNivel3 extends EscenaBase
         // *** Agrega Foco9
         // colisiona con cable  4,8........14 15
         foco9 = new AnimatedSprite(407,545,admRecursos.regionFoco,admRecursos.vbom){
-            // Aquí el código que ejecuta la foco es presionado
-            @Override
-            public boolean onAreaTouched(TouchEvent pSceneTouchEvent, float pTouchAreaLocalX, float pTouchAreaLocalY) {
-                if (pSceneTouchEvent.isActionDown()&&!lista.isEmpty()) {
-                    if (foco9.getCurrentTileIndex()==1){
-                        goingBack(foco9);
-                    }else{
-                        if (lista.getLast().equals(cable4)||lista.getLast().equals(cable8)||lista.getLast().equals(cable14)||lista.getLast().equals(cable15)) {
-                            hudMarcador.aumentarMarcador(100);
-                            foco9.setCurrentTileIndex(1);
-                            lista.add(foco9);
-                        }
-                    }
-                }
-                return super.onAreaTouched(pSceneTouchEvent, pTouchAreaLocalX, pTouchAreaLocalY);
-            }
+
         };
         foco9.setCurrentTileIndex(0);
         registerTouchArea(foco9);
@@ -933,22 +1051,7 @@ public class EscenaNivel3 extends EscenaBase
         // *** Agrega Foco16
         // colisiona con cable  11, 12, 17 ,21
         foco16 = new AnimatedSprite(154,418,admRecursos.regionFoco,admRecursos.vbom){
-            // Aquí el código que ejecuta la foco es presionado
-            @Override
-            public boolean onAreaTouched(TouchEvent pSceneTouchEvent, float pTouchAreaLocalX, float pTouchAreaLocalY) {
-                if (pSceneTouchEvent.isActionDown()&&!lista.isEmpty()) {
-                    if (foco16.getCurrentTileIndex()==1){
-                        goingBack(foco16);
-                    }else{
-                        if (lista.getLast().equals(cable11)||lista.getLast().equals(cable12)||lista.getLast().equals(cable17)||lista.getLast().equals(cable21)) {
-                            hudMarcador.aumentarMarcador(100);
-                            foco16.setCurrentTileIndex(1);
-                            lista.add(foco16);
-                        }
-                    }
-                }
-                return super.onAreaTouched(pSceneTouchEvent, pTouchAreaLocalX, pTouchAreaLocalY);
-            }
+
         };
         foco16.setCurrentTileIndex(0);
         registerTouchArea(foco16);
@@ -958,22 +1061,7 @@ public class EscenaNivel3 extends EscenaBase
         // *** Agrega Foco 18
         // colisiona con cable  17,19,22
         foco18 = new AnimatedSprite(240,300,admRecursos.regionFoco,admRecursos.vbom){
-            // Aquí el código que ejecuta la foco es presionado
-            @Override
-            public boolean onAreaTouched(TouchEvent pSceneTouchEvent, float pTouchAreaLocalX, float pTouchAreaLocalY) {
-                if (pSceneTouchEvent.isActionDown()&&!lista.isEmpty()) {
-                    if (foco18.getCurrentTileIndex()==1){
-                        goingBack(foco18);
-                    }else{
-                        if (lista.getLast().equals(cable17)||lista.getLast().equals(cable19)||lista.getLast().equals(cable22)) {
-                            hudMarcador.aumentarMarcador(100);
-                            foco18.setCurrentTileIndex(1);
-                            lista.add(foco18);
-                        }
-                    }
-                }
-                return super.onAreaTouched(pSceneTouchEvent, pTouchAreaLocalX, pTouchAreaLocalY);
-            }
+
         };
         foco18.setCurrentTileIndex(0);
         registerTouchArea(foco18);
@@ -982,22 +1070,7 @@ public class EscenaNivel3 extends EscenaBase
         // *** Agrega Foco 20
         // colisiona con cable  13, 14, 19 23
         foco20 = new AnimatedSprite(328,418,admRecursos.regionFoco,admRecursos.vbom){
-            // Aquí el código que ejecuta la foco es presionado
-            @Override
-            public boolean onAreaTouched(TouchEvent pSceneTouchEvent, float pTouchAreaLocalX, float pTouchAreaLocalY) {
-                if (pSceneTouchEvent.isActionDown()&&!lista.isEmpty()) {
-                    if (foco20.getCurrentTileIndex()==1){
-                        goingBack(foco20);
-                    }else{
-                        if (lista.getLast().equals(cable13)||lista.getLast().equals(cable14)||lista.getLast().equals(cable19)||lista.getLast().equals(cable23)) {
-                            hudMarcador.aumentarMarcador(100);
-                            foco20.setCurrentTileIndex(1);
-                            lista.add(foco20);
-                        }
-                    }
-                }
-                return super.onAreaTouched(pSceneTouchEvent, pTouchAreaLocalX, pTouchAreaLocalY);
-            }
+
         };
         foco20.setCurrentTileIndex(0);
         registerTouchArea(foco20);
@@ -1006,22 +1079,7 @@ public class EscenaNivel3 extends EscenaBase
         // *** Agrega Foco 24
         // colisiona con cable  21,27
         foco24 = new AnimatedSprite(154,255,admRecursos.regionFoco,admRecursos.vbom){
-            // Aquí el código que ejecuta la foco es presionado
-            @Override
-            public boolean onAreaTouched(TouchEvent pSceneTouchEvent, float pTouchAreaLocalX, float pTouchAreaLocalY) {
-                if (pSceneTouchEvent.isActionDown()&&!lista.isEmpty()) {
-                    if (foco24.getCurrentTileIndex()==1){
-                        goingBack(foco24);
-                    }else{
-                        if (lista.getLast().equals(cable21)||lista.getLast().equals(cable27)){
-                            hudMarcador.aumentarMarcador(100);
-                            foco24.setCurrentTileIndex(1);
-                            lista.add(foco24);
-                        }
-                    }
-                }
-                return super.onAreaTouched(pSceneTouchEvent, pTouchAreaLocalX, pTouchAreaLocalY);
-            }
+
         };
         foco24.setCurrentTileIndex(0);
         registerTouchArea(foco24);
@@ -1030,22 +1088,7 @@ public class EscenaNivel3 extends EscenaBase
         // *** Agrega Foco 25
         // colisiona con cable  22,28
         foco25 = new AnimatedSprite(240,210,admRecursos.regionFoco,admRecursos.vbom){
-            // Aquí el código que ejecuta la foco es presionado
-            @Override
-            public boolean onAreaTouched(TouchEvent pSceneTouchEvent, float pTouchAreaLocalX, float pTouchAreaLocalY) {
-                if (pSceneTouchEvent.isActionDown()&&!lista.isEmpty()) {
-                    if (foco25.getCurrentTileIndex()==1){
-                        goingBack(foco25);
-                    }else{
-                        if (lista.getLast().equals(cable28)||lista.getLast().equals(cable22)){
-                            hudMarcador.aumentarMarcador(100);
-                            foco25.setCurrentTileIndex(1);
-                            lista.add(foco25);
-                        }
-                    }
-                }
-                return super.onAreaTouched(pSceneTouchEvent, pTouchAreaLocalX, pTouchAreaLocalY);
-            }
+
         };
         foco25.setCurrentTileIndex(0);
         registerTouchArea(foco25);
@@ -1054,22 +1097,7 @@ public class EscenaNivel3 extends EscenaBase
         // *** Agrega Foco 26
         // colisiona con cable  23,29
         foco26 = new AnimatedSprite(328,255,admRecursos.regionFoco,admRecursos.vbom){
-            // Aquí el código que ejecuta la foco es presionado
-            @Override
-            public boolean onAreaTouched(TouchEvent pSceneTouchEvent, float pTouchAreaLocalX, float pTouchAreaLocalY) {
-                if (pSceneTouchEvent.isActionDown()&&!lista.isEmpty()) {
-                    if (foco26.getCurrentTileIndex()==1){
-                        goingBack(foco26);
-                    }else{
-                        if (lista.getLast().equals(cable23)||lista.getLast().equals(cable29)){
-                            hudMarcador.aumentarMarcador(100);
-                            foco26.setCurrentTileIndex(1);
-                            lista.add(foco26);
-                        }
-                    }
-                }
-                return super.onAreaTouched(pSceneTouchEvent, pTouchAreaLocalX, pTouchAreaLocalY);
-            }
+
         };
         foco26.setCurrentTileIndex(0);
         registerTouchArea(foco26);
@@ -1078,22 +1106,7 @@ public class EscenaNivel3 extends EscenaBase
         // *** Agrega Foco 30
         // colisiona con cable 10,27,31
         foco30 = new AnimatedSprite(67,170,admRecursos.regionFoco,admRecursos.vbom){
-            // Aquí el código que ejecuta la foco es presionado
-            @Override
-            public boolean onAreaTouched(TouchEvent pSceneTouchEvent, float pTouchAreaLocalX, float pTouchAreaLocalY) {
-                if (pSceneTouchEvent.isActionDown()&&!lista.isEmpty()) {
-                    if (foco30.getCurrentTileIndex()==1){
-                        goingBack(foco30);
-                    }else{
-                        if (lista.getLast().equals(cable10)||lista.getLast().equals(cable27)||lista.getLast().equals(cable31)){
-                            hudMarcador.aumentarMarcador(100);
-                            foco30.setCurrentTileIndex(1);
-                            lista.add(foco30);
-                        }
-                    }
-                }
-                return super.onAreaTouched(pSceneTouchEvent, pTouchAreaLocalX, pTouchAreaLocalY);
-            }
+
         };
         foco30.setCurrentTileIndex(0);
         registerTouchArea(foco30);
@@ -1102,22 +1115,7 @@ public class EscenaNivel3 extends EscenaBase
         // *** Agrega Foco 32
         // colisiona con cable 28,31,33
         foco32 = new AnimatedSprite(240,120,admRecursos.regionFoco,admRecursos.vbom){
-            // Aquí el código que ejecuta la foco es presionado
-            @Override
-            public boolean onAreaTouched(TouchEvent pSceneTouchEvent, float pTouchAreaLocalX, float pTouchAreaLocalY) {
-                if (pSceneTouchEvent.isActionDown()&&!lista.isEmpty()) {
-                    if (foco32.getCurrentTileIndex()==1){
-                        goingBack(foco32);
-                    }else{
-                        if (lista.getLast().equals(cable28)||lista.getLast().equals(cable31)||lista.getLast().equals(cable33)){
-                            hudMarcador.aumentarMarcador(100);
-                            foco32.setCurrentTileIndex(1);
-                            lista.add(foco32);
-                        }
-                    }
-                }
-                return super.onAreaTouched(pSceneTouchEvent, pTouchAreaLocalX, pTouchAreaLocalY);
-            }
+
         };
         foco32.setCurrentTileIndex(0);
         registerTouchArea(foco32);
@@ -1126,22 +1124,7 @@ public class EscenaNivel3 extends EscenaBase
         // *** Agrega Foco 34
         // colisiona con cable 15,29,33
         foco34 = new AnimatedSprite(413,170,admRecursos.regionFoco,admRecursos.vbom){
-            // Aquí el código que ejecuta la foco es presionado
-            @Override
-            public boolean onAreaTouched(TouchEvent pSceneTouchEvent, float pTouchAreaLocalX, float pTouchAreaLocalY) {
-                if (pSceneTouchEvent.isActionDown()&&!lista.isEmpty()) {
-                    if (foco34.getCurrentTileIndex()==1){
-                        goingBack(foco34);
-                    }else{
-                        if (lista.getLast().equals(cable15)||lista.getLast().equals(cable29)||lista.getLast().equals(cable33)){
-                            hudMarcador.aumentarMarcador(100);
-                            foco34.setCurrentTileIndex(1);
-                            lista.add(foco34);
-                        }
-                    }
-                }
-                return super.onAreaTouched(pSceneTouchEvent, pTouchAreaLocalX, pTouchAreaLocalY);
-            }
+
         };
         foco34.setCurrentTileIndex(0);
         registerTouchArea(foco34);
@@ -1338,8 +1321,8 @@ public class EscenaNivel3 extends EscenaBase
             lista.getLast().setCurrentTileIndex(0);
             lista.removeLast();
         }
-        //lista.getLast().setCurrentTileIndex(0);
-        //lista.removeLast();
+        lista.getLast().setCurrentTileIndex(0);
+        lista.removeLast();
     }
 
     @Override
