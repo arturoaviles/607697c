@@ -1254,10 +1254,12 @@ public class EscenaNivel3 extends EscenaBase
                 if (pSceneTouchEvent.isActionDown()) {
                     if (btnOnOFF_1.getCurrentTileIndex()==0){
                         btnOnOFF_1.setCurrentTileIndex(1);
-                        //ControlJuego.musicaOn=true;
+                        admMusica.modificarPreferenciaMusica(false);
+                        admMusica.pararMusicaNivel();
                     }else{
                         btnOnOFF_1.setCurrentTileIndex(0);
-                        //ControlJuego.musicaOn=false;
+                        admMusica.modificarPreferenciaMusica(true);
+                        admMusica.reproducirMusicaNivel();
                     }
                 }
                 return super.onAreaTouched(pSceneTouchEvent, pTouchAreaLocalX, pTouchAreaLocalY);
@@ -1265,6 +1267,12 @@ public class EscenaNivel3 extends EscenaBase
         };
         escenaPausa.registerTouchArea(btnOnOFF_1);
         escenaPausa.attachChild(btnOnOFF_1);
+
+        if(admMusica.leerPreferenciaMusica()){
+            btnOnOFF_1.setCurrentTileIndex(0);
+        }else{
+            btnOnOFF_1.setCurrentTileIndex(1);
+        }
 
         // Botón OnOFF para los efectos
         btnOnOFF_2 = new AnimatedSprite(310,315,
