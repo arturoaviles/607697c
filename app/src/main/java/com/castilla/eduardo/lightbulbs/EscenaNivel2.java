@@ -1,6 +1,5 @@
 package com.castilla.eduardo.lightbulbs;
 
-import android.util.Log;
 import org.andengine.engine.camera.Camera;
 import org.andengine.engine.handler.timer.ITimerCallback;
 import org.andengine.engine.handler.timer.TimerHandler;
@@ -11,9 +10,7 @@ import org.andengine.entity.sprite.AnimatedSprite;
 import org.andengine.entity.sprite.ButtonSprite;
 import org.andengine.entity.sprite.Sprite;
 import org.andengine.entity.sprite.TiledSprite;
-import org.andengine.entity.text.Text;
 import org.andengine.input.touch.TouchEvent;
-import org.andengine.opengl.font.IFont;
 import org.andengine.opengl.texture.ITexture;
 import org.andengine.opengl.texture.bitmap.AssetBitmapTexture;
 import org.andengine.opengl.texture.region.ITextureRegion;
@@ -31,7 +28,9 @@ public class EscenaNivel2 extends EscenaBase
 {
     private Sprite spriteFondoNivel; //(el fondo de la escena, estático)
 
+
     private ButtonSprite btnPausa;
+
     public AnimatedSprite startBox;
     public AnimatedSprite cable1;
     public AnimatedSprite cable2;
@@ -40,10 +39,17 @@ public class EscenaNivel2 extends EscenaBase
     public AnimatedSprite cable5;
     public AnimatedSprite cable6;
     public AnimatedSprite cable7;
+
+
+
     public AnimatedSprite foco1;
     public AnimatedSprite foco2;
     public AnimatedSprite foco3;
     public AnimatedSprite foco4;
+
+
+
+
     public AnimatedSprite endBox;
 
     // Timer
@@ -64,6 +70,9 @@ public class EscenaNivel2 extends EscenaBase
 
     // Condición de Pausa
     private boolean pausa = false;
+
+    // Condicion de Ganar
+    private boolean ganar = false;
 
     //Lista ligada que guarda los elementos encendidos
     private LinkedList<AnimatedSprite> lista = new LinkedList();
@@ -95,7 +104,7 @@ public class EscenaNivel2 extends EscenaBase
         try {
             texturaFondoPausa = new AssetBitmapTexture(admRecursos.actividadJuego.getTextureManager(),
                     admRecursos.actividadJuego.getAssets(), "MenuPausa.png");
-                    texturaFondoPausa.load();
+            texturaFondoPausa.load();
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -144,6 +153,7 @@ public class EscenaNivel2 extends EscenaBase
         attachChild(bateria);
 
 
+
         // *** Agrega StartBox
         // colisiona con cable1 y con cable4
         startBox = new AnimatedSprite(132,630,admRecursos.regionStartEndBox,admRecursos.vbom){
@@ -158,7 +168,7 @@ public class EscenaNivel2 extends EscenaBase
                         lista.get(i).setCurrentTileIndex(0);
                         lista.remove(i);
                         i--;
-                   }
+                    }
                 }
                 return super.onAreaTouched(pSceneTouchEvent, pTouchAreaLocalX, pTouchAreaLocalY);
             }
@@ -166,7 +176,6 @@ public class EscenaNivel2 extends EscenaBase
         startBox.setCurrentTileIndex(1);
         registerTouchArea(startBox);
         attachChild(startBox);
-
 
         // *** Agrega Cable1
         // colisiona cajaStart y con foco1
@@ -443,32 +452,33 @@ public class EscenaNivel2 extends EscenaBase
                 focos.add(foco2);
                 focos.add(foco3);
                 focos.add(foco4);
+
                 for(int i=0; i<focos.size(); i++){
                     if (focos.get(i).getCurrentTileIndex()==0){
                         allBulbsOn = false;
                     }
                 }
                 if(allBulbsOn) {
-                    if (cable5.getCurrentTileIndex() == 1 || cable6.getCurrentTileIndex() == 1) {
+                    revisarMarcador();
+                    if (cable3.getCurrentTileIndex() == 1 || cable4.getCurrentTileIndex() == 1) {
                         if (pSceneTouchEvent.isActionDown()) {
                             if (endBox.getCurrentTileIndex() == 0) {
                                 hudMarcador.multiplicarMarcador(((int)rectanguloEnergia.getWidth()/10));
+                                ganar=true;
                                 endBox.setCurrentTileIndex(1);
-                            } else {
-                                endBox.setCurrentTileIndex(0);
+                                // Programa la carga de la segunda escena, después de cierto tiempo
+                                admRecursos.engine.registerUpdateHandler(new TimerHandler(0.5f,
+                                        new ITimerCallback() {
+                                            @Override
+                                            public void onTimePassed(TimerHandler pTimerHandler) {
+                                                admRecursos.engine.unregisterUpdateHandler(pTimerHandler); // Invalida el timer
+                                                admEscenas.crearEscenaFin(1);
+                                                hudMarcador.setPosition(15, ControlJuego.ALTO_CAMARA / 2);
+                                                admEscenas.setEscena(TipoEscena.ESCENA_FIN);
+                                                admEscenas.liberarEscenaNivel2();
+                                            }
+                                        }));
                             }
-                            // Programa la carga de la segunda escena, después de cierto tiempo
-                            admRecursos.engine.registerUpdateHandler(new TimerHandler(1,
-                                    new ITimerCallback() {
-                                        @Override
-                                        public void onTimePassed(TimerHandler pTimerHandler) {
-                                            admRecursos.engine.unregisterUpdateHandler(pTimerHandler); // Invalida el timer
-                                            admEscenas.crearEscenaFin(1);
-                                            hudMarcador.setPosition(15,ControlJuego.ALTO_CAMARA/2);
-                                            admEscenas.setEscena(TipoEscena.ESCENA_FIN);
-                                            admEscenas.liberarEscenaNivel2();
-                                        }
-                                    }));
                         }
                     }
                 }
@@ -481,27 +491,23 @@ public class EscenaNivel2 extends EscenaBase
 
         admMusica.cargarMusicaNivel2();
 
-
     }
-
 
     // El ciclo principal de la escena
     @Override
     protected void onManagedUpdate(float pSecondsElapsed) {
         super.onManagedUpdate(pSecondsElapsed);
         //Log.d("pausa",String.valueOf(pausa));
-        if (pausa) {     // Se prendió la bandera?
-            //regresarAMenu();    // Terminar
-            setIgnoreUpdate(false);  // Ya no ejecuta este método
-            //terminar(); // Mostrar la escena de juego termina
+        if (pausa||ganar) {     // Se prendió la bandera?
+            setIgnoreUpdate(true);  // Ya no ejecuta este método
             btnContinuar.setCurrentTileIndex(0);
-            return;
         }
         if (rectanguloEnergia.getWidth() > 0) {
-            rectanguloEnergia.setWidth(rectanguloEnergia.getWidth() - 0.5f);
+            rectanguloEnergia.setWidth(rectanguloEnergia.getWidth() - 1.0f);
         }else{
             admEscenas.crearEscenaFin(0);
-            admRecursos.camara.setHUD(null);    // Quita el HUD
+            admRecursos.camara.setHUD(null);
+               // Quita el HUD
             admEscenas.setEscena(TipoEscena.ESCENA_FIN);
             admEscenas.liberarEscenaNivel2();
         }
@@ -511,6 +517,7 @@ public class EscenaNivel2 extends EscenaBase
     private void agregarEstado() {
         hudMarcador = new EstadoJuego(admRecursos.engine,admRecursos.actividadJuego,"");
         admRecursos.camara.setHUD(hudMarcador);
+        hudMarcador.setMarcadorMasAlto(admRecursos.leerRecordNivel2());
     }
 
     // Crea la escena que se mostrará cuando se pausa el juego
@@ -594,17 +601,16 @@ public class EscenaNivel2 extends EscenaBase
         pausa = false;
         setIgnoreUpdate(false);
         clearChildScene();
-        //btnContinuar.detachSelf();
-        //btnContinuar.dispose();
-        //escenaPausa.detachSelf();
-        //escenaPausa.dispose();
     }
 
 
     @Override
     public void onBackKeyPressed() {
         admMusica.liberarMusicaNivel();
-        admMusica.continuarMusicaMenu();
+        if(admMusica.leerPreferenciaMusica()){
+           admMusica.reproducirMusicaMenu();
+        }
+
         admEscenas.crearEscenaJuego();
         admRecursos.camara.setHUD(null);    // Quita el HUD
         admEscenas.setEscena(TipoEscena.ESCENA_JUEGO);
@@ -622,11 +628,20 @@ public class EscenaNivel2 extends EscenaBase
         lista.removeLast();
     }
 
+    private void revisarMarcador() {
+        //
+        int masAlto = hudMarcador.getMarcadorMasAlto();
+        int puntos = hudMarcador.getMarcador();
+        // si la puntacíon supera el highscore
+        if (puntos>=masAlto) {
+            admRecursos.modificarRecordNivel2(puntos);
+        }
+    }
+
     @Override
     public TipoEscena getTipoEscena() {
         return TipoEscena.ESCENA_NIVEL_2;
     }
-
     @Override
     public void liberarEscena() {
         // Liberar cada recurso usado en esta escena

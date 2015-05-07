@@ -61,7 +61,7 @@ public class EscenaFin extends EscenaBase
 
     @Override
     public void onBackKeyPressed() {
-        admMusica.continuarMusicaMenu();
+        admMusica.reproducirMusicaMenu();
         admEscenas.crearEscenaJuego();
         admRecursos.camara.setHUD(null);    // Quita el HUD
         admEscenas.setEscena(TipoEscena.ESCENA_JUEGO);

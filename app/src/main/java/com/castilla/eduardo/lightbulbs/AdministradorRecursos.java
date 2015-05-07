@@ -1,5 +1,7 @@
 package com.castilla.eduardo.lightbulbs;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.util.Log;
 
 import org.andengine.engine.Engine;
@@ -639,6 +641,51 @@ public class AdministradorRecursos {
 
         texturaBateria.unload();
         regionBateria = null;
+    }
+
+
+    ///////////////// Marcadores
+
+    public int leerRecordNivel1() {
+        SharedPreferences mSharedPrefs = actividadJuego.getSharedPreferences("PrefRecord1", Context.MODE_PRIVATE);
+        SharedPreferences.Editor mPrefsEditor = mSharedPrefs.edit();
+        int record = mSharedPrefs.getInt("Record1", 0);
+        return record;
+    }
+
+    public void modificarRecordNivel1(int newRecord) {
+        SharedPreferences mSharedPrefs = actividadJuego.getSharedPreferences("PrefRecord1",Context.MODE_PRIVATE);
+        SharedPreferences.Editor mPrefsEditor = mSharedPrefs.edit();
+        mPrefsEditor.putInt("Record1", newRecord);
+        mPrefsEditor.commit();
+    }
+
+    public int leerRecordNivel2() {
+        SharedPreferences mSharedPrefs = actividadJuego.getSharedPreferences("PrefRecord2", Context.MODE_PRIVATE);
+        SharedPreferences.Editor mPrefsEditor = mSharedPrefs.edit();
+        int record2 = mSharedPrefs.getInt("Record2", 0);
+        return record2;
+    }
+
+    public void modificarRecordNivel2(int newRecord) {
+        SharedPreferences mSharedPrefs = actividadJuego.getSharedPreferences("PrefRecord2",Context.MODE_PRIVATE);
+        SharedPreferences.Editor mPrefsEditor = mSharedPrefs.edit();
+        mPrefsEditor.putInt("Record2", newRecord);
+        mPrefsEditor.commit();
+    }
+
+    public int leerRecordNivel3() {
+        SharedPreferences mSharedPrefs = actividadJuego.getSharedPreferences("PrefRecord3", Context.MODE_PRIVATE);
+        SharedPreferences.Editor mPrefsEditor = mSharedPrefs.edit();
+        int record3 = mSharedPrefs.getInt("Record3", 0);
+        return record3;
+    }
+
+    public void modificarRecordNivel3(int newRecord) {
+        SharedPreferences mSharedPrefs = actividadJuego.getSharedPreferences("PrefRecord3",Context.MODE_PRIVATE);
+        SharedPreferences.Editor mPrefsEditor = mSharedPrefs.edit();
+        mPrefsEditor.putInt("Record3", newRecord);
+        mPrefsEditor.commit();
     }
 
 }

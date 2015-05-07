@@ -1,9 +1,11 @@
 package com.castilla.eduardo.lightbulbs;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Vibrator;
 import android.support.v7.app.ActionBarActivity;
         import android.os.Bundle;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.Menu;
         import android.view.MenuItem;
@@ -36,9 +38,6 @@ public class ControlJuego extends SimpleBaseGameActivity
     // El administrador de escenas
     private AdministradorEscenas admEscenas;
 
-    //Estado de los botones de Ajustes
-    public static boolean musicaOn =true;
-    public static boolean efectosOn = false;
 
     @Override
     public EngineOptions onCreateEngineOptions() {
@@ -161,14 +160,18 @@ public class ControlJuego extends SimpleBaseGameActivity
     }
 
     public synchronized void onPauseGame(){
+        SharedPreferences mSharedPrefs = getSharedPreferences("PrefMusica", Context.MODE_PRIVATE);
+        SharedPreferences.Editor mPrefsEditor = mSharedPrefs.edit();
+        boolean musicOn = mSharedPrefs.getBoolean("Musica", true);
+
         // Pausar la música en Niveles
-        if (admEscenas!=null && admEscenas.getTipoEscenaActual()==TipoEscena.ESCENA_NIVEL_1||admEscenas.getTipoEscenaActual()==TipoEscena.ESCENA_NIVEL_2||admEscenas.getTipoEscenaActual()==TipoEscena.ESCENA_NIVEL_3) {
+        if (musicOn&&admEscenas!=null && admEscenas.getTipoEscenaActual()==TipoEscena.ESCENA_NIVEL_1||admEscenas.getTipoEscenaActual()==TipoEscena.ESCENA_NIVEL_2||admEscenas.getTipoEscenaActual()==TipoEscena.ESCENA_NIVEL_3) {
             // Esta en AcercaDe, revisar si está reproduciendo música
             Music musicaFondo = admEscenas.getEscenaActual().admMusica.getMusicaNivel();
             if (musicaFondo!=null && musicaFondo.isPlaying()) {
                 musicaFondo.pause();
             }
-        }else if(admEscenas!=null && admEscenas.getTipoEscenaActual()!=TipoEscena.ESCENA_SPLASH){
+        }else if(musicOn&&admEscenas!=null && admEscenas.getTipoEscenaActual()!=TipoEscena.ESCENA_SPLASH){
             // Pausar la música en todas las escenas que ocnforman el menú
             Music musicaFondo = admEscenas.getEscenaActual().admMusica.getMusicaMenu();
             if(musicaFondo!=null && musicaFondo.isPlaying()){
@@ -178,17 +181,23 @@ public class ControlJuego extends SimpleBaseGameActivity
         super.onPauseGame();
     }
 
-    public synchronized void onResumeGame(){// Pausar la música en Niveles
+    public synchronized void onResumeGame(){
+
+
+        SharedPreferences mSharedPrefs = getSharedPreferences("PrefMusica", Context.MODE_PRIVATE);
+        SharedPreferences.Editor mPrefsEditor = mSharedPrefs.edit();
+        boolean musicOn = mSharedPrefs.getBoolean("Musica", true);
+
         if (admEscenas!=null && admEscenas.getTipoEscenaActual()==TipoEscena.ESCENA_NIVEL_1||admEscenas.getTipoEscenaActual()==TipoEscena.ESCENA_NIVEL_2||admEscenas.getTipoEscenaActual()==TipoEscena.ESCENA_NIVEL_3) {
             // Esta en AcercaDe, revisar si está reproduciendo música
             Music musicaFondo = admEscenas.getEscenaActual().admMusica.getMusicaNivel();
-            if (musicaFondo!=null && !musicaFondo.isPlaying()) {
+            if (musicaFondo!=null && musicOn && !musicaFondo.isPlaying()) {
                 musicaFondo.play();
             }
         }else if(admEscenas!=null && admEscenas.getTipoEscenaActual()!=TipoEscena.ESCENA_SPLASH){
-            // Pausar la música en todas las escenas que ocnforman el menú
+            // Pausar la música en todas las escenas que conforman el menú
             Music musicaFondo = admEscenas.getEscenaActual().admMusica.getMusicaMenu();
-            if(musicaFondo!=null && !musicaFondo.isPlaying()){
+            if(musicaFondo!=null && musicOn && !musicaFondo.isPlaying()){
                 musicaFondo.play();
             }
         }

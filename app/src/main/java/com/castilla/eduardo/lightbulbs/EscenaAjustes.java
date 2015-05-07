@@ -1,5 +1,7 @@
 package com.castilla.eduardo.lightbulbs;
 
+import android.util.Log;
+
 import org.andengine.engine.camera.Camera;
 import org.andengine.entity.scene.background.SpriteBackground;
 import org.andengine.entity.sprite.AnimatedSprite;
@@ -48,10 +50,12 @@ public class EscenaAjustes extends EscenaBase
                 if (pSceneTouchEvent.isActionDown()) {
                     if (btnOnOFF_1.getCurrentTileIndex()==0){
                         btnOnOFF_1.setCurrentTileIndex(1);
-                        //ControlJuego.musicaOn=true;
+                        admMusica.modificarPreferenciaMusica(false);
+                        admMusica.pararMusicaMenu();
                     }else{
                         btnOnOFF_1.setCurrentTileIndex(0);
-                        //ControlJuego.musicaOn=false;
+                        admMusica.modificarPreferenciaMusica(true);
+                        admMusica.reproducirMusicaMenu();
                     }
                 }
                 return super.onAreaTouched(pSceneTouchEvent, pTouchAreaLocalX, pTouchAreaLocalY);
@@ -59,6 +63,12 @@ public class EscenaAjustes extends EscenaBase
         };
         registerTouchArea(btnOnOFF_1);
         attachChild(btnOnOFF_1);
+
+        if(admMusica.leerPreferenciaMusica()){
+            btnOnOFF_1.setCurrentTileIndex(0);
+        }else{
+            btnOnOFF_1.setCurrentTileIndex(1);
+        }
 
         // Botón OnOFF para los efectos
         btnOnOFF_2 = new AnimatedSprite(327,332,
@@ -80,20 +90,6 @@ public class EscenaAjustes extends EscenaBase
         };
         registerTouchArea(btnOnOFF_2);
         attachChild(btnOnOFF_2);
-
-        //if(ControlJuego.musicaOn){
-        //    btnOnOFF_1.setCurrentTileIndex(0);
-
-        //}else{
-        //    btnOnOFF_1.setCurrentTileIndex(1);
-        //}
-
-        //if(ControlJuego.efectosOn){
-        //    btnOnOFF_2.setCurrentTileIndex(0);
-
-        //}else{
-        //    btnOnOFF_2.setCurrentTileIndex(1);
-        //}
     }
 
     @Override
@@ -109,8 +105,6 @@ public class EscenaAjustes extends EscenaBase
     @Override
     public void liberarEscena() {
         // Liberar cada recurso usado en esta escena
-
-
         this.detachSelf();      // La escena se deconecta del engine
         this.dispose();         // Libera la memoria
     }
