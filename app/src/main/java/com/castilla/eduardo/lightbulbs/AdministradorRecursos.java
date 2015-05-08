@@ -350,7 +350,7 @@ public class AdministradorRecursos {
         try {
             // Carga la imagen de fondo de la pantalla Instrucciones
             texturaFondoInstrucciones = new AssetBitmapTexture(actividadJuego.getTextureManager(),
-                    actividadJuego.getAssets(), "Instrucciones.jpg");
+                    actividadJuego.getAssets(), "PantallaInstrucciones.jpg");
             regionFondoInstrucciones = TextureRegionFactory.extractFromTexture(texturaFondoInstrucciones);
             texturaFondoInstrucciones.load();
         } catch (IOException e) {
