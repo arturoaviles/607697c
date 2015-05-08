@@ -467,7 +467,7 @@ public class EscenaNivel2 extends EscenaBase
                 }
                 if(allBulbsOn) {
                     revisarMarcador();
-                    if (cable3.getCurrentTileIndex() == 1 || cable4.getCurrentTileIndex() == 1) {
+                    if (cable5.getCurrentTileIndex() == 1 || cable6.getCurrentTileIndex() == 1) {
                         if (pSceneTouchEvent.isActionDown()) {
                             if (endBox.getCurrentTileIndex() == 0) {
                                 hudMarcador.multiplicarMarcador(((int)rectanguloEnergia.getWidth()/10));
